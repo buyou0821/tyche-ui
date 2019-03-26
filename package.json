@@ -9,10 +9,10 @@
     "serve": "cross-env NODE_ENV=development webpack-dev-server --config webpack.config.dev.js",
     "build": "cross-env NODE_ENV=production webpack --config webpack.config.prod.js",
     "prettier": "prettier --write --config .prettierrc 'components/**/*.{ts,tsx,js}'",
-    "lint:fix": "eslint --fix --ext .js,.tsx components && npm run lint:style",
+    "lint-fix:es": "eslint --fix --ext .js,.tsx components && npm run lint:style",
+    "lint:ts": "tslint --project tsconfig.json 'components/**/*.{ts,tsx}'",
     "lint:style": "prettier-stylelint --write -q 'components/**/*.{css,scss,less}'",
-    "lint-fix:ts": "tslint --fix --project tsconfig.json 'components/**/*.{ts,tsx}' && npm run prettier",
-    "lint:ts": "tslint --project tsconfig.json 'components/**/*.{ts,tsx}'"
+    "lint:fix": "tslint --fix --project tsconfig.json 'components/**/*.{ts,tsx}' && npm run prettier && npm run lint:style"
   },
   "repository": {
     "type": "git",

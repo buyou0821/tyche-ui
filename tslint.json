@@ -1,7 +1,6 @@
 {
   "extends": ["tslint-react", "tslint-eslint-rules", "tslint-config-prettier"],
   "rules": {
-    "no-unused-variable": true,
     "no-use-before-declare": true,
     "class-name": true,
     "eofline": true,
