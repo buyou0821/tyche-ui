@@ -8,8 +8,10 @@
     "test": "cross-env NODE_ENV=test jest --config=jest.config.js --runInBand",
     "serve": "cross-env NODE_ENV=development webpack-dev-server --config webpack.config.dev.js",
     "build": "cross-env NODE_ENV=production webpack --config webpack.config.prod.js",
+    "prettier": "prettier --write --config .prettierrc 'lib/**/*.{ts,tsx,js}'",
     "lint:fix": "eslint --fix --ext .js,.tsx lib && npm run lint:style",
-    "lint:style": "prettier-stylelint --write -q 'lib/**/*.{css,scss,less}' "
+    "lint:style": "prettier-stylelint --write -q 'lib/**/*.{css,scss,less}'",
+    "lint-fix:ts": "tslint --fix 'lib/**/*.{ts,tsx}' && npm run prettier"
   },
   "repository": {
     "type": "git",
