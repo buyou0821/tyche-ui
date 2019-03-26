@@ -1,6 +1,5 @@
-const base = require('./webpack.config');
-const path = require('path');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin')
+const base = require('./webpack.config')
 
 module.exports = Object.assign({}, base, {
   mode: 'development',
@@ -8,6 +7,6 @@ module.exports = Object.assign({}, base, {
     new HtmlWebpackPlugin({
       title: 'invoker-ui',
       template: 'index.html',
-    })
+    }),
   ],
-});
+})

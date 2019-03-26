@@ -1,3 +1,3 @@
 import Button from './button';
-
-export { Button }
+const a = 1;
+export { Button };

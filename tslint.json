@@ -75,17 +75,35 @@
     "jsx-boolean-value": [true, "never"],
     "jsx-no-multiline-js": false,
     "whitespace": [
+      true
+      // "check-branch",
+      // "check-decl",
+      // "check-operator",
+      // "check-module",
+      // "check-separator",
+      // "check-rest-spread",
+      // "check-type",
+      // "check-typecast",
+      // "check-type-operator",
+      // "check-preblock"
+    ],
+    "semicolon": [
       true,
-      "check-branch",
-      "check-decl",
-      "check-operator",
-      "check-module",
-      "check-separator",
-      "check-rest-spread",
-      "check-type",
-      "check-typecast",
-      "check-type-operator",
-      "check-preblock"
-    ]
+      "always",
+      "ignore-interfaces"
+    ],
+    "quotemark": [
+      true,
+      "single",
+      "jsx-double",
+      "avoid-template",
+      "avoid-escape"
+    ],
+    "object-curly-spacing": true,
+    "array-bracket-spacing": [
+        true,
+        "never"
+    ],
+    "space-before-function-paren": [true, "never"]
   }
 }

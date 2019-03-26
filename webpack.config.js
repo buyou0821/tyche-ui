@@ -1,4 +1,4 @@
-const path = require('path');
+const path = require('path')
 
 module.exports = {
   entry: {
@@ -17,7 +17,7 @@ module.exports = {
       {
         test: /\.tsx?$/,
         loader: 'awesome-typescript-loader',
-      }
-    ]
+      },
+    ],
   },
 }
