@@ -1,8 +1,8 @@
-const path = require('path')
+const path = require('path');
 
 module.exports = {
   entry: {
-    index: './lib/index.tsx',
+    index: './components/index.tsx',
   },
   resolve: {
     extensions: ['.ts', '.tsx', '.js', '.jsx'],
@@ -20,4 +20,4 @@ module.exports = {
       },
     ],
   },
-}
+};

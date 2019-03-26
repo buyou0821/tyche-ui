@@ -2,16 +2,17 @@
   "name": "invoker-ui",
   "version": "0.0.1",
   "description": "",
-  "main": "dist/lib/index.js",
-  "types": "dist/lib/index",
+  "main": "dist/components/index.js",
+  "types": "dist/components/index",
   "scripts": {
     "test": "cross-env NODE_ENV=test jest --config=jest.config.js --runInBand",
     "serve": "cross-env NODE_ENV=development webpack-dev-server --config webpack.config.dev.js",
     "build": "cross-env NODE_ENV=production webpack --config webpack.config.prod.js",
-    "prettier": "prettier --write --config .prettierrc 'lib/**/*.{ts,tsx,js}'",
-    "lint:fix": "eslint --fix --ext .js,.tsx lib && npm run lint:style",
-    "lint:style": "prettier-stylelint --write -q 'lib/**/*.{css,scss,less}'",
-    "lint-fix:ts": "tslint --fix 'lib/**/*.{ts,tsx}' && npm run prettier"
+    "prettier": "prettier --write --config .prettierrc 'components/**/*.{ts,tsx,js}'",
+    "lint:fix": "eslint --fix --ext .js,.tsx components && npm run lint:style",
+    "lint:style": "prettier-stylelint --write -q 'components/**/*.{css,scss,less}'",
+    "lint-fix:ts": "tslint --fix --project tsconfig.json 'components/**/*.{ts,tsx}' && npm run prettier",
+    "lint:ts": "tslint --project tsconfig.json 'components/**/*.{ts,tsx}'"
   },
   "repository": {
     "type": "git",
