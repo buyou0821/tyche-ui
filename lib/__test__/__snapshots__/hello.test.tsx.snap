@@ -1,0 +1,7 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`is a div 1`] = `
+<div>
+  button
+</div>
+`;
