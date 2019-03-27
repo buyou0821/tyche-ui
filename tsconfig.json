@@ -15,5 +15,24 @@
     "sourceMap": true,
     "declaration": true
   },
-  "exclude": ["node_modules", "lib", "es"]
+  "include": [
+    "example.tsx",
+    "components/**/*",
+    "lib/**/*",
+    "include/**/*",
+    "examples/**/*",
+    "types/**/*",
+    "test/**/*"
+  ],
+  "exclude": [
+    "node_modules",
+    "build",
+    "dist",
+    "scripts",
+    "acceptance-tests",
+    "webpack",
+    "jest",
+    "src/setupTests.ts",
+    "*.js"
+  ]
 }
