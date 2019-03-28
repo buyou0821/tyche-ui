@@ -8,7 +8,8 @@ const IconFont = Icon.createFromIconfont({
 
 ReactDOM.render(
   <div>
-    <IconFont type="icon-twitter" style={{ color: '#f66' }} />
+    <IconFont type="icon-twitter" style={{ color: 'red' }} />
+    <Icon material="face" style={{ color: 'blue', fontSize: '20px' }} />
   </div>,
   document.getElementById('root'),
 );

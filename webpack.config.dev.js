@@ -5,7 +5,7 @@ module.exports = Object.assign({}, base, {
   mode: 'development',
   plugins: [
     new HtmlWebpackPlugin({
-      title: 'invoker-ui',
+      title: 'm-ui',
       template: 'index.html',
     }),
   ],
