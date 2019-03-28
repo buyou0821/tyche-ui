@@ -88,7 +88,6 @@
       // "check-preblock"
     ],
     "semicolon": [true, "always", "ignore-interfaces"],
-    "quotemark": [true, "single", "jsx-double", "avoid-template", "avoid-escape"],
     "object-curly-spacing": true,
     "array-bracket-spacing": [true, "never"],
     "space-before-function-paren": [true, "never"]
