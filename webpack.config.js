@@ -1,4 +1,5 @@
 const path = require('path');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = {
   entry: {
@@ -8,7 +9,7 @@ module.exports = {
     extensions: ['.ts', '.tsx', '.js', '.jsx'],
   },
   output: {
-    path: path.resolve(__dirname, 'dist/lib'),
+    path: path.resolve(__dirname, 'dist/components'),
     library: 'invoker-ui',
     libraryTarget: 'umd',
   },
@@ -18,6 +19,20 @@ module.exports = {
         test: /\.tsx?$/,
         loader: 'awesome-typescript-loader',
       },
+      {
+        test: /\.scss$/,
+        use: [
+          process.env.NODE_ENV !== 'production' ? 'style-loader' : MiniCssExtractPlugin.loader,
+          'css-loader',
+          'sass-loader',
+        ],
+      },
     ],
   },
+  plugins: [
+    new MiniCssExtractPlugin({
+      filename: '[name].css',
+      chunkFilename: '[id].css',
+    }),
+  ],
 };
