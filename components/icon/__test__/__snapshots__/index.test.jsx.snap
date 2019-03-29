@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Icon should render material icon 1`] = `
+<i
+  class="muiicon material-icons"
+>
+  face
+</i>
+`;
+
+exports[`Icon should support iconfont 1`] = `
+<i
+  class="muiicon"
+>
+  <svg
+    fill="currentColor"
+    height="1em"
+    width="1em"
+  >
+    <use
+      href="#icon-twitter"
+    />
+  </svg>
+</i>
+`;
