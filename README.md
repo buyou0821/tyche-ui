@@ -1,1 +1,1 @@
-# MUI
+# tyche-ui
