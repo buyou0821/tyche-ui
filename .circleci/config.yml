@@ -41,7 +41,6 @@ jobs:
       - attach_workspace:
           at: .
       - run: yarn ci
-      - run: yarn test
       - run: bash <(curl -s https://codecov.io/bash)
       - store_test_results:
           path: test-results
