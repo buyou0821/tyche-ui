@@ -42,9 +42,9 @@ jobs:
           at: .
       - run: yarn ci
       - run: yarn test
+      - run: bash <(curl -s https://codecov.io/bash)
       - store_test_results:
           path: test-results
-      - run: bash <(curl -s https://codecov.io/bash)
   publish:
     <<: *defaults
     steps:
