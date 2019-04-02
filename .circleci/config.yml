@@ -2,7 +2,9 @@ defaults: &defaults
   docker:
     - image: circleci/node:8
 
-version: 2
+version: 2.1
+orbs:
+  codecov: codecov/codecov@1.0.4
 jobs:
   prepare:
     <<: *defaults
@@ -34,6 +36,9 @@ jobs:
             - package.json
             - README.md
             - LICENSE
+      - codecov/upload:
+          file: coverage/lcov.info
+          flags: frontend
   test:
     <<: *defaults
     steps:
@@ -52,7 +57,7 @@ jobs:
       - run: npm publish
 
 workflows:
-  version: 2
+  version: 2.1
   build_accept_deploy:
     jobs:
       - prepare
