@@ -49,7 +49,7 @@ jobs:
       - attach_workspace:
           at: .
       - run: npm publish
-      - run: npm config set //registry.npmjs.org/:_authToken=$NPM_TOKEN
+      - run: npm config set //registry.npmjs.org/:_authToken $NPM_TOKEN
 
 workflows:
   version: 2
