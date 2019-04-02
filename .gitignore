@@ -1,8 +1,9 @@
 node_modules/
 /dist
+/coverage
+/test-results
+/.vscode
 .DS_Store
 *.bak
 npm-debug.log
-/.vscode/
-/coverage
 package-lock.json

@@ -1,5 +1,18 @@
 module.exports = {
   verbose: true,
+  collectCoverage: true,
+  coverageDirectory: 'coverage',
+  coverageReporters: ['text', 'lcov'],
+  reporters: ['default', 'jest-junit'],
+  collectCoverageFrom: [
+    'components/**/*.{ts,tsx}',
+    '!components/index.{ts,tsx}',
+    '!components/*/style/index.tsx',
+    '!components/style/index.tsx',
+    '!components/*/locale/index.tsx',
+    '!components/*/__tests__/**/type.tsx',
+    '!components/**/*/interface.{ts,tsx}',
+  ],
   moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx', 'json', 'md'],
   setupFiles: ['./tests/setup.js'],
   globals: {
@@ -16,13 +29,5 @@ module.exports = {
       '<rootDir>/tests/__mocks__/file-mock.js',
     '\\.(css|sass|scss)$': '<rootDir>/tests/__mocks__/object-mock.js',
   },
-  collectCoverageFrom: [
-    'components/**/*.{ts,tsx}',
-    '!components/*/style/index.tsx',
-    '!components/style/index.tsx',
-    '!components/*/locale/index.tsx',
-    '!components/*/__tests__/**/type.tsx',
-    '!components/**/*/interface.{ts,tsx}',
-  ],
   snapshotSerializers: ['enzyme-to-json/serializer'],
 };

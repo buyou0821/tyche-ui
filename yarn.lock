@@ -797,6 +797,14 @@
     "@types/istanbul-lib-coverage" "^1.1.0"
     "@types/yargs" "^12.0.9"
 
+"@jest/types@^24.6.0":
+  version "24.6.0"
+  resolved "http://registry.npm.taobao.org/@jest/types/download/@jest/types-24.6.0.tgz#cf018e56f3ef45e81119fd613fc20a9819f4eddd"
+  integrity sha1-zwGOVvPvRegRGf1hP8IKmBn07d0=
+  dependencies:
+    "@types/istanbul-lib-coverage" "^2.0.0"
+    "@types/yargs" "^12.0.9"
+
 "@types/babel__core@^7.1.0":
   version "7.1.0"
   resolved "http://registry.npm.taobao.org/@types/babel__core/download/@types/babel__core-7.1.0.tgz#710f2487dda4dcfd010ca6abb2b4dc7394365c51"
@@ -839,6 +847,11 @@
   version "1.1.0"
   resolved "http://registry.npm.taobao.org/@types/istanbul-lib-coverage/download/@types/istanbul-lib-coverage-1.1.0.tgz#2cc2ca41051498382b43157c8227fea60363f94a"
   integrity sha1-LMLKQQUUmDgrQxV8gif+pgNj+Uo=
+
+"@types/istanbul-lib-coverage@^2.0.0":
+  version "2.0.0"
+  resolved "http://registry.npm.taobao.org/@types/istanbul-lib-coverage/download/@types/istanbul-lib-coverage-2.0.0.tgz#1eb8c033e98cf4e1a4cedcaf8bcafe8cb7591e85"
+  integrity sha1-HrjAM+mM9OGkztyvi8r+jLdZHoU=
 
 "@types/jest-diff@*":
   version "20.0.1"
@@ -5093,6 +5106,16 @@ jest-jasmine2@^24.5.0:
     pretty-format "^24.5.0"
     throat "^4.0.0"
 
+jest-junit@^6.3.0:
+  version "6.3.0"
+  resolved "http://registry.npm.taobao.org/jest-junit/download/jest-junit-6.3.0.tgz#99e64ebc54eddcb21238f0cc49f5820c89a8c785"
+  integrity sha1-meZOvFTt3LISOPDMSfWCDImox4U=
+  dependencies:
+    jest-validate "^24.0.0"
+    mkdirp "^0.5.1"
+    strip-ansi "^4.0.0"
+    xml "^1.0.1"
+
 jest-leak-detector@^24.5.0:
   version "24.5.0"
   resolved "http://registry.npm.taobao.org/jest-leak-detector/download/jest-leak-detector-24.5.0.tgz#21ae2b3b0da252c1171cd494f75696d65fb6fa89"
@@ -5256,6 +5279,18 @@ jest-util@^24.5.0:
     mkdirp "^0.5.1"
     slash "^2.0.0"
     source-map "^0.6.0"
+
+jest-validate@^24.0.0:
+  version "24.6.0"
+  resolved "http://registry.npm.taobao.org/jest-validate/download/jest-validate-24.6.0.tgz#7ad68c68bf2639295cd727817f468e840e950507"
+  integrity sha1-etaMaL8mOSlc1yeBf0aOhA6VBQc=
+  dependencies:
+    "@jest/types" "^24.6.0"
+    camelcase "^5.0.0"
+    chalk "^2.0.1"
+    jest-get-type "^24.3.0"
+    leven "^2.1.0"
+    pretty-format "^24.6.0"
 
 jest-validate@^24.5.0:
   version "24.5.0"
@@ -7154,6 +7189,16 @@ pretty-format@^24.5.0:
   integrity sha1-zGmgKBpizXJCYz/BNdaTDNiJgi0=
   dependencies:
     "@jest/types" "^24.5.0"
+    ansi-regex "^4.0.0"
+    ansi-styles "^3.2.0"
+    react-is "^16.8.4"
+
+pretty-format@^24.6.0:
+  version "24.6.0"
+  resolved "http://registry.npm.taobao.org/pretty-format/download/pretty-format-24.6.0.tgz#66124fe5ea5c4d473337a204ece220e8fdc9806c"
+  integrity sha1-ZhJP5epcTUczN6IE7OIg6P3JgGw=
+  dependencies:
+    "@jest/types" "^24.6.0"
     ansi-regex "^4.0.0"
     ansi-styles "^3.2.0"
     react-is "^16.8.4"
@@ -9076,7 +9121,7 @@ typedarray@^0.0.6:
 
 typescript@^3.3.4000:
   version "3.3.4000"
-  resolved "http://registry.npm.taobao.org/typescript/download/typescript-3.3.4000.tgz?cache=0&other_urls=http%3A%2F%2Fregistry.npm.taobao.org%2Ftypescript%2Fdownload%2Ftypescript-3.3.4000.tgz#76b0f89cfdbf97827e1112d64f283f1151d6adf0"
+  resolved "http://registry.npm.taobao.org/typescript/download/typescript-3.3.4000.tgz#76b0f89cfdbf97827e1112d64f283f1151d6adf0"
   integrity sha1-drD4nP2/l4J+ERLWTyg/EVHWrfA=
 
 uglify-js@3.4.x:
@@ -9705,6 +9750,11 @@ xml-name-validator@^3.0.0:
   version "3.0.0"
   resolved "http://registry.npm.taobao.org/xml-name-validator/download/xml-name-validator-3.0.0.tgz#6ae73e06de4d8c6e47f9fb181f78d648ad457c6a"
   integrity sha1-auc+Bt5NjG5H+fsYH3jWSK1FfGo=
+
+xml@^1.0.1:
+  version "1.0.1"
+  resolved "http://registry.npm.taobao.org/xml/download/xml-1.0.1.tgz#78ba72020029c5bc87b8a81a3cfcd74b4a2fc1e5"
+  integrity sha1-eLpyAgApxbyHuKgaPPzXS0ovweU=
 
 xregexp@4.0.0:
   version "4.0.0"
