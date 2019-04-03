@@ -7,10 +7,13 @@ module.exports = {
   },
   resolve: {
     extensions: ['.ts', '.tsx', '.js', '.jsx'],
+    alias: {
+      components: './components',
+    },
   },
   output: {
-    path: path.resolve(__dirname, 'dist/components'),
-    library: 'invoker-ui',
+    path: path.resolve(__dirname, 'dist'),
+    library: 'tyche-ui',
     libraryTarget: 'umd',
   },
   module: {
