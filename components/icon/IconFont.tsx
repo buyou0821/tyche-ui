@@ -4,11 +4,11 @@ import Icon, { IconProps } from './index';
 const urlCache = new Set<string>();
 
 interface CustomIconOptions {
-  scriptUrl?: string;
+  scriptUrl: string;
 }
 
 export default function createIconFont(
-  options: CustomIconOptions = {},
+  options: CustomIconOptions,
 ): React.FunctionComponent<IconProps> {
   const { scriptUrl } = options;
 

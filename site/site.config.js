@@ -7,6 +7,9 @@ module.exports = Object.assign({}, base, {
   entry: {
     site: path.resolve(__dirname, './index.tsx'),
   },
+  output: {
+    publicPath: '/',
+  },
   resolve: {
     extensions: ['.ts', '.tsx', '.js', '.jsx'],
     alias: {
@@ -19,4 +22,7 @@ module.exports = Object.assign({}, base, {
       template: path.resolve(__dirname, './index.html'),
     }),
   ],
+  devServer: {
+    historyApiFallback: true,
+  },
 });
