@@ -16,7 +16,7 @@ module.exports = {
   setupFiles: ['./tests/setup.js'],
   globals: {
     'ts-jest': {
-      tsConfig: './tsconfig.test.json',
+      tsConfig: './tsconfig.json',
     },
   },
   transform: {
