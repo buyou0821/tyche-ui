@@ -96,11 +96,5 @@
   },
   "files": [
     "dist"
-  ],
-  "sideEffects": [
-    "dist/*",
-    "es/**/style/*",
-    "lib/**/style/*",
-    "*.less"
   ]
 }
