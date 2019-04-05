@@ -2,7 +2,7 @@
 
 exports[`Icon should render material icon 1`] = `
 <i
-  class="muiicon material-icons"
+  class="tycheicon material-icons"
 >
   face
 </i>
@@ -10,9 +10,11 @@ exports[`Icon should render material icon 1`] = `
 
 exports[`Icon should support iconfont 1`] = `
 <i
-  class="muiicon"
+  class="tycheicon"
 >
   <svg
+    aria-hidden="true"
+    class=""
     fill="currentColor"
     height="1em"
     width="1em"

@@ -1,2 +1,4 @@
 const importAll = requireContext => requireContext.keys().forEach(requireContext);
-importAll(require.context('./svg', true, /\.svg$/));
+try {
+  importAll(require.context('./svg', true, /\.svg$/));
+} catch (e) {}
