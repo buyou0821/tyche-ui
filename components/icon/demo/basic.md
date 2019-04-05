@@ -34,3 +34,19 @@ ReactDOM.render(
   mountNode,
 );
 ```
+
+## 使用 loading
+
+```jsx
+ReactDOM.render(
+  <div>
+    <Icon type="loading" />
+  </div>,
+  mountNode,
+);
+```
+
+| 字段   | 说明          | 类型    | 默认值 |
+| ------ | ------------- | ------- | ------ |
+| spin   | 循环旋转动画  | boolean | false  |
+| rotate | icon 旋转角度 | number  | -      |
