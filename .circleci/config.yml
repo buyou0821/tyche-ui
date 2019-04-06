@@ -68,6 +68,6 @@ workflows:
             - build
           filters:
             branches:
-              ignore: /.*/
+              only: deploy
             tags:
               only: /^v[0-9]+(\.[0-9]+)*$/
