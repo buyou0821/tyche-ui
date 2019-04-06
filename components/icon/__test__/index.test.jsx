@@ -16,6 +16,11 @@ describe('Icon', () => {
     expect(wrapper).toMatchSnapshot();
   });
 
+  it('should support loading', () => {
+    const wrapper = mount(<Icon type="loading" />);
+    expect(wrapper).toMatchSnapshot();
+  });
+
   it('should support onClick', () => {
     const fn = jest.fn();
     const wrapper = mount(<Icon material="face" onClick={fn} />);

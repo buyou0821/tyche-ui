@@ -25,3 +25,25 @@ exports[`Icon should support iconfont 1`] = `
   </svg>
 </i>
 `;
+
+exports[`Icon should support loading 1`] = `
+<Icon
+  type="loading"
+>
+  <i
+    className="tycheicon"
+  >
+    <svg
+      aria-hidden="true"
+      className="tycheicon-spin"
+      fill="currentColor"
+      height="1em"
+      width="1em"
+    >
+      <use
+        xlinkHref="#loading"
+      />
+    </svg>
+  </i>
+</Icon>
+`;
