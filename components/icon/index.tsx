@@ -1,5 +1,5 @@
 import React from 'react';
-import classNames from 'classnames';
+import clsx from 'clsx';
 import { svgBaseProps } from './untils';
 import createFromIconfont from './IconFont';
 import './importSVG';
@@ -31,14 +31,14 @@ interface IconComponent<p> extends React.FunctionComponent<p> {
 const Icon: IconComponent<IconProps> = props => {
   const { className, children, material, type, spin, rotate, style, ...restProps } = props;
 
-  let classString = classNames(
+  let classString = clsx(
     {
       [`tycheicon`]: true,
     },
     className,
   );
 
-  const svgClassString = classNames({
+  const svgClassString = clsx({
     [`tycheicon-spin`]: !!spin || type === 'loading',
   });
 
@@ -76,7 +76,7 @@ const Icon: IconComponent<IconProps> = props => {
   // Material Design Icons
   if (material) {
     innerNode = material;
-    classString = classNames(classString, 'material-icons');
+    classString = clsx(classString, 'material-icons');
     materialStyle = {
       style: Object.assign({}, props.style, rotateStyle),
     };
