@@ -4,7 +4,7 @@ import './style';
 
 const Button = () => {
   return (
-    <div className="wrapper">
+    <div className="wrapper" style={{ color: 'blue' }}>
       按钮
       <TouchRipple />
     </div>
