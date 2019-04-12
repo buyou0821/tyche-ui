@@ -66,9 +66,7 @@ const TouchRipple: React.FunctionComponent<TouchRippleProps> = props => {
 
   const end = () => {
     if (ripples.length === 0) return;
-    setTimeout(() => {
-      setRipples([]);
-    }, 500);
+    setRipples([]);
   };
 
   const startCommit = (rippleProps: RippleProps) => {

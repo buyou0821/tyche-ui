@@ -4,7 +4,7 @@ import { Transition } from 'react-transition-group';
 import { RippleProps } from './TouchRipple';
 import './style';
 
-const DURATION = 500;
+const DURATION = 550;
 
 const Ripple = (props: RippleProps) => {
   const { rippleX, rippleY, rippleSize, ...restProps } = props;
@@ -51,7 +51,6 @@ const Ripple = (props: RippleProps) => {
           height: rippleSize,
           top: -(rippleSize / 2) + rippleY,
           left: -(rippleSize / 2) + rippleX,
-          backgroundColor: '#000',
         }}
       >
         <div className={childClassName} />
