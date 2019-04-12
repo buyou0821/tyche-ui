@@ -23,6 +23,7 @@ module.exports = Object.assign({}, base, {
     }),
   ],
   devServer: {
+    host: '0.0.0.0',
     historyApiFallback: true,
   },
 });

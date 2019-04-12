@@ -918,6 +918,13 @@
   dependencies:
     "@types/react" "*"
 
+"@types/react-transition-group@^2.8.0":
+  version "2.8.0"
+  resolved "https://registry.npmjs.org/@types/react-transition-group/-/react-transition-group-2.8.0.tgz#0e30ced3ad695ac053f715675467162b19bbe539"
+  integrity sha512-DHZrY4UBypeT/bD2WakC3MkdBHMOkhqWnRRCMqrtNknyhfkCfKmRlpKdxGlPkDKvNl2uDSHcdvmKy8JW0aNETA==
+  dependencies:
+    "@types/react" "*"
+
 "@types/react@*", "@types/react@^16.8.8":
   version "16.8.8"
   resolved "http://registry.npm.taobao.org/@types/react/download/@types/react-16.8.8.tgz?cache=0&other_urls=http%3A%2F%2Fregistry.npm.taobao.org%2F%40types%2Freact%2Fdownload%2F%40types%2Freact-16.8.8.tgz#4b60a469fd2469f7aa6eaa0f8cfbc51f6d76e662"
@@ -2856,6 +2863,13 @@ dom-converter@^0.2:
   integrity sha1-ZyGp2u4uKTaClVtq/kFncWJ7t2g=
   dependencies:
     utila "~0.4"
+
+dom-helpers@^3.4.0:
+  version "3.4.0"
+  resolved "https://registry.npmjs.org/dom-helpers/-/dom-helpers-3.4.0.tgz#e9b369700f959f62ecde5a6babde4bccd9169af8"
+  integrity sha512-LnuPJ+dwqKDIyotW1VzmOZ5TONUN7CwkCR5hrgawTUbkBGYdeoNLZo6nNfGkCrjtE1nXXaj7iMMpDa8/d9WoIA==
+  dependencies:
+    "@babel/runtime" "^7.1.2"
 
 dom-serializer@0, dom-serializer@~0.1.0:
   version "0.1.1"
@@ -7700,6 +7714,11 @@ react-is@^16.8.1, react-is@^16.8.4, react-is@^16.8.5:
   resolved "http://registry.npm.taobao.org/react-is/download/react-is-16.8.5.tgz#c54ac229dd66b5afe0de5acbe47647c3da692ff8"
   integrity sha1-xUrCKd1mta/g3lrL5HZHw9ppL/g=
 
+react-lifecycles-compat@^3.0.4:
+  version "3.0.4"
+  resolved "https://registry.npmjs.org/react-lifecycles-compat/-/react-lifecycles-compat-3.0.4.tgz#4f1a273afdfc8f3488a8c516bfda78f872352362"
+  integrity sha512-fBASbA6LnOU9dOU2eW7aQ8xmYBSXUIWr+UmF9b1efZBazGNO+rcXT/icdKnYm2pTwcRylVUYwW7H1PHfLekVzA==
+
 react-router-dom@^5.0.0:
   version "5.0.0"
   resolved "https://registry.npmjs.org/react-router-dom/-/react-router-dom-5.0.0.tgz#542a9b86af269a37f0b87218c4c25ea8dcf0c073"
@@ -7748,6 +7767,16 @@ react-test-renderer@^16.8.5:
     prop-types "^15.6.2"
     react-is "^16.8.5"
     scheduler "^0.13.5"
+
+react-transition-group@^2.9.0:
+  version "2.9.0"
+  resolved "https://registry.npmjs.org/react-transition-group/-/react-transition-group-2.9.0.tgz#df9cdb025796211151a436c69a8f3b97b5b07c8d"
+  integrity sha512-+HzNTCHpeQyl4MJ/bdE0u6XRMe9+XG/+aL4mCxVN4DnPBQ0/5bfHWPDuOZUzYdMj94daZaZdCCc1Dzt9R/xSSg==
+  dependencies:
+    dom-helpers "^3.4.0"
+    loose-envify "^1.4.0"
+    prop-types "^15.6.2"
+    react-lifecycles-compat "^3.0.4"
 
 react@^16.8.5:
   version "16.8.5"

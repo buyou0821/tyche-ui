@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
-import { Icon } from 'components/index';
+import { Icon, Button } from 'components/index';
 import './style';
 
 const IconWrapper = () => {
@@ -23,6 +23,10 @@ const IconWrapper = () => {
   );
 };
 
+const ButtonWrapper = () => {
+  return <Button />;
+};
+
 ReactDOM.render(
   <Router>
     <div>
@@ -36,10 +40,14 @@ ReactDOM.render(
             <li>
               <Link to="/icon">Icon</Link>
             </li>
+            <li>
+              <Link to="/button">button</Link>
+            </li>
           </ul>
         </aside>
         <main>
           <Route path="/icon" component={IconWrapper} />
+          <Route path="/button" component={ButtonWrapper} />
         </main>
       </div>
     </div>
