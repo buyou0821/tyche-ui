@@ -11,14 +11,21 @@ export interface RippleProps {
   rippleX: number;
   rippleY: number;
   rippleSize: number;
-  classNames?: string;
-  in?: boolean;
 }
 
-const TouchRipple: React.FunctionComponent<TouchRippleProps> = React.memo(props => {
+interface EventAttr {
+  type: string;
+  clientX: number;
+  clientY: number;
+}
+
+const TouchRipple: React.FunctionComponent<TouchRippleProps> = props => {
   const { center } = props;
   const [ripples, setRipples] = useState<Array<React.ReactElement>>([]);
   const [nextKey, setNextKey] = useState<number>(0);
+  const [ignoringMousedown, setIgnoringMousedown] = useState<boolean>(false);
+  const [startTimerCommit, setStartTimerCommit] = useState<Function | null>(null);
+  const [startTimer, setStartTimer] = useState<number | null>(null);
 
   const container = React.createRef<HTMLDivElement>();
 
@@ -26,8 +33,15 @@ const TouchRipple: React.FunctionComponent<TouchRippleProps> = React.memo(props 
     return Math.sqrt(a ** 2 + b ** 2);
   };
 
-  const start = (event: React.MouseEvent) => {
-    // console.log(event.type);
+  const start = (event: EventAttr) => {
+    if (event.type === 'mousedown' && ignoringMousedown) {
+      setIgnoringMousedown(false);
+      return;
+    }
+
+    if (event.type === 'touchstart') {
+      setIgnoringMousedown(true);
+    }
 
     const element = container.current;
     const rect = element
@@ -39,9 +53,9 @@ const TouchRipple: React.FunctionComponent<TouchRippleProps> = React.memo(props 
           top: 0,
         };
 
-    let rippleX;
-    let rippleY;
-    let rippleSize;
+    let rippleX: number;
+    let rippleY: number;
+    let rippleSize: number;
     if (center || (event.clientX === 0 && event.clientY === 0) || !event.clientX) {
       rippleX = Math.round(rect.width / 2);
       rippleY = Math.round(rect.height / 2);
@@ -53,16 +67,42 @@ const TouchRipple: React.FunctionComponent<TouchRippleProps> = React.memo(props 
     if (center) {
       rippleSize = clacDiag(rect.width, rect.height);
     } else {
-      // 距离元素中心点的距离+元素长度的一半
       const deltaX = Math.abs(rect.width / 2 - rippleX) + rect.width / 2 + 2;
       const deltaY = Math.abs(rect.height / 2 - rippleY) + rect.height / 2 + 2;
       rippleSize = clacDiag(deltaX, deltaY) * 2;
     }
+    setStartTimerCommit(() => startCommit({ rippleX, rippleY, rippleSize }));
 
-    startCommit({ rippleX, rippleY, rippleSize });
+    if (event.type === 'touchstart') {
+      setStartTimer(
+        window.setTimeout(() => {
+          if (startTimerCommit) {
+            startTimerCommit();
+            setStartTimer(null);
+          }
+        }, 80),
+      );
+    } else {
+      if (startTimerCommit) startTimerCommit();
+    }
   };
 
-  const end = () => {
+  const end = (event: React.MouseEvent | React.TouchEvent) => {
+    if (startTimer) clearTimeout(startTimer);
+
+    if (event.type === 'touchend' && startTimerCommit) {
+      event.persist();
+      startTimerCommit();
+      setStartTimerCommit(null);
+      setStartTimer(
+        setTimeout(() => {
+          end(event);
+        }),
+      );
+      return;
+    }
+    setStartTimerCommit(null);
+
     if (ripples.length === 0) return;
     setRipples(ripples.slice(1));
   };
@@ -72,25 +112,36 @@ const TouchRipple: React.FunctionComponent<TouchRippleProps> = React.memo(props 
     setNextKey(nextKey + 1);
   };
 
-  const handleMouseDown = (event: React.MouseEvent) => {
-    start(event);
+  const getFormatTouchEvent = (event: React.TouchEvent): EventAttr => {
+    const { type } = event;
+    const { clientX, clientY } = event.touches[0];
+
+    return {
+      type,
+      clientX,
+      clientY,
+      ...event,
+    };
   };
 
-  // const handleTouchStart = (event: React.TouchEvent) => {
-  //   console.log(event.touches[0]);
-  // };
+  const handleTouchStart = (event: React.TouchEvent) => {
+    start(getFormatTouchEvent(event));
+  };
 
   return (
-    <div
+    <span
       className="touchRipple"
       ref={container}
-      onMouseDown={handleMouseDown}
+      onMouseDown={start}
       onMouseUp={end}
-      // onTouchStart={handleTouchStart}
+      onMouseLeave={end}
+      onTouchStart={handleTouchStart}
+      onTouchEnd={end}
+      onTouchMove={end}
     >
       <TransitionGroup component={null}>{ripples}</TransitionGroup>
-    </div>
+    </span>
   );
-});
+};
 
 export default TouchRipple;
