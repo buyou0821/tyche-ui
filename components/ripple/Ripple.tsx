@@ -43,8 +43,8 @@ const Ripple = (props: RippleProps) => {
         style={{
           width: rippleSize,
           height: rippleSize,
-          top: -(rippleSize / 2) + rippleY,
-          left: -(rippleSize / 2) + rippleX,
+          top: rippleY - rippleSize / 2,
+          left: rippleX - rippleSize / 2,
         }}
       >
         <span className={childClassName} />
