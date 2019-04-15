@@ -19,7 +19,7 @@ interface EventAttr {
   clientY: number;
 }
 
-const TouchRipple: React.FunctionComponent<TouchRippleProps> = props => {
+const TouchRipple: React.FunctionComponent<TouchRippleProps> = React.memo(props => {
   const { center } = props;
   const [ripples, setRipples] = useState<Array<React.ReactElement>>([]);
   const [nextKey, setNextKey] = useState<number>(0);
@@ -142,6 +142,6 @@ const TouchRipple: React.FunctionComponent<TouchRippleProps> = props => {
       <TransitionGroup component={null}>{ripples}</TransitionGroup>
     </span>
   );
-};
+});
 
 export default TouchRipple;
