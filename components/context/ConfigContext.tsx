@@ -5,17 +5,11 @@ interface ConfigProviderProps {
 }
 
 interface ConfigConsumerProps {
-  prefixCls?: string;
-  getPrefixCls?: (suffixCls: string) => string;
+  getPrefixCls: (suffixCls: string) => string;
 }
 
 export const ConfigContext: Context<ConfigConsumerProps> = createContext({
-  getPrefixCls: () => {
-    const prefixCls = 'tyche';
-    // const { prefixCls = 'tyche' } = props;
-    // console.log(prefixCls);
-    return prefixCls;
-  },
+  getPrefixCls: () => '',
 });
 
 const ConfigProvider: React.FunctionComponent<ConfigProviderProps> = props => {

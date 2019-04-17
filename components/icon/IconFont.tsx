@@ -28,7 +28,7 @@ export default function createIconFont(
 
   const IconFont: React.FunctionComponent<IconProps> = props => {
     const { type, ...resetProps } = props;
-    let content = null;
+    let content: JSX.Element | null = null;
     if (props.type) {
       content = <use xlinkHref={`#${type}`} />;
     }
