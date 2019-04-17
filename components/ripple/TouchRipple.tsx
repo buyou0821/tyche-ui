@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, memo } from 'react';
 import { TransitionGroup } from 'react-transition-group';
 import Ripple from './Ripple';
 import './style';
@@ -19,7 +19,7 @@ interface EventAttr {
   clientY: number;
 }
 
-const TouchRipple: React.FunctionComponent<TouchRippleProps> = React.memo(props => {
+const TouchRipple: React.FunctionComponent<TouchRippleProps> = memo(props => {
   const { center } = props;
   const [ripples, setRipples] = useState<Array<React.ReactElement>>([]);
   const [nextKey, setNextKey] = useState<number>(0);

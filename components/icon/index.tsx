@@ -42,7 +42,9 @@ const Icon: IconComponent<IconProps> = props => {
     [`tycheicon-spin`]: !!spin || type === 'loading',
   });
 
-  let materialStyle;
+  let styleProps = {
+    style: Object.assign({}, props.style),
+  };
 
   const rotateStyle = rotate
     ? {
@@ -77,13 +79,13 @@ const Icon: IconComponent<IconProps> = props => {
   if (material) {
     innerNode = material;
     classString = clsx(classString, 'material-icons');
-    materialStyle = {
-      style: Object.assign({}, props.style, rotateStyle),
+    styleProps = {
+      style: Object.assign({}, style, rotateStyle),
     };
   }
 
   return (
-    <i className={classString} {...materialStyle} {...restProps}>
+    <i className={classString} {...styleProps} {...restProps}>
       {innerNode}
     </i>
   );

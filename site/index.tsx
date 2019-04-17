@@ -10,7 +10,7 @@ const IconWrapper = () => {
   });
   return (
     <div>
-      <Icon type="loading" style={{ color: '#299' }} />
+      <Icon type="loading" style={{ color: '#1890ff' }} />
       <Icon material="face" style={{ color: '#f66' }} rotate={90}>
         face
       </Icon>
