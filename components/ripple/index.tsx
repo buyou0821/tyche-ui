@@ -1,14 +1,28 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { ConfigContext } from '../context/ConfigContext';
+import clsx from 'clsx';
 import TouchRipple from './TouchRipple';
 import './style';
 
-const Button = () => {
+interface RippleProps extends React.DOMAttributes<HTMLElement> {
+  children?: React.ReactNode;
+  component?: string;
+  className?: string;
+}
+
+const RippleComponent: React.FunctionComponent<RippleProps> = props => {
+  const { className } = props;
+  const { getPrefixCls } = useContext(ConfigContext);
+  const { component = 'button', children, ...rest } = props;
+  const Component: any = component;
+  const prefixCls = getPrefixCls('ripple');
+  const classes = clsx(prefixCls, className);
   return (
-    <div className="wrapper" style={{ color: 'blue' }}>
-      按钮
+    <Component className={classes} {...rest} style={{ color: 'blue' }}>
+      {children}
       <TouchRipple />
-    </div>
+    </Component>
   );
 };
 
-export default Button;
+export default RippleComponent;

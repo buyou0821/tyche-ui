@@ -1,4 +1,5 @@
-import React, { useState, memo } from 'react';
+import React, { useContext, useState, memo } from 'react';
+import { ConfigContext } from '../context/ConfigContext';
 import { TransitionGroup } from 'react-transition-group';
 import Ripple from './Ripple';
 import './style';
@@ -20,6 +21,7 @@ interface EventAttr {
 }
 
 const TouchRipple: React.FunctionComponent<TouchRippleProps> = memo(props => {
+  const { getPrefixCls } = useContext(ConfigContext);
   const { center } = props;
   const [ripples, setRipples] = useState<Array<React.ReactElement>>([]);
   const [nextKey, setNextKey] = useState<number>(0);
@@ -27,7 +29,7 @@ const TouchRipple: React.FunctionComponent<TouchRippleProps> = memo(props => {
   const [startTimerCommit, setStartTimerCommit] = useState<Function | null>(null);
   const [startTimer, setStartTimer] = useState<number | null>(null);
 
-  const container = React.createRef<HTMLDivElement>();
+  const container = React.createRef<HTMLElement>();
 
   const clacDiag = (a: number, b: number): number => {
     return Math.sqrt(a ** 2 + b ** 2);
@@ -128,9 +130,12 @@ const TouchRipple: React.FunctionComponent<TouchRippleProps> = memo(props => {
     start(getFormatTouchEvent(event));
   };
 
+  const prefixCls = getPrefixCls('ripple');
+  const classes = `${prefixCls}__wrapper`;
+
   return (
     <span
-      className="touchRipple"
+      className={classes}
       ref={container}
       onMouseDown={start}
       onMouseUp={end}
