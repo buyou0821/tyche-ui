@@ -7,16 +7,18 @@ import './style';
 interface RippleProps extends React.DOMAttributes<HTMLElement> {
   children?: React.ReactNode;
   component?: string;
-  className?: string;
+  classes?: string;
 }
 
 const RippleComponent: React.FunctionComponent<RippleProps> = props => {
-  const { className } = props;
+  const { classes: classNameProp } = props;
   const { getPrefixCls } = useContext(ConfigContext);
   const { component = 'button', children, ...rest } = props;
   const Component: any = component;
   const prefixCls = getPrefixCls('ripple');
-  const classes = clsx(prefixCls, className);
+  console.log(prefixCls, classNameProp);
+  const classes = clsx(prefixCls, classNameProp);
+  console.log('@', prefixCls);
   return (
     <Component className={classes} {...rest} style={{ color: 'blue' }}>
       {children}

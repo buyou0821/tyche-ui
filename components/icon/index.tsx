@@ -29,7 +29,7 @@ interface IconComponent<p> extends React.FunctionComponent<p> {
 }
 
 const Icon: IconComponent<IconProps> = props => {
-  const { className, children, material, type, spin, rotate, style, ...restProps } = props;
+  const { className, children, material, type, spin, rotate, style, ...rest } = props;
 
   let classString = clsx(
     {
@@ -85,7 +85,7 @@ const Icon: IconComponent<IconProps> = props => {
   }
 
   return (
-    <i className={classString} {...styleProps} {...restProps}>
+    <i className={classString} {...styleProps} {...rest}>
       {innerNode}
     </i>
   );
