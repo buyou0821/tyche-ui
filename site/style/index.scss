@@ -1,5 +1,9 @@
 body {
   background-color: #f4f6f9;
+  // background-color: #e2e5d8;
+}
+html {
+  -webkit-tap-highlight-color: transparent;
 }
 
 .tyche-wrapper {
@@ -9,5 +13,14 @@ body {
   }
   & > main {
     flex: 5;
+  }
+}
+
+.demo {
+  &-buttons {
+    .ty-button {
+      margin-right: 8px;
+      margin-bottom: 12px;
+    }
   }
 }

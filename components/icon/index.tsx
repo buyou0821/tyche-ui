@@ -1,5 +1,6 @@
 import React from 'react';
 import clsx from 'clsx';
+import { usePrefixCls } from '../_until/hooks';
 import { svgBaseProps } from './untils';
 import createFromIconfont from './IconFont';
 import './importSVG';
@@ -30,16 +31,12 @@ interface IconComponent<p> extends React.FunctionComponent<p> {
 
 const Icon: IconComponent<IconProps> = props => {
   const { className, children, material, type, spin, rotate, style, ...rest } = props;
+  const prefixCls = usePrefixCls('icon');
 
-  let classString = clsx(
-    {
-      [`tycheicon`]: true,
-    },
-    className,
-  );
+  let classString = clsx(prefixCls, className);
 
   const svgClassString = clsx({
-    [`tycheicon-spin`]: !!spin || type === 'loading',
+    [`${prefixCls}--spin`]: !!spin || type === 'loading',
   });
 
   let styleProps = {

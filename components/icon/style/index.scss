@@ -1,8 +1,10 @@
-.tycheicon {
+@import '../../theme/mixins/mixins.scss';
+
+@include b(icon) {
   display: inline-block;
   line-height: 0;
   vertical-align: -0.125em;
-  &-spin {
+  @include m(spin) {
     animation: loadingCircle 1s infinite linear;
   }
 }

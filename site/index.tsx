@@ -22,7 +22,93 @@ const IconWrapper = () => {
 const ButtonWrapper = () => {
   return (
     <ConfigProvider>
-      <Button />
+      <div className="demo-buttons">
+        <h3>Contained Buttons</h3>
+        <Button>DEFAULT</Button>
+        <Button color="primary">PRIMARY</Button>
+        <Button color="secondary">SECONDARY</Button>
+        <Button color="success">SUCCESS</Button>
+        <Button color="warning">WARNING</Button>
+        <Button color="error">ERROR</Button>
+      </div>
+      <div className="demo-buttons">
+        <h3>Text Buttons</h3>
+        <Button type="text">DEFAULT</Button>
+        <Button type="text" color="primary">
+          PRIMARY
+        </Button>
+        <Button type="text" color="secondary">
+          SECONDARY
+        </Button>
+        <Button type="text" color="success">
+          SUCCESS
+        </Button>
+        <Button type="text" color="warning">
+          WARNING
+        </Button>
+        <Button type="text" color="error">
+          ERROR
+        </Button>
+      </div>
+      <div className="demo-buttons">
+        <h3>Outlined Buttons</h3>
+        <Button type="outlined">DEFAULT</Button>
+        <Button type="outlined" color="primary">
+          PRIMARY
+        </Button>
+        <Button type="outlined" color="secondary">
+          SECONDARY
+        </Button>
+        <Button type="outlined" color="success">
+          SUCCESS
+        </Button>
+        <Button type="outlined" color="warning">
+          WARNING
+        </Button>
+        <Button type="outlined" color="error">
+          ERROR
+        </Button>
+      </div>
+      <div className="demo-buttons">
+        <h3>Circle Buttons</h3>
+        <Button type="circle">
+          <Icon material="face" />
+        </Button>
+        <Button type="circle" color="primary">
+          <Icon material="remove" />
+        </Button>
+        <Button type="circle" color="secondary">
+          <Icon material="create" />
+        </Button>
+        <Button type="circle" color="success">
+          <Icon material="done" />
+        </Button>
+        <Button type="circle" color="warning">
+          <Icon material="priority_high" />
+        </Button>
+        <Button type="circle" color="error">
+          <Icon material="clear" />
+        </Button>
+      </div>
+      <div className="demo-buttons">
+        <h3>Round Buttons</h3>
+        <Button type="round">DEFAULT</Button>
+        <Button type="round" color="primary">
+          PRIMARY
+        </Button>
+        <Button type="round" color="secondary">
+          SECONDARY
+        </Button>
+        <Button type="round" color="success">
+          SUCCESS
+        </Button>
+        <Button type="round" color="warning">
+          WARNING
+        </Button>
+        <Button type="round" color="error">
+          ERROR
+        </Button>
+      </div>
     </ConfigProvider>
   );
 };

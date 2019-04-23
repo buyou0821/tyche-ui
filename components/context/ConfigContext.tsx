@@ -8,13 +8,15 @@ interface ConfigConsumerProps {
   getPrefixCls: (suffixCls: string) => string;
 }
 
+const defaultPrefixCls = 'ty';
+
 export const ConfigContext: Context<ConfigConsumerProps> = createContext({
-  getPrefixCls: () => '',
+  getPrefixCls: (suffixCls: string) => `${defaultPrefixCls}-${suffixCls}`,
 });
 
 const ConfigProvider: React.FunctionComponent<ConfigProviderProps> = props => {
   const getPrefixCls = (suffixCls: string) => {
-    const { prefixCls = 'tyche' } = props;
+    const { prefixCls = defaultPrefixCls } = props;
     return `${prefixCls}-${suffixCls}`;
   };
   const config: ConfigConsumerProps = {

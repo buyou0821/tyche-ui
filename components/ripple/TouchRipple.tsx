@@ -1,6 +1,6 @@
-import React, { useContext, useState, memo } from 'react';
-import { ConfigContext } from '../context/ConfigContext';
+import React, { useState, memo } from 'react';
 import { TransitionGroup } from 'react-transition-group';
+import { usePrefixCls } from '../_until/hooks';
 import Ripple from './Ripple';
 import './style';
 
@@ -21,7 +21,6 @@ interface EventAttr {
 }
 
 const TouchRipple: React.FunctionComponent<TouchRippleProps> = memo(props => {
-  const { getPrefixCls } = useContext(ConfigContext);
   const { center } = props;
   const [ripples, setRipples] = useState<Array<React.ReactElement>>([]);
   const [nextKey, setNextKey] = useState<number>(0);
@@ -130,7 +129,7 @@ const TouchRipple: React.FunctionComponent<TouchRippleProps> = memo(props => {
     start(getFormatTouchEvent(event));
   };
 
-  const prefixCls = getPrefixCls('ripple');
+  const prefixCls = usePrefixCls('ripple');
   const classes = `${prefixCls}__wrapper`;
 
   return (

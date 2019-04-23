@@ -1,14 +1,13 @@
-import React, { useContext, useState } from 'react';
+import React, { useState } from 'react';
 import { Transition } from 'react-transition-group';
 import clsx from 'clsx';
-import { ConfigContext } from '../context/ConfigContext';
+import { usePrefixCls } from '../_until/hooks';
 import { RippleProps } from './TouchRipple';
 import './style';
 
-const DURATION = 550;
+const DURATION = 500;
 
 const Ripple = (props: RippleProps) => {
-  const { getPrefixCls } = useContext(ConfigContext);
   const { rippleX, rippleY, rippleSize, ...restProps } = props;
   const [visible, setVisible] = useState<boolean>(false);
   const [leaving, setLeaving] = useState<boolean>(false);
@@ -20,14 +19,14 @@ const Ripple = (props: RippleProps) => {
     setLeaving(true);
   };
 
-  const prefixCls = getPrefixCls('ripple');
+  const prefixCls = usePrefixCls('ripple');
 
   const rippleClassName = clsx(`${prefixCls}__element`, {
-    [`is-visible`]: visible,
+    [`${prefixCls}_visible`]: visible,
   });
 
   const childClassName = clsx(`${prefixCls}__element--child`, {
-    [`is-leaving`]: leaving,
+    [`${prefixCls}_leaving`]: leaving,
   });
 
   return (

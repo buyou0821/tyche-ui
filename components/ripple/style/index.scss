@@ -2,14 +2,7 @@
 
 @include b(ripple) {
   position: relative;
-  width: 80px;
-  line-height: 40px;
-  text-align: center;
-  border: 1px solid #000;
-  outline: none;
-  cursor: pointer;
   user-select: none;
-  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   @include e(wrapper) {
     position: absolute;
     top: 0;
@@ -29,8 +22,8 @@
     pointer-events: none;
     @include when(visible) {
       transform: scale(1);
-      opacity: 0.3;
-      animation: ripple-element-enter 550ms cubic-bezier(0.4, 0, 0.2, 1);
+      opacity: 0.36;
+      animation: ripple-element-enter 500ms cubic-bezier(0.4, 0, 0.2, 1);
     }
     @include m(child) {
       display: block;
@@ -41,7 +34,7 @@
       opacity: 1;
       @include when(leaving) {
         opacity: 0;
-        animation: ripple-element-child-exit 550ms cubic-bezier(0.4, 0, 0.2, 1);
+        animation: ripple-element-child-exit 500ms cubic-bezier(0.4, 0, 0.2, 1);
       }
     }
   }
@@ -54,7 +47,7 @@
   }
   100% {
     transform: scale(1);
-    opacity: 0.3;
+    opacity: 0.36;
   }
 }
 
