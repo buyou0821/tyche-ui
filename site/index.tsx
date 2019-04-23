@@ -26,7 +26,9 @@ const ButtonWrapper = () => {
         <h3>Contained Buttons</h3>
         <Button>DEFAULT</Button>
         <Button color="primary">PRIMARY</Button>
-        <Button color="secondary">SECONDARY</Button>
+        <Button color="secondary" disabled>
+          SECONDARY
+        </Button>
         <Button color="success">SUCCESS</Button>
         <Button color="warning">WARNING</Button>
         <Button color="error">ERROR</Button>
@@ -70,7 +72,7 @@ const ButtonWrapper = () => {
         </Button>
       </div>
       <div className="demo-buttons">
-        <h3>Circle Buttons</h3>
+        <h3>Circle/Fab Buttons</h3>
         <Button type="circle">
           <Icon material="face" />
         </Button>
@@ -80,13 +82,13 @@ const ButtonWrapper = () => {
         <Button type="circle" color="secondary">
           <Icon material="create" />
         </Button>
-        <Button type="circle" color="success">
+        <Button type="circle" color="success" fab>
           <Icon material="done" />
         </Button>
-        <Button type="circle" color="warning">
+        <Button type="circle" color="warning" fab>
           <Icon material="priority_high" />
         </Button>
-        <Button type="circle" color="error">
+        <Button type="circle" color="error" fab>
           <Icon material="clear" />
         </Button>
       </div>
@@ -107,6 +109,50 @@ const ButtonWrapper = () => {
         </Button>
         <Button type="round" color="error">
           ERROR
+        </Button>
+      </div>
+      <div className="demo-buttons">
+        <h3>Icon Buttons</h3>
+        <Button type="icon">
+          <Icon material="face" />
+        </Button>
+        <Button type="icon" color="primary">
+          <Icon material="remove" />
+        </Button>
+        <Button type="icon" color="secondary">
+          <Icon material="create" />
+        </Button>
+        <Button type="icon" color="success">
+          <Icon material="done" />
+        </Button>
+        <Button type="icon" color="warning">
+          <Icon material="priority_high" />
+        </Button>
+        <Button type="icon" color="error">
+          <Icon material="clear" />
+        </Button>
+      </div>
+      <div className="demo-buttons">
+        <h3>Icon Buttons</h3>
+        <Button color="primary">
+          <Icon left material="delete" />
+          删除
+        </Button>
+        <Button color="secondary">
+          <Icon left material="create" />
+          添加
+        </Button>
+        <Button color="success">
+          成功
+          <Icon right material="done" />
+        </Button>
+        <Button color="warning">
+          警告
+          <Icon right material="warning" />
+        </Button>
+        <Button color="error">
+          <Icon left material="send" />
+          SEND
         </Button>
       </div>
     </ConfigProvider>

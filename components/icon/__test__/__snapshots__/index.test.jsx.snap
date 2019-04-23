@@ -2,7 +2,7 @@
 
 exports[`Icon should render material icon 1`] = `
 <i
-  class="tycheicon material-icons"
+  class="ty-icon material-icons"
 >
   face
 </i>
@@ -10,7 +10,7 @@ exports[`Icon should render material icon 1`] = `
 
 exports[`Icon should support iconfont 1`] = `
 <i
-  class="tycheicon"
+  class="ty-icon"
 >
   <svg
     aria-hidden="true"
@@ -31,11 +31,12 @@ exports[`Icon should support loading 1`] = `
   type="loading"
 >
   <i
-    className="tycheicon"
+    className="ty-icon"
+    style={Object {}}
   >
     <svg
       aria-hidden="true"
-      className="tycheicon-spin"
+      className="ty-icon--spin"
       fill="currentColor"
       height="1em"
       width="1em"

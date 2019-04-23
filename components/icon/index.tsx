@@ -14,6 +14,8 @@ export interface IconProps extends React.DOMAttributes<HTMLElement> {
   material?: string;
   spin?: boolean;
   rotate?: number;
+  left?: boolean;
+  right?: boolean;
 }
 
 interface CustomIconComponentProps {
@@ -30,10 +32,13 @@ interface IconComponent<p> extends React.FunctionComponent<p> {
 }
 
 const Icon: IconComponent<IconProps> = props => {
-  const { className, children, material, type, spin, rotate, style, ...rest } = props;
+  const { className, children, material, type, spin, rotate, style, left, right, ...rest } = props;
   const prefixCls = usePrefixCls('icon');
 
-  let classString = clsx(prefixCls, className);
+  let classString = clsx(prefixCls, className, {
+    [`${prefixCls}--left`]: left,
+    [`${prefixCls}--right`]: right,
+  });
 
   const svgClassString = clsx({
     [`${prefixCls}--spin`]: !!spin || type === 'loading',
