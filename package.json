@@ -5,7 +5,7 @@
   "main": "dist/components/index.js",
   "types": "dist/components/index",
   "scripts": {
-    "test": "cross-env NODE_ENV=test jest --config=.jest.js --runInBand --no-cache",
+    "test": "cross-env NODE_ENV=test jest --config=jest.config.js --runInBand --no-cache",
     "dev": "cross-env NODE_ENV=development webpack-dev-server --config site/site.config.js",
     "build": "cross-env NODE_ENV=production webpack --config webpack.config.prod.js",
     "prettier": "prettier --write --config .prettierrc 'components/**/*.{ts,tsx,js}'",
@@ -99,5 +99,11 @@
   },
   "files": [
     "dist"
+  ],
+  "activationEvents": [
+    "workspaceContains:node_modules/.bin/jest",
+    "workspaceContains:node_modules/react-scripts/node_modules/.bin/jest",
+    "workspaceContains:yarn test",
+    "onCommand:io.orta.jest.start"
   ]
 }

@@ -25,14 +25,19 @@ const ButtonWrapper = () => {
       <div className="demo-buttons">
         <h3>Contained Buttons</h3>
         <Button>DEFAULT</Button>
-        <Button loading onClick={() => console.log('onClick')} color="primary">
+        <Button loading color="primary">
           PRIMARY
         </Button>
         <Button color="secondary" disabled>
           SECONDARY
         </Button>
-        <Button component="a" href="http://www.baidu.com" target="_blank" color="success">
-          百度
+        <Button
+          component="a"
+          href="https://github.com/buyou0821/tyche-ui"
+          target="_blank"
+          color="success"
+        >
+          百 度
         </Button>
         <Button htmlType="submit" color="warning" ripple={false}>
           WARNING
@@ -42,7 +47,8 @@ const ButtonWrapper = () => {
       <div className="demo-buttons">
         <h3>Text Buttons</h3>
         <Button shape="text">DEFAULT</Button>
-        <Button shape="text" color="primary">
+        <Button shape="text" color="primary" center>
+          <Icon left material="create" />
           PRIMARY
         </Button>
         <Button shape="text" color="secondary">
