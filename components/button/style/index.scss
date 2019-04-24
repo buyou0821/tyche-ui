@@ -51,6 +51,12 @@
   outline: none;
   cursor: pointer;
 
+  @include when(disabled) {
+    color: $--button-disable-color;
+    box-shadow: none;
+    cursor: not-allowed;
+  }
+
   @include e(wrapper) {
     display: flex;
     justify-content: center;
@@ -61,12 +67,20 @@
     color: $--color-white;
     @extend %normal-shadow;
     @include contained-circle-round-colors;
+    @include when(disabled) {
+      background-color: $--button-disable-background;
+    }
   }
 
   @include e(text) {
     background-color: transparent;
     @media (hover: none) {
       [class*='-button'] &:hover {
+        background-color: transparent;
+      }
+    }
+    @include when(disabled) {
+      &:hover {
         background-color: transparent;
       }
     }
@@ -110,6 +124,9 @@
 
   @include e(outlined) {
     background-color: transparent;
+    @include when(disabled) {
+      border-color: $--button-disable-background;
+    }
     @include m(default) {
       color: $--color-black;
       border: 1px solid rgba($--color-black, 0.5);
@@ -144,6 +161,9 @@
     border-radius: 50%;
     @extend %normal-shadow;
     @include contained-circle-round-colors;
+    @include when(disabled) {
+      background-color: $--button-disable-background;
+    }
   }
 
   @include e(round) {
@@ -151,6 +171,9 @@
     border-radius: 36px;
     @extend %normal-shadow;
     @include contained-circle-round-colors;
+    @include when(disabled) {
+      background-color: $--button-disable-background;
+    }
   }
 
   @include e(icon) {
@@ -182,11 +205,5 @@
 
   @include m(fab) {
     @extend %fab-shadow;
-  }
-  @include when(disabled) {
-    color: rgba(0, 0, 0, 0.3);
-    background-color: #e6e6e6;
-    box-shadow: none;
-    cursor: not-allowed;
   }
 }

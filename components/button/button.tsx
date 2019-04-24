@@ -2,14 +2,14 @@ import React from 'react';
 import clsx from 'clsx';
 import { tuple } from '../_until/type';
 import { usePrefixCls } from '../_until/hooks';
-import ButtonBase from '../ripple';
+import ButtonBase from '../button-base';
 
 const ButtonTypes = tuple('contained', 'text', 'outlined', 'circle', 'round', 'icon');
 type ButtonType = (typeof ButtonTypes)[number];
 const ButtonColors = tuple('primary', 'secondary', 'success', 'warning', 'error');
 type ButtonColor = (typeof ButtonColors)[number];
 
-interface ButtonProps {
+interface ButtonProps extends React.DOMAttributes<HTMLElement> {
   type?: ButtonType;
   color?: ButtonColor;
   className?: string;
@@ -19,7 +19,15 @@ interface ButtonProps {
 }
 
 const Button: React.FunctionComponent<ButtonProps> = props => {
-  const { className, type = 'contained', color = 'default', disabled, fab, children } = props;
+  const {
+    className,
+    type = 'contained',
+    color = 'default',
+    disabled,
+    fab,
+    children,
+    ...rest
+  } = props;
   const prefixCls = usePrefixCls('button');
 
   const classes = clsx(prefixCls, className, {
@@ -30,7 +38,7 @@ const Button: React.FunctionComponent<ButtonProps> = props => {
   });
 
   return (
-    <ButtonBase className={classes}>
+    <ButtonBase className={classes} disabled={disabled} {...rest}>
       <span className={`${prefixCls}__wrapper`}>{children}</span>
     </ButtonBase>
   );

@@ -25,11 +25,15 @@ const ButtonWrapper = () => {
       <div className="demo-buttons">
         <h3>Contained Buttons</h3>
         <Button>DEFAULT</Button>
-        <Button color="primary">PRIMARY</Button>
+        <Button onClick={() => console.log('onClick')} color="primary">
+          PRIMARY
+        </Button>
         <Button color="secondary" disabled>
           SECONDARY
         </Button>
-        <Button color="success">SUCCESS</Button>
+        <Button onTouchEnd={() => console.log('onTouchEnd')} color="success">
+          SUCCESS
+        </Button>
         <Button color="warning">WARNING</Button>
         <Button color="error">ERROR</Button>
       </div>
@@ -39,7 +43,7 @@ const ButtonWrapper = () => {
         <Button type="text" color="primary">
           PRIMARY
         </Button>
-        <Button type="text" color="secondary">
+        <Button type="text" color="secondary" disabled>
           SECONDARY
         </Button>
         <Button type="text" color="success">
@@ -58,7 +62,7 @@ const ButtonWrapper = () => {
         <Button type="outlined" color="primary">
           PRIMARY
         </Button>
-        <Button type="outlined" color="secondary">
+        <Button type="outlined" color="secondary" disabled>
           SECONDARY
         </Button>
         <Button type="outlined" color="success">
@@ -79,7 +83,7 @@ const ButtonWrapper = () => {
         <Button type="circle" color="primary">
           <Icon material="remove" />
         </Button>
-        <Button type="circle" color="secondary">
+        <Button type="circle" color="secondary" disabled>
           <Icon material="create" />
         </Button>
         <Button type="circle" color="success" fab>
@@ -88,7 +92,7 @@ const ButtonWrapper = () => {
         <Button type="circle" color="warning" fab>
           <Icon material="priority_high" />
         </Button>
-        <Button type="circle" color="error" fab>
+        <Button type="circle" color="error" fab disabled>
           <Icon material="clear" />
         </Button>
       </div>
@@ -98,7 +102,7 @@ const ButtonWrapper = () => {
         <Button type="round" color="primary">
           PRIMARY
         </Button>
-        <Button type="round" color="secondary">
+        <Button type="round" color="secondary" disabled>
           SECONDARY
         </Button>
         <Button type="round" color="success">
@@ -119,7 +123,7 @@ const ButtonWrapper = () => {
         <Button type="icon" color="primary">
           <Icon material="remove" />
         </Button>
-        <Button type="icon" color="secondary">
+        <Button type="icon" color="secondary" disabled>
           <Icon material="create" />
         </Button>
         <Button type="icon" color="success">
@@ -138,7 +142,7 @@ const ButtonWrapper = () => {
           <Icon left material="delete" />
           删除
         </Button>
-        <Button color="secondary">
+        <Button color="secondary" disabled>
           <Icon left material="create" />
           添加
         </Button>
