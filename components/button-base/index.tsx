@@ -31,12 +31,13 @@ export type NativeButtonProps = {
 export type ButtonProps = Partial<AnchorButtonProps & NativeButtonProps>;
 
 const BaseButton: React.FunctionComponent<ButtonProps> = props => {
-  const { component = 'button', children, className, disabled, loading, ...rest } = props;
+  const { component = 'button', children, className, disabled, loading, htmlType, ...rest } = props;
   const Component: any = component;
   const prefixRippleCls = usePrefixCls('ripple');
   const prefixButtonCls = usePrefixCls('button');
   const buttonProps = {
     disabled: disabled || loading,
+    type: htmlType,
   };
   const classes = clsx(prefixRippleCls, className, {
     [`${prefixButtonCls}_disabled`]: buttonProps.disabled,
