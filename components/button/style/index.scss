@@ -39,7 +39,7 @@
 
 @include b(button) {
   display: inline-block;
-  height: 35px;
+  height: 32px;
   padding: 0 15px;
   font-weight: 400;
   font-size: 14px;
@@ -55,6 +55,38 @@
     color: $--button-disable-color;
     box-shadow: none;
     cursor: not-allowed;
+  }
+
+  @include m(small) {
+    height: 24px;
+    padding: 0 7px;
+    font-size: 12px;
+    border-radius: 4px;
+    [class*='-icon'] {
+      font-size: 12px;
+    }
+    &[class*='__circle'] {
+      width: 24px;
+      height: 24px;
+      padding: 0;
+      font-size: 14px;
+    }
+  }
+
+  @include m(large) {
+    height: 40px;
+    padding: 0 15px;
+    font-size: 16px;
+    border-radius: 4px;
+    &[class*='__circle'] {
+      width: 56px;
+      height: 56px;
+      padding: 0;
+      font-size: 18px;
+      .material-icons {
+        font-size: 32px;
+      }
+    }
   }
 
   @include e(loading) {
@@ -169,8 +201,8 @@
   }
 
   @include e(circle) {
-    width: 56px;
-    height: 56px;
+    width: 40px;
+    height: 40px;
     padding: 0;
     color: $--color-white;
     border-radius: 50%;

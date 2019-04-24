@@ -43,7 +43,7 @@ const ButtonWrapper = () => {
         <Button type="text" color="primary">
           PRIMARY
         </Button>
-        <Button type="text" color="secondary" disabled>
+        <Button type="text" color="secondary">
           SECONDARY
         </Button>
         <Button type="text" color="success">
@@ -157,6 +157,30 @@ const ButtonWrapper = () => {
         <Button color="error">
           <Icon left material="send" />
           SEND
+        </Button>
+      </div>
+      <div className="demo-buttons">
+        <h3>Size</h3>
+        <Button color="primary" size="small">
+          <Icon left material="delete" />
+          删除
+        </Button>
+        <Button color="secondary">
+          <Icon left material="create" />
+          添加
+        </Button>
+        <Button color="success" size="large">
+          成功
+          <Icon right material="done" />
+        </Button>
+        <Button color="error" type="circle" size="small">
+          <Icon material="warning" />
+        </Button>
+        <Button color="warning" type="circle">
+          <Icon material="warning" />
+        </Button>
+        <Button color="error" type="circle" size="large">
+          <Icon material="warning" />
         </Button>
       </div>
     </ConfigProvider>
