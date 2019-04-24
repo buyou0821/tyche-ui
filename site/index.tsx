@@ -34,7 +34,7 @@ const ButtonWrapper = () => {
         <Button component="a" href="http://www.baidu.com" target="_blank" color="success">
           百度
         </Button>
-        <Button htmlType="submit" color="warning">
+        <Button htmlType="submit" color="warning" ripple={false}>
           WARNING
         </Button>
         <Button color="error">ERROR</Button>

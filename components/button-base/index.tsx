@@ -15,6 +15,7 @@ export interface BaseButtonProps extends React.DOMAttributes<HTMLElement> {
   className?: string;
   loading?: boolean;
   disabled?: boolean;
+  ripple?: boolean;
 }
 
 export type AnchorButtonProps = {
@@ -31,7 +32,16 @@ export type NativeButtonProps = {
 export type ButtonProps = Partial<AnchorButtonProps & NativeButtonProps>;
 
 const BaseButton: React.FunctionComponent<ButtonProps> = props => {
-  const { component = 'button', children, className, disabled, loading, htmlType, ...rest } = props;
+  const {
+    component = 'button',
+    children,
+    className,
+    disabled,
+    loading,
+    htmlType,
+    ripple = true,
+    ...rest
+  } = props;
   const Component: any = component;
   const prefixRippleCls = usePrefixCls('ripple');
   const prefixButtonCls = usePrefixCls('button');
@@ -45,7 +55,7 @@ const BaseButton: React.FunctionComponent<ButtonProps> = props => {
   return (
     <Component className={classes} {...buttonProps} {...rest}>
       {children}
-      {(loading || !disabled) && <TouchRipple />}
+      {ripple && (loading || !disabled) && <TouchRipple />}
       {loading && <Loading />}
     </Component>
   );
