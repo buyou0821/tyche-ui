@@ -41,100 +41,100 @@ const ButtonWrapper = () => {
       </div>
       <div className="demo-buttons">
         <h3>Text Buttons</h3>
-        <Button type="text">DEFAULT</Button>
-        <Button type="text" color="primary">
+        <Button shape="text">DEFAULT</Button>
+        <Button shape="text" color="primary">
           PRIMARY
         </Button>
-        <Button type="text" color="secondary">
+        <Button shape="text" color="secondary">
           SECONDARY
         </Button>
-        <Button type="text" color="success">
+        <Button shape="text" color="success">
           SUCCESS
         </Button>
-        <Button type="text" color="warning">
+        <Button shape="text" color="warning">
           WARNING
         </Button>
-        <Button type="text" color="error">
+        <Button shape="text" color="error">
           ERROR
         </Button>
       </div>
       <div className="demo-buttons">
         <h3>Outlined Buttons</h3>
-        <Button type="outlined">DEFAULT</Button>
-        <Button type="outlined" color="primary">
+        <Button shape="outlined">DEFAULT</Button>
+        <Button shape="outlined" color="primary">
           PRIMARY
         </Button>
-        <Button type="outlined" color="secondary" disabled>
+        <Button shape="outlined" color="secondary" disabled>
           SECONDARY
         </Button>
-        <Button type="outlined" color="success">
+        <Button shape="outlined" color="success">
           SUCCESS
         </Button>
-        <Button type="outlined" color="warning">
+        <Button shape="outlined" color="warning">
           WARNING
         </Button>
-        <Button type="outlined" color="error">
+        <Button shape="outlined" color="error">
           ERROR
         </Button>
       </div>
       <div className="demo-buttons">
         <h3>Circle/Fab Buttons</h3>
-        <Button type="circle">
+        <Button shape="circle">
           <Icon material="face" />
         </Button>
-        <Button type="circle" loading color="primary">
+        <Button shape="circle" loading color="primary">
           <Icon material="remove" />
         </Button>
-        <Button type="circle" color="secondary" disabled>
+        <Button shape="circle" color="secondary" disabled>
           <Icon material="create" />
         </Button>
-        <Button type="circle" color="success" fab>
+        <Button shape="circle" color="success" fab>
           <Icon material="done" />
         </Button>
-        <Button type="circle" color="warning" fab loading>
+        <Button shape="circle" color="warning" fab loading>
           <Icon material="priority_high" />
         </Button>
-        <Button type="circle" color="error" fab disabled>
+        <Button shape="circle" color="error" fab disabled>
           <Icon material="clear" />
         </Button>
       </div>
       <div className="demo-buttons">
         <h3>Round Buttons</h3>
-        <Button type="round">DEFAULT</Button>
-        <Button type="round" color="primary">
+        <Button shape="round">DEFAULT</Button>
+        <Button shape="round" color="primary">
           PRIMARY
         </Button>
-        <Button type="round" color="secondary" disabled>
+        <Button shape="round" color="secondary" disabled>
           SECONDARY
         </Button>
-        <Button type="round" color="success">
+        <Button shape="round" color="success">
           SUCCESS
         </Button>
-        <Button type="round" color="warning">
+        <Button shape="round" color="warning">
           WARNING
         </Button>
-        <Button type="round" color="error">
+        <Button shape="round" color="error">
           ERROR
         </Button>
       </div>
       <div className="demo-buttons">
         <h3>Icon Buttons</h3>
-        <Button type="icon">
+        <Button shape="icon">
           <Icon material="face" />
         </Button>
-        <Button type="icon" color="primary">
+        <Button shape="icon" color="primary">
           <Icon material="remove" />
         </Button>
-        <Button type="icon" color="secondary" disabled>
+        <Button shape="icon" color="secondary" disabled>
           <Icon material="create" />
         </Button>
-        <Button type="icon" color="success" size="small">
+        <Button shape="icon" color="success" size="small">
           <Icon material="done" />
         </Button>
-        <Button type="icon" color="warning">
+        <Button shape="icon" color="warning">
           <Icon material="priority_high" />
         </Button>
-        <Button type="icon" color="error" size="large">
+        <Button shape="icon" color="error" size="large">
           <Icon material="clear" />
         </Button>
       </div>
@@ -175,13 +175,13 @@ const ButtonWrapper = () => {
           成功
           <Icon right material="done" />
         </Button>
-        <Button color="error" type="circle" size="small">
+        <Button color="error" shape="circle" size="small">
           <Icon material="warning" />
         </Button>
-        <Button color="warning" type="circle">
+        <Button color="warning" shape="circle">
           <Icon material="warning" />
         </Button>
-        <Button color="error" type="circle" size="large">
+        <Button color="error" shape="circle" size="large">
           <Icon material="warning" />
         </Button>
       </div>

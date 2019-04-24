@@ -4,15 +4,15 @@ import { tuple } from '../_until/type';
 import { usePrefixCls } from '../_until/hooks';
 import ButtonBase, { ButtonProps as BaseButtonProps } from '../button-base';
 
-const ButtonTypes = tuple('contained', 'text', 'outlined', 'circle', 'round', 'icon');
-type ButtonType = (typeof ButtonTypes)[number];
+const ButtonShapes = tuple('contained', 'text', 'outlined', 'circle', 'round', 'icon');
+type ButtonShape = (typeof ButtonShapes)[number];
 const ButtonColors = tuple('primary', 'secondary', 'success', 'warning', 'error');
 type ButtonColor = (typeof ButtonColors)[number];
 const ButtonSizes = tuple('large', 'default', 'small');
 export type ButtonSize = (typeof ButtonSizes)[number];
 
 type ButtonProps = {
-  type?: ButtonType;
+  shape?: ButtonShape;
   color?: ButtonColor;
   fab?: boolean;
   size?: ButtonSize;
@@ -21,7 +21,7 @@ type ButtonProps = {
 const Button: React.FunctionComponent<ButtonProps> = props => {
   const {
     className,
-    type = 'contained',
+    shape = 'contained',
     color = 'default',
     fab,
     size = 'default',
@@ -31,8 +31,8 @@ const Button: React.FunctionComponent<ButtonProps> = props => {
   const prefixCls = usePrefixCls('button');
 
   const classes = clsx(prefixCls, className, {
-    [`${prefixCls}__${type}`]: type,
-    [`${prefixCls}__${type}--${color}`]: true,
+    [`${prefixCls}__${shape}`]: shape,
+    [`${prefixCls}__${shape}--${color}`]: true,
     [`${prefixCls}--fab`]: fab,
     [`${prefixCls}--${size}`]: size && size !== 'default',
   });
