@@ -55,7 +55,7 @@ const BaseButton: React.FunctionComponent<ButtonProps> = props => {
   return (
     <Component className={classes} {...buttonProps} {...rest}>
       {children}
-      {ripple && (loading || !disabled) && <TouchRipple />}
+      {ripple && !buttonProps.disabled && <TouchRipple />}
       {loading && <Loading />}
     </Component>
   );

@@ -128,13 +128,13 @@ const ButtonWrapper = () => {
         <Button type="icon" color="secondary" disabled>
           <Icon material="create" />
         </Button>
-        <Button type="icon" color="success">
+        <Button type="icon" color="success" size="small">
           <Icon material="done" />
         </Button>
         <Button type="icon" color="warning">
           <Icon material="priority_high" />
         </Button>
-        <Button type="icon" color="error">
+        <Button type="icon" color="error" size="large">
           <Icon material="clear" />
         </Button>
       </div>
