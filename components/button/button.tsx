@@ -2,7 +2,7 @@ import React from 'react';
 import clsx from 'clsx';
 import { tuple } from '../_until/type';
 import { usePrefixCls } from '../_until/hooks';
-import ButtonBase, { BaseButtonProps } from '../button-base';
+import ButtonBase, { ButtonProps as BaseButtonProps } from '../button-base';
 
 const ButtonTypes = tuple('contained', 'text', 'outlined', 'circle', 'round', 'icon');
 type ButtonType = (typeof ButtonTypes)[number];

@@ -18,7 +18,7 @@ export interface BaseButtonProps extends React.DOMAttributes<HTMLElement> {
 }
 
 export type AnchorButtonProps = {
-  href: string;
+  href?: string;
   target?: string;
 } & BaseButtonProps &
   Omit<React.AnchorHTMLAttributes<any>, 'type'>;

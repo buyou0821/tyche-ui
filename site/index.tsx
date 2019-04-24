@@ -31,8 +31,8 @@ const ButtonWrapper = () => {
         <Button color="secondary" disabled>
           SECONDARY
         </Button>
-        <Button onTouchEnd={() => console.log('onTouchEnd')} color="success">
-          SUCCESS
+        <Button component="a" href="http://www.baidu.com" target="_blank" color="success">
+          百度
         </Button>
         <Button color="warning">WARNING</Button>
         <Button color="error">ERROR</Button>
