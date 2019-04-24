@@ -25,7 +25,7 @@ const ButtonWrapper = () => {
       <div className="demo-buttons">
         <h3>Contained Buttons</h3>
         <Button>DEFAULT</Button>
-        <Button onClick={() => console.log('onClick')} color="primary">
+        <Button loading onClick={() => console.log('onClick')} color="primary">
           PRIMARY
         </Button>
         <Button color="secondary" disabled>
@@ -80,7 +80,7 @@ const ButtonWrapper = () => {
         <Button type="circle">
           <Icon material="face" />
         </Button>
-        <Button type="circle" color="primary">
+        <Button type="circle" loading color="primary">
           <Icon material="remove" />
         </Button>
         <Button type="circle" color="secondary" disabled>
@@ -89,7 +89,7 @@ const ButtonWrapper = () => {
         <Button type="circle" color="success" fab>
           <Icon material="done" />
         </Button>
-        <Button type="circle" color="warning" fab>
+        <Button type="circle" color="warning" fab loading>
           <Icon material="priority_high" />
         </Button>
         <Button type="circle" color="error" fab disabled>

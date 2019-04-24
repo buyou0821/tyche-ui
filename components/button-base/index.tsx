@@ -3,15 +3,18 @@ import clsx from 'clsx';
 import { usePrefixCls } from '../_until/hooks';
 import { Omit, tuple } from '../_until/type';
 import TouchRipple from './TouchRipple';
+import Loading from './loading';
 import './style';
 
 const ButtonHTMLTypes = tuple('submit', 'button', 'reset');
 export type ButtonHTMLType = (typeof ButtonHTMLTypes)[number];
 
-interface BaseButtonProps {
+export interface BaseButtonProps extends React.DOMAttributes<HTMLElement> {
   children?: React.ReactNode;
   component?: string;
   className?: string;
+  loading?: boolean;
+  disabled?: boolean;
 }
 
 export type AnchorButtonProps = {
@@ -28,14 +31,21 @@ export type NativeButtonProps = {
 export type ButtonProps = Partial<AnchorButtonProps & NativeButtonProps>;
 
 const BaseButton: React.FunctionComponent<ButtonProps> = props => {
-  const { component = 'button', children, className, disabled, ...rest } = props;
+  const { component = 'button', children, className, disabled, loading, ...rest } = props;
   const Component: any = component;
-  const prefixCls = usePrefixCls('ripple');
-  const classes = clsx(prefixCls, className);
+  const prefixRippleCls = usePrefixCls('ripple');
+  const prefixButtonCls = usePrefixCls('button');
+  const buttonProps = {
+    disabled: disabled || loading,
+  };
+  const classes = clsx(prefixRippleCls, className, {
+    [`${prefixButtonCls}_disabled`]: buttonProps.disabled,
+  });
   return (
-    <Component className={classes} disabled={disabled} {...rest}>
+    <Component className={classes} {...buttonProps} {...rest}>
       {children}
-      {!disabled && <TouchRipple />}
+      {(loading || !disabled) && <TouchRipple />}
+      {loading && <Loading />}
     </Component>
   );
 };
