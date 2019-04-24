@@ -44,7 +44,7 @@ const BaseButton: React.FunctionComponent<ButtonProps> = props => {
   } = props;
   const Component: any = component;
   const prefixRippleCls = usePrefixCls('ripple');
-  const prefixButtonCls = usePrefixCls('button');
+  const prefixButtonCls = usePrefixCls('btn');
   const buttonProps = {
     disabled: disabled || loading,
     type: htmlType,

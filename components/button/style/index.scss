@@ -37,9 +37,9 @@
   }
 }
 
-@include b(button) {
+@include b(btn) {
   display: inline-block;
-  height: 32px;
+  height: 36px;
   padding: 0 15px;
   font-weight: 400;
   font-size: 14px;

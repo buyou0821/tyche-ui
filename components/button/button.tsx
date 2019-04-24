@@ -28,7 +28,7 @@ const Button: React.FunctionComponent<ButtonProps> = props => {
     children,
     ...rest
   } = props;
-  const prefixCls = usePrefixCls('button');
+  const prefixCls = usePrefixCls('btn');
 
   const classes = clsx(prefixCls, className, {
     [`${prefixCls}__${shape}`]: shape,
