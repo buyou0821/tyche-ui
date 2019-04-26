@@ -3,7 +3,7 @@ import clsx from 'clsx';
 import { usePrefixCls } from '../_until/hooks';
 import { Omit, tuple } from '../_until/type';
 import TouchRipple from './TouchRipple';
-import Loading from './Loadinga';
+import Loading from './Loading';
 import './style';
 
 const ButtonHTMLTypes = tuple('submit', 'button', 'reset');
