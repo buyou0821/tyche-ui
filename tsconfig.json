@@ -20,7 +20,8 @@
     "importHelpers": true,
     "strictNullChecks": true,
     "esModuleInterop": true,
-    "noUnusedLocals": true
+    "noUnusedLocals": true,
+    "allowSyntheticDefaultImports": true 
   },
   "include": ["site/**/*", "examples/**/*", "types/**/*", "components/**/*", "test/**/*"],
   "exclude": [

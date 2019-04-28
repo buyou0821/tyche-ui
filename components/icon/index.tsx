@@ -23,7 +23,6 @@ interface CustomIconComponentProps {
   height: string | number;
   fill: string;
   className?: string;
-  ['aria-hidden']?: string;
   style?: React.CSSProperties;
 }
 
