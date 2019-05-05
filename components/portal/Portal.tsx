@@ -1,20 +1,22 @@
-import React, { forwardRef } from 'react';
-import { PurePortal } from './PurePortal';
+import React, { forwardRef, useLayoutEffect } from 'react';
+import { PurePortal, PurePortalProps } from './PurePortal';
 
 type PortalProps = {
-  children?: React.ReactNode;
-  selector?: string;
-};
+} & PurePortalProps;
 
 interface PortalComponent<p> extends React.ForwardRefExoticComponent<p> {
   PurePortal: typeof PurePortal;
 }
 
-const Portal: any = forwardRef<PortalComponent<PortalProps>, PortalProps>((props, ref) => {
+const Portal = forwardRef<PortalComponent<PortalProps>, PortalProps>((props, ref) => {
   const { children, ...rest } = props;
 
+  useLayoutEffect(() => {
+    console.log(22);
+  }, []);
+
   return <PurePortal {...rest}>{children}</PurePortal>;
-});
+}) as PortalComponent<PortalProps>;
 
 // const Portal = forwardRef<React.ComponentPropsWithRef<PortalComponent<PortalProps>>, PortalProps>((props, ref) => {
 //   const { children, ...rest } = props;

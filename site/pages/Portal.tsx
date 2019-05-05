@@ -13,9 +13,9 @@ export default () => {
           <p>这是 PurePortal 动态插入.demo-portal-conent的内容</p>
         </Portal.PurePortal>
       )}
-      {/* <Portal>
-        <p>这里是 Portal 动态插入body的内容</p>
-      </Portal> */}
+      <Portal append selector=".demo-portal-conent">
+        <p>这里是 Portal 动态插入 .demo-portal-conent 的内容</p>
+      </Portal>
       <Button
         style={{ marginTop: 20 }}
         onClick={() => setPurePortalVisible(!PurePortalVisible)}

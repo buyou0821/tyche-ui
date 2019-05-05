@@ -2,7 +2,7 @@ import React, { useState, useLayoutEffect } from 'react';
 import { createPortal } from 'react-dom';
 import { getNodeFromSelector, removeAllChildren } from './until';
 
-type PurePortalProps = {
+export type PurePortalProps = {
   children?: React.ReactNode;
   selector?: string;
   append?: boolean;
