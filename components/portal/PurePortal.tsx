@@ -1,14 +1,15 @@
-import React, { useState, useLayoutEffect } from 'react';
+import React, { useState, useLayoutEffect, forwardRef } from 'react';
 import { createPortal } from 'react-dom';
 import { getNodeFromSelector, removeAllChildren } from './until';
 
 export type PurePortalProps = {
   children?: React.ReactNode;
-  selector?: string;
+  selector?: string | HTMLElement;
   append?: boolean;
+  ref?: React.RefObject<React.FunctionComponent>;
 };
 
-export const PurePortal: React.FunctionComponent<PurePortalProps> = props => {
+export const PurePortal = forwardRef<React.FunctionComponent, PurePortalProps>((props, ref) => {
   const { selector = 'body', append, children } = props;
   const [DOMNode, setDOMNode] = useState<Element | null>(null);
 
@@ -24,4 +25,4 @@ export const PurePortal: React.FunctionComponent<PurePortalProps> = props => {
   }
 
   return createPortal(children, DOMNode);
-};
+});

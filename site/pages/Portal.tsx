@@ -13,8 +13,8 @@ export default () => {
           <p>这是 PurePortal 动态插入.demo-portal-conent的内容</p>
         </Portal.PurePortal>
       )}
-      <Portal append selector=".demo-portal-conent">
-        <p>这里是 Portal 动态插入 .demo-portal-conent 的内容</p>
+      <Portal append className="tttppp" style={{ background: 'rgba(0, 0, 0, 0.2)' }}>
+        <p>这里是 Portal 动态插入的内容</p>
       </Portal>
       <Button
         style={{ marginTop: 20 }}
