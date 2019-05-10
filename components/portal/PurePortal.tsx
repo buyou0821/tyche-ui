@@ -1,28 +1,47 @@
-import React, { useState, useLayoutEffect, forwardRef } from 'react';
+import React, { Component } from 'react';
 import { createPortal } from 'react-dom';
 import { getNodeFromSelector, removeAllChildren } from './until';
+import memoize from '../_until/memoize-one';
 
 export type PurePortalProps = {
   children?: React.ReactNode;
-  selector?: string | HTMLElement;
+  selector: string | HTMLElement;
   append?: boolean;
-  ref?: React.RefObject<React.FunctionComponent>;
 };
 
-export const PurePortal = forwardRef<React.FunctionComponent, PurePortalProps>((props, ref) => {
-  const { selector = 'body', append, children } = props;
-  const [DOMNode, setDOMNode] = useState<Element | null>(null);
+export default class PurePortal extends Component<PurePortalProps> {
+  getContainer = memoize(
+    (selector: string | HTMLElement): Element | null => {
+      const node = getNodeFromSelector(selector);
+      if (!node) {
+        return node;
+      }
+      if (!this.props.append) {
+        removeAllChildren(node);
+      }
+      return node;
+    },
+  );
 
-  useLayoutEffect(() => {
-    const node = getNodeFromSelector(selector) as HTMLElement;
-    setDOMNode(node);
-  }, [selector]);
-
-  if (!DOMNode) return null;
-
-  if (!append) {
-    removeAllChildren(DOMNode);
+  contains(el: Node): boolean {
+    const container = this.getContainer(this.props.selector);
+    if (!container) {
+      return false;
+    }
+    if (container.contains(el)) {
+      return true;
+    }
+    return false;
   }
 
-  return createPortal(children, DOMNode);
-});
+  render() {
+    const { selector, children } = this.props;
+    const DOMNode = this.getContainer(selector);
+
+    if (!DOMNode) {
+      return null;
+    }
+
+    return createPortal(children, DOMNode);
+  }
+}
