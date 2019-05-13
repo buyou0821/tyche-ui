@@ -1,6 +1,11 @@
 import React from 'react';
-import { Button } from 'components/index';
+import { Button, Modal } from 'components/index';
 
 export default () => {
-  return <Button color="primary">Open Modal</Button>;
+  return (
+    <>
+      <Button color="primary">Open Modal</Button>
+      <Modal>modal content</Modal>
+    </>
+  );
 };
