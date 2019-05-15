@@ -1,8 +1,8 @@
-import React, { forwardRef } from 'react';
+import React from 'react';
 import ModalWrapper from './ModalWrapper';
 
-const Modal = forwardRef<React.FunctionComponent, any>((props, ref) => {
+const Modal: React.FunctionComponent = () => {
   return <ModalWrapper>modal wrapper</ModalWrapper>;
-});
+};
 
 export default Modal;

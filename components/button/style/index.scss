@@ -258,26 +258,53 @@
     width: 40px;
     height: 40px;
     padding: 0;
-    color: $--color-white;
     background-color: transparent;
     border-radius: 50%;
+    @media (hover: none) {
+      [class*='-button'] &:hover {
+        background-color: transparent;
+      }
+    }
+    @include when(disabled) {
+      &:hover {
+        background-color: transparent;
+      }
+    }
     @include m(default) {
       color: $--color-black;
+      &:hover {
+        background-color: rgba($--color-black, 0.1);
+      }
     }
     @include m(primary) {
       color: $--color-primary;
+      &:hover {
+        background-color: rgba($--color-primary, 0.1);
+      }
     }
     @include m(secondary) {
       color: $--color-secondary;
+      &:hover {
+        background-color: rgba($--color-secondary, 0.1);
+      }
     }
     @include m(success) {
       color: $--color-success;
+      &:hover {
+        background-color: rgba($--color-success, 0.1);
+      }
     }
     @include m(warning) {
       color: $--color-warning;
+      &:hover {
+        background-color: rgba($--color-warning, 0.1);
+      }
     }
     @include m(error) {
       color: $--color-error;
+      &:hover {
+        background-color: rgba($--color-error, 0.1);
+      }
     }
   }
 

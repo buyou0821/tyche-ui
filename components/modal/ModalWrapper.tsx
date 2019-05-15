@@ -1,11 +1,9 @@
-import React, { forwardRef } from 'react';
+import React from 'react';
 
-interface ModalWrapperProps {
-  children?: React.ReactNode;
-}
+interface ModalWrapperProps {}
 
-const ModalWrapper = forwardRef((props: ModalWrapperProps, ref: React.Ref<HTMLDivElement>) => {
-  return <div ref={ref}>{props.children}</div>;
-});
+const ModalWrapper: React.FunctionComponent<ModalWrapperProps> = props => {
+  return <div>{props.children}</div>;
+};
 
 export default ModalWrapper;
