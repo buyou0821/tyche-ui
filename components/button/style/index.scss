@@ -176,32 +176,58 @@
 
   @include e(outlined) {
     background-color: transparent;
+    @media (hover: none) {
+      [class*='-button'] &:hover {
+        background-color: transparent;
+      }
+    }
     @include when(disabled) {
       border-color: $--button-disable-background;
+      &:hover {
+        background-color: transparent;
+      }
     }
     @include m(default) {
       color: $--color-black;
       border: 1px solid rgba($--color-black, 0.5);
+      &:hover {
+        background-color: rgba($--color-black, 0.1);
+      }
     }
     @include m(primary) {
       color: $--color-primary;
       border: 1px solid rgba($--color-primary, 0.5);
+      &:hover {
+        background-color: rgba($--color-primary, 0.1);
+      }
     }
     @include m(secondary) {
       color: $--color-secondary;
       border: 1px solid rgba($--color-secondary, 0.5);
+      &:hover {
+        background-color: rgba($--color-secondary, 0.1);
+      }
     }
     @include m(success) {
       color: $--color-success;
       border: 1px solid rgba($--color-success, 0.5);
+      &:hover {
+        background-color: rgba($--color-success, 0.1);
+      }
     }
     @include m(warning) {
       color: $--color-warning;
       border: 1px solid rgba($--color-warning, 0.5);
+      &:hover {
+        background-color: rgba($--color-warning, 0.1);
+      }
     }
     @include m(error) {
       color: $--color-error;
       border: 1px solid rgba($--color-error, 0.5);
+      &:hover {
+        background-color: rgba($--color-error, 0.1);
+      }
     }
   }
 
