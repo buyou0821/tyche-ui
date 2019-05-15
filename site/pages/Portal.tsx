@@ -21,23 +21,18 @@ export default () => {
       >
         Toggle PurePortal
       </Button>
-      {PortalVisible && (
-        <Portal
-          onClose={() => {
-            setPortalVisible(false);
-          }}
-          append
-          className="tttppp"
-          style={{ background: 'rgba(0, 0, 0, 0.2)' }}
-        >
-          <p style={{ backgroundColor: '#fff' }}>这里是带mask的Portal动态插入body的内容</p>
-        </Portal>
-      )}
-      <Button
-        style={{ marginLeft: 20 }}
-        onClick={() => setPortalVisible(true)}
-        color="primary"
+      <Portal
+        onClose={() => {
+          setPortalVisible(false);
+        }}
+        visible={PortalVisible}
+        append
+        className="tttppp"
+        style={{ background: 'rgba(0, 0, 0, 0.2)' }}
       >
+        <p style={{ backgroundColor: '#fff' }}>这里是带mask的Portal动态插入body的内容</p>
+      </Portal>
+      <Button style={{ marginLeft: 20 }} onClick={() => setPortalVisible(true)} color="primary">
         show Portal
       </Button>
     </section>

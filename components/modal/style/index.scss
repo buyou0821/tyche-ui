@@ -6,6 +6,7 @@
   max-width: 75%;
   position: relative;
   top: 100px;
+  color: $--color-black;
   background-color: $--color-white;
   border-radius: 4px;
 
@@ -35,7 +36,7 @@
     position: relative;
     padding: 16px 24px;
     color: rgba(0, 0, 0, 0.65);
-    border-bottom: 1px solid #e8e8e8;
+    border-bottom: 1px solid $--color-gray;
     border-radius: 4px 4px 0 0;
   }
 
@@ -50,8 +51,22 @@
     top: 50%;
     bottom: 0;
     transform: translateY(-50%);
-    right: 6px;
+    right: 9px;
     color: #8c8c8c;
     font-size: 26px;
+  }
+
+  @include e(footer) {
+    padding: 10px 16px;
+    border-top: 1px solid $--color-gray;
+    text-align: right;
+    button + button {
+      margin-left: 8px;
+    }
+  }
+
+  @include e(body) {
+    padding: 24px;
+    word-wrap: break-word;
   }
 }
