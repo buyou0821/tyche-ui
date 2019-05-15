@@ -6,15 +6,25 @@ import { Portal } from '../index';
 
 type ModalProps = {
   visible: boolean;
+  closeOnESC?: boolean;
 } & ModalInnerProps &
   ModalWrapperProps;
 
 const Modal: React.FunctionComponent<ModalProps> = props => {
-  const { visible, mask, maskClosable, ...reset } = props;
+  const { visible, mask, maskClosable, closeOnESC, ...reset } = props;
   const { onClose } = props;
-  const wrapperProps: ModalWrapperProps = { mask, maskClosable, onClose };
+  const portalProps = {
+    onClose,
+    visible,
+    closeOnESC,
+  };
+  const wrapperProps: ModalWrapperProps = {
+    mask,
+    maskClosable,
+    onClose,
+  };
   return (
-    <Portal visible={visible}>
+    <Portal {...portalProps}>
       <ModalWrapper {...wrapperProps}>
         <ModalInner {...reset}>{props.children}</ModalInner>
       </ModalWrapper>

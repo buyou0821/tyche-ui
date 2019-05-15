@@ -19,11 +19,12 @@ export default () => {
         Open Modal
       </Button>
       <Modal
+        title="Basic Modal"
         visible={visible}
         onClose={() => {
           handleModalVisible(false);
         }}
-        title="Basic Modal"
+        closeOnESC
       >
         <div>Some contents...</div>
         <div>Some contents...</div>

@@ -17,7 +17,7 @@ export interface PortalProps extends Partial<PurePortalProps> {
   maskClosable?: boolean;
   closeOnClickOutside?: boolean;
   closeOnESC?: boolean;
-  onClose?: (event: KeyboardEvent | TouchEvent | MouseEvent) => void;
+  onClose?: (event: KeyboardEvent | TouchEvent | MouseEvent | React.MouseEvent) => void;
 }
 
 interface PortalComponent<p> extends React.ForwardRefExoticComponent<p> {
@@ -32,13 +32,13 @@ const Portal = forwardRef<PortalImperativeHandlers, PortalProps>((props, ref) =>
   const {
     mask = 'div',
     selector = 'body',
-    visible = true,
+    visible,
     className,
     style,
     children,
-    maskClosable = true,
-    closeOnClickOutside = true,
-    closeOnESC = true,
+    maskClosable,
+    closeOnClickOutside,
+    closeOnESC,
     onClose,
     ...rest
   } = props;
@@ -167,6 +167,7 @@ const Portal = forwardRef<PortalImperativeHandlers, PortalProps>((props, ref) =>
       {children}
     </PurePortal>
   ) : null;
+  // return visible ? 123 : 321;
 }) as PortalComponent<PortalProps>;
 
 Portal.PurePortal = PurePortal;
