@@ -5,7 +5,7 @@ export default () => {
   return (
     <>
       <Button color="primary">Open Modal</Button>
-      <Modal>modal content</Modal>
+      <Modal title="Basic Modal">modal content</Modal>
     </>
   );
 };

@@ -17,7 +17,7 @@
 
 @mixin contained-circle-round-colors {
   @include m(default) {
-    color: $--color-black;
+    color: $--color-black-heavy;
     background-color: $--color-gray;
   }
   @include m(primary) {
@@ -137,9 +137,9 @@
       }
     }
     @include m(default) {
-      color: $--color-black;
+      color: $--color-black-heavy;
       &:hover {
-        background-color: rgba($--color-black, 0.1);
+        background-color: rgba($--color-black-heavy, 0.1);
       }
     }
     @include m(primary) {
@@ -188,10 +188,10 @@
       }
     }
     @include m(default) {
-      color: $--color-black;
-      border: 1px solid rgba($--color-black, 0.5);
+      color: $--color-black-heavy;
+      border: 1px solid rgba($--color-black-heavy, 0.5);
       &:hover {
-        background-color: rgba($--color-black, 0.1);
+        background-color: rgba($--color-black-heavy, 0.1);
       }
     }
     @include m(primary) {
@@ -271,9 +271,9 @@
       }
     }
     @include m(default) {
-      color: $--color-black;
+      color: $--color-black-heavy;
       &:hover {
-        background-color: rgba($--color-black, 0.1);
+        background-color: rgba($--color-black-heavy, 0.1);
       }
     }
     @include m(primary) {

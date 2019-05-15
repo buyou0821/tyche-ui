@@ -1,0 +1,57 @@
+@import '../../theme/mixins/mixins.scss';
+@import '../../theme/default.scss';
+
+@include b(modal) {
+  margin: 0 auto;
+  max-width: 75%;
+  position: relative;
+  top: 100px;
+  background-color: $--color-white;
+  border-radius: 4px;
+
+  @include e(mask) {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1000;
+    height: 100%;
+    background-color: $--color-black;
+  }
+
+  @include e(wrap) {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1000;
+    overflow: auto;
+    outline: 0;
+  }
+
+  @include e(header) {
+    position: relative;
+    padding: 16px 24px;
+    color: rgba(0, 0, 0, 0.65);
+    border-bottom: 1px solid #e8e8e8;
+    border-radius: 4px 4px 0 0;
+  }
+
+  @include e(title) {
+    font-weight: 500;
+    font-size: 16px;
+    color: $--color-black-heavy;
+  }
+
+  @include e(close) {
+    position: absolute;
+    top: 50%;
+    bottom: 0;
+    transform: translateY(-50%);
+    right: 6px;
+    color: #8c8c8c;
+    font-size: 26px;
+  }
+}
