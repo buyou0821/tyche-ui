@@ -17,7 +17,7 @@ export interface PortalProps extends Partial<PurePortalProps> {
   maskClosable?: boolean;
   closeOnClickOutside?: boolean;
   closeOnESC?: boolean;
-  onClose?: (event: KeyboardEvent | TouchEvent | MouseEvent | React.MouseEvent) => void;
+  onCancel?: (event: KeyboardEvent | TouchEvent | MouseEvent | React.MouseEvent) => void;
 }
 
 interface PortalComponent<p> extends React.ForwardRefExoticComponent<p> {
@@ -39,7 +39,7 @@ const Portal = forwardRef<PortalImperativeHandlers, PortalProps>((props, ref) =>
     maskClosable,
     closeOnClickOutside,
     closeOnESC,
-    onClose,
+    onCancel,
     ...rest
   } = props;
 
@@ -113,8 +113,8 @@ const Portal = forwardRef<PortalImperativeHandlers, PortalProps>((props, ref) =>
 
       const { target } = event;
       if (!(target instanceof Node) || target === node || !contains(target)) {
-        if (onClose) {
-          onClose(event);
+        if (onCancel) {
+          onCancel(event);
         }
       }
     }
@@ -142,17 +142,17 @@ const Portal = forwardRef<PortalImperativeHandlers, PortalProps>((props, ref) =>
   }, [visible, maskClosable, closeOnClickOutside, node]);
 
   useLayoutEffect(() => {
-    if (!visible || !closeOnESC || !onClose) {
+    if (!visible || !closeOnESC || !onCancel) {
       return;
     }
 
     function handleKeyUp(event: KeyboardEvent) {
-      if (!onClose) {
+      if (!onCancel) {
         return;
       }
       // ESC
       if (event.keyCode === 27) {
-        onClose(event);
+        onCancel(event);
       }
     }
 
@@ -160,7 +160,7 @@ const Portal = forwardRef<PortalImperativeHandlers, PortalProps>((props, ref) =>
     return () => {
       document.body.removeEventListener('keyup', handleKeyUp);
     };
-  }, [visible, closeOnESC, onClose]);
+  }, [visible, closeOnESC, onCancel]);
 
   return visible ? (
     <PurePortal ref={purePortalRef} {...rest} selector={node}>

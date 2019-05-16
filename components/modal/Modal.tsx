@@ -11,17 +11,18 @@ type ModalProps = {
   ModalWrapperProps;
 
 const Modal: React.FunctionComponent<ModalProps> = props => {
-  const { visible, mask, maskClosable, closeOnESC, ...reset } = props;
-  const { onClose } = props;
+  const { visible, mask, maskClosable, closeOnESC = true, ...reset } = props;
+  const { onCancel } = props;
   const portalProps = {
-    onClose,
     visible,
     closeOnESC,
+    onCancel,
   };
   const wrapperProps: ModalWrapperProps = {
     mask,
     maskClosable,
-    onClose,
+    onCancel,
+    visible,
   };
   return (
     <Portal {...portalProps}>

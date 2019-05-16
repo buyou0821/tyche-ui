@@ -22,7 +22,7 @@ export default () => {
         Toggle PurePortal
       </Button>
       <Portal
-        onClose={() => {
+        onCancel={() => {
           setPortalVisible(false);
         }}
         visible={PortalVisible}

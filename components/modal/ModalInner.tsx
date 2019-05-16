@@ -6,17 +6,17 @@ export interface ModalInnerProps {
   width?: string | number;
   title?: React.ReactNode;
   footer?: React.ReactNode;
-  onClose?: (e: React.MouseEvent<any>) => void;
+  onCancel?: (e: React.MouseEvent<any>) => void;
 }
 
 const ModalInnter: React.FunctionComponent<ModalInnerProps> = props => {
-  const { width = 520, children, title, footer, onClose } = props;
+  const { width = 520, children, title, footer, onCancel } = props;
   const prefixCls = usePrefixCls('modal');
   const style = { width };
 
   const handleClose = (e: React.MouseEvent<HTMLDivElement>) => {
-    if (onClose) {
-      onClose(e);
+    if (onCancel) {
+      onCancel(e);
     }
   };
 

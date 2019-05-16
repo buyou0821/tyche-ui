@@ -4,8 +4,8 @@ import { Button, Modal } from 'components/index';
 export default () => {
   const [visible, setVisible] = useState(false);
 
-  const handleModalVisible = (flag: boolean) => {
-    setVisible(!!flag);
+  const handleCancel = () => {
+    setVisible(false);
   };
 
   return (
@@ -13,7 +13,7 @@ export default () => {
       <Button
         color="primary"
         onClick={() => {
-          handleModalVisible(true);
+          setVisible(true);
         }}
       >
         Open Modal
@@ -21,10 +21,9 @@ export default () => {
       <Modal
         title="Basic Modal"
         visible={visible}
-        onClose={() => {
-          handleModalVisible(false);
+        onCancel={() => {
+          handleCancel();
         }}
-        closeOnESC
       >
         <div>Some contents...</div>
         <div>Some contents...</div>
