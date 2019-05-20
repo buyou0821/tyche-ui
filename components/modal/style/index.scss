@@ -1,4 +1,5 @@
 @import '../../theme/mixins/mixins.scss';
+@import '../../theme/_timing-functions.scss';
 @import '../../theme/default.scss';
 
 @include b(modal) {
@@ -68,5 +69,61 @@
   @include e(body) {
     padding: 24px;
     word-wrap: break-word;
+  }
+
+  @include m(zoom) {
+    &-appear,
+    &-exit {
+      animation-fill-mode: both;
+      animation-play-state: paused;
+    }
+    &-appear-active {
+      animation: 160ms $timing-fn-ease-in 0s 1 normal both running ty-zoomin,
+        100ms $timing-fn-ease-in 60ms 1 normal both running ty-fadein;
+    }
+    &-exit-active {
+      animation: 160ms $timing-fn-ease-out 0s 1 normal both running ty-zoomout,
+        100ms $timing-fn-ease-out 60ms 1 normal both running ty-fadeout;
+    }
+  }
+}
+
+@keyframes ty-zoomin {
+  0% {
+    transform: scale(0);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes ty-zoomout {
+  0% {
+    transform: scale(1);
+  }
+
+  100% {
+    transform: scale(0);
+  }
+}
+
+@keyframes ty-fadein {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes ty-fadeout {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
   }
 }

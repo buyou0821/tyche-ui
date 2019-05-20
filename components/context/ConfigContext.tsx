@@ -4,7 +4,7 @@ interface ConfigProviderProps {
   prefixCls?: string;
 }
 
-interface ConfigConsumerProps {
+export interface ConfigConsumerProps {
   getPrefixCls: (suffixCls: string) => string;
 }
 
@@ -24,5 +24,7 @@ const ConfigProvider: React.FunctionComponent<ConfigProviderProps> = props => {
   };
   return <ConfigContext.Provider value={config}>{props.children}</ConfigContext.Provider>;
 };
+
+export const ConfigConsumer = ConfigContext.Consumer;
 
 export default ConfigProvider;

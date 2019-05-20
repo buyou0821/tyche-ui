@@ -6,7 +6,7 @@ export interface ModalInnerProps {
   width?: string | number;
   title?: React.ReactNode;
   footer?: React.ReactNode;
-  onCancel?: (e: React.MouseEvent<any>) => void;
+  onCancel?: (e?: React.MouseEvent<any>) => void;
 }
 
 const ModalInnter: React.FunctionComponent<ModalInnerProps> = props => {

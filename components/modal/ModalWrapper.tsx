@@ -9,7 +9,7 @@ export interface ModalWrapperProps {
 }
 
 const ModalWrapper: React.FunctionComponent<ModalWrapperProps> = props => {
-  const { mask = true, maskClosable = true, onCancel, children } = props;
+  const { mask = true, maskClosable = true, onCancel, visible, children } = props;
   const prefixCls = usePrefixCls('modal');
 
   const handleMaskClick = (e: React.MouseEvent<HTMLDivElement>) => {
@@ -22,7 +22,7 @@ const ModalWrapper: React.FunctionComponent<ModalWrapperProps> = props => {
 
   return (
     <div className={`${prefixCls}__root`}>
-      {mask && <div className={`${prefixCls}__mask`} />}
+      {visible && mask && <div className={`${prefixCls}__mask`} />}
       <div className={`${prefixCls}__wrap`} onClick={handleMaskClick}>
         {children}
       </div>
