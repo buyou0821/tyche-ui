@@ -5,6 +5,29 @@ import { ModalWrapperProps } from './ModalWrapper';
 import { Portal } from '../index';
 import { CSSTransition } from 'react-transition-group';
 import { ConfigConsumer, ConfigConsumerProps } from '../context/ConfigContext';
+import isBrowser from '../_until/isBrowser';
+
+export type MousePosition = {
+  x: number;
+  y: number;
+} | null;
+
+let mousePosition: MousePosition = null;
+
+// Inspired by antd and rc-dialog
+const getClickPosition = (e: MouseEvent) => {
+  mousePosition = {
+    x: e.pageX,
+    y: e.pageY,
+  };
+  setTimeout(() => {
+    mousePosition = null;
+  }, 100);
+};
+
+if (isBrowser) {
+  document.documentElement.addEventListener('click', getClickPosition);
+}
 
 type ModalProps = {
   visible: boolean;
@@ -37,6 +60,8 @@ class Modal extends Component<ModalProps, ModalState> {
     };
   }
 
+  mousePosition: MousePosition = null;
+
   state = {
     prevVisible: this.props.visible,
     exciting: false,
@@ -67,6 +92,12 @@ class Modal extends Component<ModalProps, ModalState> {
       visible,
     };
 
+    if (visible) {
+      this.mousePosition = this.mousePosition || mousePosition;
+    } else {
+      this.mousePosition = null;
+    }
+
     return (
       <ConfigConsumer>
         {({ getPrefixCls }: ConfigConsumerProps) => (
@@ -74,14 +105,16 @@ class Modal extends Component<ModalProps, ModalState> {
             <ModalWrapper {...wrapperProps}>
               <CSSTransition
                 in={visible}
-                timeout={300}
+                timeout={160}
                 appear
                 mountOnEnter
                 unmountOnExit
                 classNames={`${getPrefixCls('modal')}--zoom`}
                 onExited={this.onExited}
               >
-                <ModalInner {...reset}>{children}</ModalInner>
+                <ModalInner mousePosition={this.mousePosition} {...reset}>
+                  {children}
+                </ModalInner>
               </CSSTransition>
             </ModalWrapper>
           </Portal>
