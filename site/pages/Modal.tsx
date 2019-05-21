@@ -33,7 +33,6 @@ export default () => {
         style={{ marginLeft: 12 }}
         color="secondary"
         onClick={() => {
-          // Modal.info({});
           Modal.confirm({
             title: 'Do you Want to delete these items?',
             content: 'Some descriptions',

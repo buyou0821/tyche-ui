@@ -57,12 +57,16 @@ const ConfirmDialog: React.FunctionComponent<ConfirmDialogProps> = props => {
         <div className={`${prefixCls}__content`}>{content}</div>
       </div>
       <div className={`${prefixCls}__buttons`}>
-        <Button shape="outlined" color={cancelColor} onClick={handleCancel}>
-          {cancelText || '取 消'}
-        </Button>
-        <Button shape="outlined" color={okColor || 'primary'} onClick={handleOk}>
-          {okText || '确 定'}
-        </Button>
+        {onCancel && (
+          <Button shape="outlined" color={cancelColor} onClick={handleCancel}>
+            {cancelText || '取 消'}
+          </Button>
+        )}
+        {onOk && (
+          <Button shape="outlined" color={okColor || 'primary'} onClick={handleOk}>
+            {okText || '确 定'}
+          </Button>
+        )}
       </div>
     </Modal>
   );
