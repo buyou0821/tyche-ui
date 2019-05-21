@@ -6,6 +6,9 @@ import { Portal } from '../index';
 import { CSSTransition } from 'react-transition-group';
 import { ConfigConsumer, ConfigConsumerProps } from '../context/ConfigContext';
 import isBrowser from '../_until/isBrowser';
+import { ButtonColor } from '../button/button';
+
+const TIMEOUT = 300;
 
 export type MousePosition = {
   x: number;
@@ -29,9 +32,10 @@ if (isBrowser) {
   document.documentElement.addEventListener('click', getClickPosition);
 }
 
-type ModalProps = {
-  visible: boolean;
+export type ModalProps = {
+  visible?: boolean;
   closeOnESC?: boolean;
+  afterClose?: () => void;
 } & ModalInnerProps &
   ModalWrapperProps;
 
@@ -40,7 +44,30 @@ interface ModalState {
   prevVisible: boolean;
 }
 
+export interface ModalFuncProps {
+  visible?: boolean;
+  width?: string | number;
+  afterClose?: () => void;
+  title?: React.ReactNode;
+  content?: React.ReactNode;
+  onOk?: (...args: any[]) => any;
+  onCancel?: (...args: any[]) => any;
+  okText?: React.ReactNode;
+  cancelText?: React.ReactNode;
+  okColor?: ButtonColor;
+  cancelColor?: ButtonColor;
+}
+
+export type ModalFunc = (
+  props: ModalFuncProps,
+) => {
+  destroy: () => void;
+};
+
 class Modal extends Component<ModalProps, ModalState> {
+  static info: ModalFunc;
+  static confirm: ModalFunc;
+
   static getDerivedStateFromProps(
     { visible }: ModalProps,
     { prevVisible }: ModalState,
@@ -63,14 +90,17 @@ class Modal extends Component<ModalProps, ModalState> {
   mousePosition: MousePosition = null;
 
   state = {
-    prevVisible: this.props.visible,
+    prevVisible: this.props.visible || false,
     exciting: false,
   };
 
   onExited = () => {
-    const { onCancel } = this.props;
+    const { onCancel, afterClose } = this.props;
     if (onCancel) {
       onCancel();
+    }
+    if (afterClose) {
+      afterClose();
     }
     this.setState({
       exciting: false,
@@ -105,7 +135,7 @@ class Modal extends Component<ModalProps, ModalState> {
             <ModalWrapper {...wrapperProps}>
               <CSSTransition
                 in={visible}
-                timeout={160}
+                timeout={TIMEOUT}
                 appear
                 mountOnEnter
                 unmountOnExit

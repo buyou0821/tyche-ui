@@ -1,0 +1,24 @@
+@import '../../theme/mixins/mixins.scss';
+@import '../../theme/default.scss';
+
+@include b(confirm) {
+  padding: 32px 32px 24px;
+  @include e(title) {
+    color: $--color-black-heavy;
+    font-size: 16px;
+    font-weight: 500;
+    text-align: center;
+  }
+  @include e(content) {
+    margin-top: 8px;
+    color: $--color-black;
+    font-size: 14px;
+  }
+  @include e(buttons) {
+    margin-top: 24px;
+    text-align: right;
+    button + button {
+      margin-left: 8px;
+    }
+  }
+}

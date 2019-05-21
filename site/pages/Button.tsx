@@ -19,7 +19,7 @@ export default () => {
         <Button htmlType="submit" color="warning" ripple={false}>
           WARNING
         </Button>
-        <Button color="error">ERROR</Button>
+        <Button color="danger">ERROR</Button>
       </div>
       <div className="demo-buttons">
         <h3>Text Buttons</h3>
@@ -37,7 +37,7 @@ export default () => {
         <Button shape="text" color="warning">
           WARNING
         </Button>
-        <Button shape="text" color="error">
+        <Button shape="text" color="danger">
           ERROR
         </Button>
       </div>
@@ -50,13 +50,13 @@ export default () => {
         <Button shape="outlined" color="secondary" disabled>
           SECONDARY
         </Button>
-        <Button shape="outlined" color="success">
+        <Button shape="outlined" color="success" loading>
           SUCCESS
         </Button>
         <Button shape="outlined" color="warning">
           WARNING
         </Button>
-        <Button shape="outlined" color="error">
+        <Button shape="outlined" color="danger">
           ERROR
         </Button>
       </div>
@@ -77,7 +77,7 @@ export default () => {
         <Button shape="circle" color="warning" fab loading>
           <Icon material="priority_high" />
         </Button>
-        <Button shape="circle" color="error" fab disabled>
+        <Button shape="circle" color="danger" fab disabled>
           <Icon material="clear" />
         </Button>
       </div>
@@ -96,7 +96,7 @@ export default () => {
         <Button shape="round" color="warning">
           WARNING
         </Button>
-        <Button shape="round" color="error">
+        <Button shape="round" color="danger">
           ERROR
         </Button>
       </div>
@@ -117,7 +117,7 @@ export default () => {
         <Button shape="icon" color="warning">
           <Icon material="priority_high" />
         </Button>
-        <Button shape="icon" color="error" size="large">
+        <Button shape="icon" color="danger" size="large">
           <Icon material="clear" />
         </Button>
       </div>
@@ -139,7 +139,7 @@ export default () => {
           警告
           <Icon right material="warning" />
         </Button>
-        <Button color="error">
+        <Button color="danger">
           <Icon left material="send" />
           SEND
         </Button>
@@ -158,13 +158,13 @@ export default () => {
           成功
           <Icon right material="done" />
         </Button>
-        <Button color="error" shape="circle" size="small">
+        <Button color="danger" shape="circle" size="small">
           <Icon material="warning" />
         </Button>
         <Button color="warning" shape="circle">
           <Icon material="warning" />
         </Button>
-        <Button color="error" shape="circle" size="large">
+        <Button color="danger" shape="circle" size="large">
           <Icon material="warning" />
         </Button>
       </div>

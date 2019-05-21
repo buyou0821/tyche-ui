@@ -6,8 +6,8 @@ import ButtonBase, { ButtonProps as BaseButtonProps } from '../button-base';
 
 const ButtonShapes = tuple('contained', 'text', 'outlined', 'circle', 'round', 'icon');
 type ButtonShape = (typeof ButtonShapes)[number];
-const ButtonColors = tuple('primary', 'secondary', 'success', 'warning', 'error');
-type ButtonColor = (typeof ButtonColors)[number];
+const ButtonColors = tuple('primary', 'secondary', 'success', 'warning', 'danger');
+export type ButtonColor = (typeof ButtonColors)[number];
 const ButtonSizes = tuple('large', 'default', 'small');
 export type ButtonSize = (typeof ButtonSizes)[number];
 

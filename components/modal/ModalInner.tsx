@@ -1,4 +1,5 @@
 import React, { useRef, useEffect } from 'react';
+import clsx from 'clsx';
 import { usePrefixCls } from '../_until/hooks';
 import { Icon, Button } from '../index';
 import { MousePosition } from './Modal';
@@ -9,10 +10,11 @@ export interface ModalInnerProps {
   footer?: React.ReactNode;
   onCancel?: (e?: React.MouseEvent<any>) => void;
   mousePosition?: MousePosition;
+  className?: string;
 }
 
 const ModalInnter: React.FunctionComponent<ModalInnerProps> = props => {
-  const { width = 520, title, footer, onCancel, mousePosition, children } = props;
+  const { width = 520, title, footer, onCancel, mousePosition, className, children } = props;
   const prefixCls = usePrefixCls('modal');
   const style = { width };
   const modalInnerRef = useRef<HTMLDivElement>(null);
@@ -63,21 +65,26 @@ const ModalInnter: React.FunctionComponent<ModalInnerProps> = props => {
   // footer
   let Footer;
   const defaultFooter = (
-    <div className={`${prefixCls}__footer`}>
+    <>
       <Button shape="text" onClick={handleClose}>
         取 消
       </Button>
       <Button shape="text" color="primary">
         确 定
       </Button>
-    </div>
+    </>
   );
-  Footer = footer === undefined ? defaultFooter : footer;
+
+  Footer = footer !== null && (
+    <div className={`${prefixCls}__footer`}>{footer === undefined ? defaultFooter : footer}</div>
+  );
+
+  const classes = clsx(`${prefixCls}__body`, className);
 
   return (
     <div ref={modalInnerRef} className={`${prefixCls}`} style={{ ...style }}>
       {Header}
-      <div className={`${prefixCls}__body`}>{children}</div>
+      <div className={classes}>{children}</div>
       {Footer}
     </div>
   );

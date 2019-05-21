@@ -32,8 +32,8 @@
   @include m(warning) {
     background-color: $--color-warning;
   }
-  @include m(error) {
-    background-color: $--color-error;
+  @include m(danger) {
+    background-color: $--color-danger;
   }
 }
 
@@ -139,7 +139,7 @@
     @include m(default) {
       color: $--color-black;
       &:hover {
-        background-color: rgba($--color-black, 0.1);
+        background-color: rgba($--color-black, 0.05);
       }
     }
     @include m(primary) {
@@ -166,10 +166,10 @@
         background-color: rgba($--color-warning, 0.1);
       }
     }
-    @include m(error) {
-      color: $--color-error;
+    @include m(danger) {
+      color: $--color-danger;
       &:hover {
-        background-color: rgba($--color-error, 0.1);
+        background-color: rgba($--color-danger, 0.1);
       }
     }
   }
@@ -189,9 +189,9 @@
     }
     @include m(default) {
       color: $--color-black;
-      border: 1px solid rgba($--color-black, 0.5);
+      border: 1px solid rgba($--color-black, 0.26);
       &:hover {
-        background-color: rgba($--color-black, 0.1);
+        background-color: rgba($--color-black, 0.05);
       }
     }
     @include m(primary) {
@@ -222,11 +222,11 @@
         background-color: rgba($--color-warning, 0.1);
       }
     }
-    @include m(error) {
-      color: $--color-error;
-      border: 1px solid rgba($--color-error, 0.5);
+    @include m(danger) {
+      color: $--color-danger;
+      border: 1px solid rgba($--color-danger, 0.5);
       &:hover {
-        background-color: rgba($--color-error, 0.1);
+        background-color: rgba($--color-danger, 0.1);
       }
     }
   }
@@ -273,7 +273,7 @@
     @include m(default) {
       color: $--color-black;
       &:hover {
-        background-color: rgba($--color-black, 0.1);
+        background-color: rgba($--color-black, 0.05);
       }
     }
     @include m(primary) {
@@ -300,10 +300,10 @@
         background-color: rgba($--color-warning, 0.1);
       }
     }
-    @include m(error) {
-      color: $--color-error;
+    @include m(danger) {
+      color: $--color-danger;
       &:hover {
-        background-color: rgba($--color-error, 0.1);
+        background-color: rgba($--color-danger, 0.1);
       }
     }
   }
