@@ -48,9 +48,8 @@ const BasicLayout: React.FunctionComponent<BasicOrderProps> = props => {
     },
   };
 
-  const hasSider = siders.reduce((result, sider) => result || !!sider, false);
   const classes = clsx(`${className}`, {
-    [`${usePrefixCls('layout')}--hasSider`]: hasSider,
+    [`${usePrefixCls('layout')}--hasSider`]: siders.length > 0,
   });
 
   return (
