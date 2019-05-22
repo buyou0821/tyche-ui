@@ -5,6 +5,7 @@ import IconPage from './pages/Icon';
 import ButtonPage from './pages/Button';
 import Portal from './pages/Portal';
 import ModalPage from './pages/Modal';
+import Layout from './pages/Layout';
 import './style';
 
 ReactDOM.render(
@@ -29,6 +30,9 @@ ReactDOM.render(
             <li>
               <Link to="/modal">modal</Link>
             </li>
+            <li>
+              <Link to="/layout">loyout</Link>
+            </li>
           </ul>
         </aside>
         <main>
@@ -36,6 +40,7 @@ ReactDOM.render(
           <Route path="/button" component={ButtonPage} />
           <Route path="/portal" component={Portal} />
           <Route path="/modal" component={ModalPage} />
+          <Route path="/layout" component={Layout} />
         </main>
       </div>
     </div>

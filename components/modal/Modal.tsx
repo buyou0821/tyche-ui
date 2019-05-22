@@ -6,7 +6,7 @@ import { Portal } from '../index';
 import { CSSTransition } from 'react-transition-group';
 import { ConfigConsumer, ConfigConsumerProps } from '../context/ConfigContext';
 import isBrowser from '../_until/isBrowser';
-import { ButtonColor } from '../button/button';
+import { ButtonColor } from '../button/Button';
 
 const TIMEOUT = 300;
 

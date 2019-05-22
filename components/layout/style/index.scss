@@ -1,0 +1,13 @@
+@import '../../theme/mixins/mixins.scss';
+@import '../../theme/default.scss';
+
+@include b(layout) {
+  display: flex;
+  flex-direction: column;
+  @include e(content) {
+    flex: auto;
+  }
+  @include m(hasSider) {
+    flex-direction: row;
+  }
+}
