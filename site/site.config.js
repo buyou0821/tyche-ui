@@ -1,11 +1,12 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const markdownRenderer = require('react-markdown-reader').renderer;
 const base = require('../webpack.config');
 
 module.exports = Object.assign({}, base, {
   mode: 'development',
   entry: {
-    site: path.resolve(__dirname, './index.tsx'),
+    site: path.resolve(__dirname, './index'),
   },
   output: {
     publicPath: '/',
@@ -15,6 +16,59 @@ module.exports = Object.assign({}, base, {
     alias: {
       components: path.resolve(__dirname, '../components'),
     },
+  },
+  module: {
+    rules: [
+      {
+        test: /\.tsx?$/,
+        loader: 'awesome-typescript-loader',
+      },
+      {
+        test: /\.(js|jsx)$/,
+        loader: 'babel-loader',
+        exclude: /node_modules/,
+        query: {
+          cacheDirectory: true,
+          presets: ['@babel/preset-env', '@babel/preset-react'],
+        },
+      },
+      {
+        test: /\.scss$/,
+        use: [
+          process.env.NODE_ENV !== 'production' ? 'style-loader' : MiniCssExtractPlugin.loader,
+          'css-loader',
+          'sass-loader',
+        ],
+      },
+      {
+        test: /\.md$/,
+        use: [
+          {
+            loader: 'html-loader',
+          },
+          {
+            loader: 'markdown-loader',
+            options: {
+              pedantic: true,
+              renderer: markdownRenderer([
+                'javascript',
+                'bash',
+                'xml',
+                'css',
+                'less',
+                'json',
+                'diff',
+                'typescript',
+              ]),
+            },
+          },
+        ],
+      },
+      {
+        test: /\.svg$/,
+        loader: 'svg-sprite-loader',
+      },
+    ],
   },
   plugins: [
     new HtmlWebpackPlugin({

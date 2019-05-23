@@ -6,6 +6,9 @@ import ButtonPage from './pages/Button';
 import Portal from './pages/Portal';
 import ModalPage from './pages/Modal';
 import Layout from './pages/Layout';
+import { Button } from 'components/index';
+import Code from './components/Code';
+
 import './style';
 
 ReactDOM.render(
@@ -37,7 +40,12 @@ ReactDOM.render(
         </aside>
         <main>
           <Route path="/icon" component={IconPage} />
-          <Route path="/button" component={ButtonPage} />
+          <Route
+            path="/button"
+            component={() => (
+              <Code md={require('./markdown/Button.md')} dependencies={{ Button }} />
+            )}
+          />
           <Route path="/portal" component={Portal} />
           <Route path="/modal" component={ModalPage} />
           <Route path="/layout" component={Layout} />

@@ -15,6 +15,13 @@ html {
   & > main {
     flex: 5;
   }
+  .code-view-wrapper {
+    .md {
+      &-show {
+        height: auto;
+      }
+    }
+  }
 }
 
 .demo {
@@ -24,5 +31,11 @@ html {
       margin-bottom: 12px;
       vertical-align: middle;
     }
+  }
+}
+
+div {
+  button + button {
+    margin-left: 12px;
   }
 }
