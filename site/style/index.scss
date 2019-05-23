@@ -25,17 +25,44 @@ html {
 }
 
 .demo {
-  &-buttons {
-    .ty-btn {
-      margin-right: 8px;
-      margin-bottom: 12px;
-      vertical-align: middle;
+  &-page {
+    & > div {
+      button + button {
+        margin-left: 24px;
+      }
+      button {
+        vertical-align: middle;
+        margin-bottom: 24px;
+      }
     }
-  }
-}
+    .markdown {
+      h3 {
+        margin-top: 46px;
+        padding-left: 18px;
+      }
+    }
 
-div {
-  button + button {
-    margin-left: 12px;
+    & > div {
+      margin: 18px 0;
+      max-width: 820px;
+      width: 75%;
+      .code-view-wrapper {
+        border: 1px dashed #00000042;
+        transition: border-color 0.3s linear;
+        &:hover {
+          border-color: #2196f3;
+        }
+      }
+    }
+
+    .code-view {
+      padding-bottom: 0;
+    }
+
+    .code-view-toolbar {
+      button {
+        margin-bottom: 0;
+      }
+    }
   }
 }

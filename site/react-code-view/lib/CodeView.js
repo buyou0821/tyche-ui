@@ -203,7 +203,9 @@ var CodeView = (function(_React$Component) {
           React.createElement(
             'div',
             null,
-            this.initialExample ? this.initialExample : React.createElement('div', null, ''), // loading
+            this.initialExample
+              ? this.initialExample
+              : React.createElement('div', null, 'loading...'), // loading
           ),
         );
       },
