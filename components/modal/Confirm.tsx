@@ -21,8 +21,8 @@ const ConfirmDialog: React.FunctionComponent<ConfirmDialogProps> = props => {
     content,
     onOk,
     onCancel,
-    okText,
-    cancelText,
+    okText = '确 定',
+    cancelText = '取 消',
     okColor,
     cancelColor,
   } = props;
@@ -59,12 +59,12 @@ const ConfirmDialog: React.FunctionComponent<ConfirmDialogProps> = props => {
       <div className={`${prefixCls}__buttons`}>
         {onCancel && (
           <Button shape="outlined" color={cancelColor} onClick={handleCancel}>
-            {cancelText || '取 消'}
+            {cancelText}
           </Button>
         )}
         {onOk && (
           <Button shape="outlined" color={okColor || 'primary'} onClick={handleOk}>
-            {okText || '确 定'}
+            {okText}
           </Button>
         )}
       </div>

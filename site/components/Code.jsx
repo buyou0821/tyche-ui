@@ -6,7 +6,7 @@ import { DOMAPI } from '../until';
 import '../react-code-view/lib/style/index.scss';
 
 const Code = props => {
-  const { md, ...rest } = props;
+  const { source, ...rest } = props;
   const [visible, setVisible] = useState(false);
 
   const toggleCode = e => {
@@ -29,7 +29,7 @@ const Code = props => {
       )}
       {...rest}
     >
-      {md}
+      {source}
     </CodeView>
   );
 };

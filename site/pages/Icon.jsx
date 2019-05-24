@@ -8,7 +8,7 @@ export default () => {
   return (
     <div>
       <Icon type="loading" style={{ color: '#1890ff' }} />
-      <Icon type="clear" style={{ color: '#1890ff' }} />
+      <Icon type="clear" style={{ color: '#f66' }} />
       <Icon material="face" style={{ color: '#f66' }} rotate={90} />
       <Icon material="face" rotate={90} />
       <IconFont type="icon-twitter" spin />

@@ -1,17 +1,13 @@
 @import '~codemirror/lib/codemirror.css';
 @import './dracula.css';
+@import './oceanic-next.css';
 
 .CodeMirror {
   padding: 10px;
   margin: 10px 0;
   height: auto !important;
-  font-family: 'Lucida Console', Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
   pre {
     padding: 0 20px;
-  }
-  .CodeMirror-line {
-    font-size: 16px;
-    line-height: 1.5;
   }
 }
 

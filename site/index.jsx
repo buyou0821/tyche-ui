@@ -1,21 +1,24 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
+import { Layout } from 'components/index';
+import Buttons from './demo/button';
 import IconPage from './pages/Icon';
 import Portal from './pages/Portal';
 import ModalPage from './pages/Modal';
-import Layout from './pages/Layout';
-import Buttons from './demo/button';
+import LayoutPage from './pages/Layout';
 import './style';
+
+const { Header, Sider, Content, Footer } = Layout;
 
 ReactDOM.render(
   <Router>
-    <div>
-      <header>
+    <Layout>
+      <Header>
         <div className="logo">Tyche UI</div>
-      </header>
-      <div className="tyche-wrapper">
-        <aside>
+      </Header>
+      <Layout>
+        <Sider>
           <h2>components</h2>
           <ul>
             <li>
@@ -34,16 +37,16 @@ ReactDOM.render(
               <Link to="/layout">loyout</Link>
             </li>
           </ul>
-        </aside>
-        <main>
+        </Sider>
+        <Content>
           <Route path="/icon" component={IconPage} />
           <Route path="/button" component={Buttons} />
           <Route path="/portal" component={Portal} />
           <Route path="/modal" component={ModalPage} />
-          <Route path="/layout" component={Layout} />
-        </main>
-      </div>
-    </div>
+          <Route path="/layout" component={LayoutPage} />
+        </Content>
+      </Layout>
+    </Layout>
   </Router>,
   document.getElementById('root'),
 );

@@ -15,22 +15,23 @@ html {
   & > main {
     flex: 5;
   }
-  .code-view-wrapper {
-    .md {
-      &-show {
-        height: auto;
-      }
-    }
-  }
 }
 
 .demo {
   &-page {
     & > div {
-      button + button {
-        margin-left: 24px;
+      margin: 18px auto 0;
+      max-width: 820px;
+      width: 75%;
+      .code-view-wrapper {
+        border: 1px dashed #00000042;
+        transition: border-color 0.3s linear;
+        &:hover {
+          border-color: #2196f3;
+        }
       }
       button {
+        margin-right: 24px;
         vertical-align: middle;
         margin-bottom: 24px;
       }
@@ -42,19 +43,6 @@ html {
       }
     }
 
-    & > div {
-      margin: 18px 0;
-      max-width: 820px;
-      width: 75%;
-      .code-view-wrapper {
-        border: 1px dashed #00000042;
-        transition: border-color 0.3s linear;
-        &:hover {
-          border-color: #2196f3;
-        }
-      }
-    }
-
     .code-view {
       padding-bottom: 0;
     }
@@ -62,6 +50,13 @@ html {
     .code-view-toolbar {
       button {
         margin-bottom: 0;
+      }
+    }
+    .code-view-wrapper {
+      .md {
+        &-show {
+          height: auto;
+        }
       }
     }
   }

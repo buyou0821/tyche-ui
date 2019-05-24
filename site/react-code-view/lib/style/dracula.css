@@ -1,3 +1,12 @@
+.cm-s-dracula.CodeMirror {
+  tab-size: 1.5em;
+  border-radius: 6px;
+
+  font-family: 'Lucida Console', Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+  font-size: 16px;
+  line-height: 24px;
+}
+
 .cm-s-dracula.CodeMirror,
 .cm-s-dracula .CodeMirror-gutters {
   background-color: #282a36 !important;
