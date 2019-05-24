@@ -1,7 +1,8 @@
 body {
-  background-color: #f4f6f9;
+  // background-color: #f4f6f9;
   // background-color: #e2e5d8;
-  font-family: Roboto, Lato, sans-serif;
+  // font-family: Roboto, Lato, sans-serif;
+  font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, Courier, monospace;
 }
 html {
   -webkit-tap-highlight-color: transparent;
@@ -45,6 +46,7 @@ html {
 
     .code-view {
       padding-bottom: 0;
+      padding-left: 12px;
     }
 
     .code-view-toolbar {

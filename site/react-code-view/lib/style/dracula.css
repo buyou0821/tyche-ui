@@ -5,6 +5,8 @@
   font-family: 'Lucida Console', Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
   font-size: 16px;
   line-height: 24px;
+  box-shadow: rgba(0, 0, 0, 0.55) 0px 1px 12px;
+  margin: 12px;
 }
 
 .cm-s-dracula.CodeMirror,
