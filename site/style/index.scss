@@ -1,8 +1,13 @@
+@import './normalize.css';
+
 body {
-  // background-color: #f4f6f9;
+  background-color: #f4f6f9;
   // background-color: #e2e5d8;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB',
+    'Microsoft YaHei', 'Helvetica Neue', Helvetica, Arial, sans-serif, 'Apple Color Emoji',
+    'Segoe UI Emoji', 'Segoe UI Symbol';
   // font-family: Roboto, Lato, sans-serif;
-  font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, Courier, monospace;
+  // font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, Courier, monospace;
 }
 html {
   -webkit-tap-highlight-color: transparent;

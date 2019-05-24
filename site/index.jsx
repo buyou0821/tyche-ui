@@ -9,7 +9,7 @@ import ModalPage from './pages/Modal';
 import LayoutPage from './pages/Layout';
 import './style';
 
-const { Header, Sider, Content, Footer } = Layout;
+const { Header, Sider, Content } = Layout;
 
 ReactDOM.render(
   <Router>
@@ -18,7 +18,7 @@ ReactDOM.render(
         <div className="logo">Tyche UI</div>
       </Header>
       <Layout>
-        <Sider>
+        <Sider className="md-menu">
           <h2>components</h2>
           <ul>
             <li>

@@ -13,7 +13,7 @@ const generateId = (() => {
 })();
 
 const Sider = forwardRef((props: SiderProps, ref: React.RefObject<HTMLElement>) => {
-  const { children } = props;
+  const { children, ...rest } = props;
   const { addSider } = useContext(LayoutContext);
   const prefixCls = usePrefixCls('layout');
 
@@ -23,7 +23,7 @@ const Sider = forwardRef((props: SiderProps, ref: React.RefObject<HTMLElement>) 
   }, []);
 
   return (
-    <aside className={`${prefixCls}__sider`} ref={ref}>
+    <aside className={`${prefixCls}__sider`} ref={ref} {...rest}>
       {children}
     </aside>
   );
