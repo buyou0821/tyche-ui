@@ -1,6 +1,6 @@
 import React, { useRef, useEffect } from 'react';
 import clsx from 'clsx';
-import { usePrefixCls } from '../_until/hooks';
+import { usePrefixCls } from '../_util/hooks';
 import { Icon, Button } from '../index';
 import { MousePosition } from './Modal';
 

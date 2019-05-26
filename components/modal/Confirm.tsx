@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import Modal, { ModalFuncProps } from './Modal';
 import { Button } from '../index';
-import { usePrefixCls } from '../_until/hooks';
+import { usePrefixCls } from '../_util/hooks';
 
 export const destroyFns: Array<() => void> = [];
 

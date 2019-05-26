@@ -5,7 +5,7 @@ import { ModalWrapperProps } from './ModalWrapper';
 import { Portal } from '../index';
 import { CSSTransition } from 'react-transition-group';
 import { ConfigConsumer, ConfigConsumerProps } from '../context/ConfigContext';
-import isBrowser from '../_until/isBrowser';
+import isBrowser from '../_util/isBrowser';
 import { ButtonColor } from '../button/Button';
 
 const TIMEOUT = 300;

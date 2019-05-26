@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { createPortal } from 'react-dom';
-import { getNodeFromSelector, removeAllChildren } from './until';
-import memoize from '../_until/memoize-one';
+import { getNodeFromSelector, removeAllChildren } from './util';
+import memoize from '../_util/memoize-one';
 
 export type PurePortalProps = {
   children?: React.ReactNode;

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import CodeView from '../react-code-view/lib/index';
 import { Button, Icon } from 'components/index';
-import { DOMAPI } from '../until';
+import { DOMAPI } from '../utils';
 
 import '../react-code-view/lib/style/index.scss';
 

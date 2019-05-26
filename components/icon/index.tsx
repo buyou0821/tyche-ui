@@ -1,7 +1,7 @@
 import React from 'react';
 import clsx from 'clsx';
-import { usePrefixCls } from '../_until/hooks';
-import { svgBaseProps } from './untils';
+import { usePrefixCls } from '../_util/hooks';
+import { svgBaseProps } from './utils';
 import createFromIconfont from './IconFont';
 import './importSVG';
 import './style';

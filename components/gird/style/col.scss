@@ -1,0 +1,13 @@
+@import '../../theme/mixins/mixins.scss';
+@import '../../theme/default.scss';
+
+[class*='#{$namespace}-col-'] {
+  float: left;
+  box-sizing: border-box;
+}
+
+@for $i from 0 through 24 {
+  .#{$namespace}-col-#{$i} {
+    width: (100 / 24 * $i) * 1%;
+  }
+}

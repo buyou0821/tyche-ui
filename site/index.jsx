@@ -7,6 +7,7 @@ import IconPage from './pages/Icon';
 import Portal from './pages/Portal';
 import ModalPage from './pages/Modal';
 import LayoutPage from './pages/Layout';
+import GridPage from './pages/Grid';
 import './style';
 
 const { Header, Sider, Content } = Layout;
@@ -36,6 +37,9 @@ ReactDOM.render(
             <li>
               <Link to="/layout">loyout</Link>
             </li>
+            <li>
+              <Link to="/grid">grid</Link>
+            </li>
           </ul>
         </Sider>
         <Content>
@@ -44,6 +48,7 @@ ReactDOM.render(
           <Route path="/portal" component={Portal} />
           <Route path="/modal" component={ModalPage} />
           <Route path="/layout" component={LayoutPage} />
+          <Route path="/grid" component={GridPage} />
         </Content>
       </Layout>
     </Layout>

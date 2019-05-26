@@ -28,7 +28,7 @@ module.exports = Object.assign({}, base, {
         loader: 'babel-loader',
         exclude: /node_modules/,
         query: {
-          cacheDirectory: true,
+          cacheDirectory: false,
           presets: ['@babel/preset-env', '@babel/preset-react'],
         },
       },

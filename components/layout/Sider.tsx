@@ -1,5 +1,5 @@
 import React, { forwardRef, useContext, useLayoutEffect } from 'react';
-import { usePrefixCls } from '../_until/hooks';
+import { usePrefixCls } from '../_util/hooks';
 import { LayoutContext } from './Layout';
 
 interface SiderProps extends React.HTMLAttributes<HTMLDivElement> {}

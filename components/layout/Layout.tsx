@@ -1,6 +1,6 @@
 import React, { forwardRef, createContext, useState, Context } from 'react';
 import clsx from 'clsx';
-import { usePrefixCls } from '../_until/hooks';
+import { usePrefixCls } from '../_util/hooks';
 import Sider from './Sider';
 
 interface GeneratorProps {

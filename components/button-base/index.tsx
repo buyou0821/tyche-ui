@@ -1,7 +1,7 @@
 import React from 'react';
 import clsx from 'clsx';
-import { usePrefixCls } from '../_until/hooks';
-import { Omit, tuple } from '../_until/type';
+import { usePrefixCls } from '../_util/hooks';
+import { Omit, tuple } from '../_util/type';
 import TouchRipple from './TouchRipple';
 import Loading from './Loading';
 import './style';

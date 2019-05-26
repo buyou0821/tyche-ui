@@ -7,7 +7,7 @@ import React, {
   useCallback,
 } from 'react';
 import PurePortal, { PurePortalProps } from './PurePortal';
-import { getNodeFromSelector } from './until';
+import { getNodeFromSelector } from './util';
 
 export interface PortalProps extends Partial<PurePortalProps> {
   visible?: boolean;

@@ -101,6 +101,7 @@
   },
   "dependencies": {
     "clsx": "^1.0.4",
+    "enquire.js": "^2.1.6",
     "react": "^16.8.5",
     "react-dom": "^16.8.5"
   },

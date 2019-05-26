@@ -1,7 +1,7 @@
 import React from 'react';
 import clsx from 'clsx';
-import { tuple } from '../_until/type';
-import { usePrefixCls } from '../_until/hooks';
+import { tuple } from '../_util/type';
+import { usePrefixCls } from '../_util/hooks';
 import ButtonBase, { ButtonProps as BaseButtonProps } from '../button-base';
 
 const ButtonShapes = tuple('contained', 'text', 'outlined', 'circle', 'round', 'icon');

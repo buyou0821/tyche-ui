@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Transition } from 'react-transition-group';
 import clsx from 'clsx';
-import { usePrefixCls } from '../_until/hooks';
+import { usePrefixCls } from '../_util/hooks';
 import { RippleProps } from './TouchRipple';
 import './style';
 
