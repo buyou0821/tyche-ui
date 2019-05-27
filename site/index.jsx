@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 import { Layout } from 'components/index';
 import Buttons from './demo/buttons';
+import Icon from './demo/icon';
 import IconPage from './pages/Icon';
 import Portal from './pages/Portal';
 import ModalPage from './pages/Modal';
@@ -26,7 +27,7 @@ ReactDOM.render(
               <Link to="/icon">Icon</Link>
             </li>
             <li>
-              <Link to="/button">button</Link>
+              <Link to="/buttons">buttons</Link>
             </li>
             <li>
               <Link to="/portal">Portal</Link>
@@ -43,8 +44,8 @@ ReactDOM.render(
           </ul>
         </Sider>
         <Content>
-          <Route path="/icon" component={IconPage} />
-          <Route path="/button" component={Buttons} />
+          <Route path="/icon" component={Icon} />
+          <Route path="/buttons" component={Buttons} />
           <Route path="/portal" component={Portal} />
           <Route path="/modal" component={ModalPage} />
           <Route path="/layout" component={LayoutPage} />

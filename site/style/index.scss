@@ -1,4 +1,5 @@
 @import './normalize.css';
+@import './config.scss';
 
 body {
   background-color: #f4f6f9;
@@ -53,6 +54,9 @@ html {
       button {
         margin-bottom: 0;
       }
+      .ty-icon {
+        margin: 0;
+      }
     }
     .code-view-wrapper {
       .md {
@@ -67,6 +71,16 @@ html {
       margin-right: 24px;
       vertical-align: middle;
       margin-bottom: 24px;
+    }
+  }
+  &-icon {
+    .ty-icon {
+      font-size: 18px;
+      margin-right: 24px;
+      color: $--color-black-heavy;
+    }
+    .material-icons {
+      font-size: 24px;
     }
   }
   &-grid {

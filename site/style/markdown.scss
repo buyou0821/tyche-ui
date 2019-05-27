@@ -1,3 +1,5 @@
+@import './config';
+
 .demo-markdown {
   color: #314659;
   font-size: 14px;
@@ -44,8 +46,8 @@
     background: #ebedf0;
     border: 0;
   }
-  p,
-  pre {
+  .doc-highlight p,
+  .doc-highlight pre {
     margin: 1em 0;
   }
   ul > li {
@@ -69,14 +71,16 @@
     margin: 0 1px;
     padding: 0.2em 0.4em;
     font-size: 0.9em;
-    background: #f2f4f5;
+    background: #fff;
     border: 1px solid #eee;
     border-radius: 3px;
   }
-  pre {
+  .doc-highlight pre {
+    padding: 16px;
     font-family: 'Lucida Console', Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
-    background: #f2f4f5;
+    background: #fff;
     border-radius: 2px;
+    overflow: auto;
   }
   pre code {
     margin: 0;
@@ -84,7 +88,7 @@
     overflow: auto;
     color: #314659;
     font-size: 13px;
-    background: #f2f4f5;
+    background: #fff;
     border: none;
   }
   strong,
@@ -160,5 +164,29 @@
       width: 13%;
       font-size: 13px;
     }
+  }
+  .hljs-deletion,
+  .hljs-name,
+  .hljs-section,
+  .hljs-selector-tag,
+  .hljs-subst {
+    color: $--color-danger;
+  }
+  .hljs-attr,
+  .hljs-number,
+  .hljs-selector-attr,
+  .hljs-selector-class,
+  .hljs-selector-pseudo,
+  .hljs-template-variable,
+  .hljs-type,
+  .hljs-variable {
+    color: #986801;
+  }
+  .hljs-addition,
+  .hljs-attribute,
+  .hljs-meta-string,
+  .hljs-regexp,
+  .hljs-string {
+    color: $--color-success;
   }
 }

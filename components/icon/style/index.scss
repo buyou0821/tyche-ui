@@ -13,14 +13,14 @@
   @include m(right) {
     margin-left: 8px;
   }
+  &.material-icons {
+    line-height: 1;
+    font-size: 24px;
+  }
 }
 
 @keyframes loadingCircle {
   100% {
     transform: rotate(360deg);
   }
-}
-
-.material-icons {
-  line-height: 1;
 }

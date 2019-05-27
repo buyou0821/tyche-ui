@@ -7,18 +7,23 @@ const generatePage = ({ component, markdownList, dependencies }) => () => {
     key: fileName,
   }));
 
-  let propsDemo;
-  try {
-    propsDemo = require(`../demo/${component}/props.md`);
-  } catch (error) {}
-
   return (
     <div className={`demo-page demo-${component}`}>
-      {demos.map(item => (
-        <Code key={item.key} source={item.source} dependencies={dependencies} />
-      ))}
-      {propsDemo && (
-        <div className="demo-markdown" dangerouslySetInnerHTML={{ __html: propsDemo }} />
+      {demos.map(item =>
+        item.key.startsWith('_') ? (
+          <div
+            key={item.key}
+            className="demo-markdown"
+            dangerouslySetInnerHTML={{ __html: item.source }}
+          />
+        ) : (
+          <Code
+            key={item.key}
+            className="demo-markdown"
+            source={item.source}
+            dependencies={dependencies}
+          />
+        ),
       )}
     </div>
   );

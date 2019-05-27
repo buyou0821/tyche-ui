@@ -3,7 +3,7 @@ import { Button, Icon } from 'components';
 
 export default generatePage({
   component: 'buttons',
-  markdownList: ['basic', 'text', 'outlined', 'circle-fab', 'round', 'icon', 'size'],
+  markdownList: ['basic', 'text', 'outlined', 'circle-fab', 'round', 'icon', 'size', '_props'],
   dependencies: {
     Button,
     Icon,
