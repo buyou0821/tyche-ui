@@ -1,3 +1,5 @@
+## API
+
 | 参数 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |
 | style | 设置图标的样式，例如 `fontSize` 和 `color` | CSSProperties | - |
