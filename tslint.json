@@ -87,7 +87,7 @@
       // "check-type-operator",
       // "check-preblock"
     ],
-    "semicolon": [true, "always", "ignore-interfaces", "ignore-bound-class-methods"],
+    "semicolon": [true, "always", "ignore-bound-class-methods"],
     "object-curly-spacing": true,
     "array-bracket-spacing": [true, "never"],
     "space-before-function-paren": [true, "never"]

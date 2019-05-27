@@ -20,7 +20,8 @@
     "strictNullChecks": true,
     "esModuleInterop": true,
     "noUnusedLocals": true,
-    "allowSyntheticDefaultImports": true
+    "allowSyntheticDefaultImports": true,
+    "suppressImplicitAnyIndexErrors": true
   },
   "include": ["site/**/*", "examples/**/*", "types/**/*", "components/**/*", "test/**/*"],
   "exclude": [

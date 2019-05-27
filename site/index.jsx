@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 import { Layout } from 'components/index';
-import Buttons from './demo/button';
+import Buttons from './demo/buttons';
 import IconPage from './pages/Icon';
 import Portal from './pages/Portal';
 import ModalPage from './pages/Modal';

@@ -2,6 +2,7 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const markdownRenderer = require('react-markdown-reader').renderer;
 const base = require('../webpack.config');
+const webpack = require('webpack');
 
 module.exports = Object.assign({}, base, {
   mode: 'development',
@@ -75,6 +76,7 @@ module.exports = Object.assign({}, base, {
       title: 'tyche-ui',
       template: path.resolve(__dirname, './index.html'),
     }),
+    new webpack.HotModuleReplacementPlugin(),
   ],
   devServer: {
     host: '0.0.0.0',

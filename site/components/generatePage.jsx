@@ -13,7 +13,7 @@ const generatePage = ({ component, markdownList, dependencies }) => () => {
   } catch (error) {}
 
   return (
-    <div className="demo-page">
+    <div className={`demo-page demo-${component}`}>
       {demos.map(item => (
         <Code key={item.key} source={item.source} dependencies={dependencies} />
       ))}

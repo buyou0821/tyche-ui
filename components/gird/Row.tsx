@@ -14,7 +14,7 @@ if (typeof window !== 'undefined') {
   enquire = require('enquire.js');
 }
 
-import React, { forwardRef, useEffect, useState } from 'react';
+import React, { forwardRef, useState, useLayoutEffect } from 'react';
 import { tuple } from '../_util/type';
 import RowContext from './RowContext';
 import { usePrefixCls } from '../_util/hooks';
@@ -43,10 +43,10 @@ const responsiveMap: BreakpointMap = {
 };
 
 const Row = forwardRef((props: RowProps, ref: React.RefObject<HTMLDivElement>) => {
-  const { className, children, gutter, style } = props;
+  const { gutter, style, type, align, justify, className, children } = props;
   const [screens, setScreens] = useState<BreakpointMap>({});
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     Object.keys(responsiveMap).map((screen: Breakpoint) => {
       enquire.register(responsiveMap[screen], {
         match: () => {
@@ -95,7 +95,12 @@ const Row = forwardRef((props: RowProps, ref: React.RefObject<HTMLDivElement>) =
       : style;
 
   const prefixCls = usePrefixCls('row');
-  const classes = clsx(className, prefixCls);
+  const classes = clsx(className, {
+    [prefixCls]: !type,
+    [`${prefixCls}-${type}`]: type,
+    [`${prefixCls}-${type}-${align}`]: type && align,
+    [`${prefixCls}-${type}-${justify}`]: type && justify,
+  });
 
   return (
     <RowContext.Provider value={{ gutter: currentGutter }}>

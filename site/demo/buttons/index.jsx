@@ -1,8 +1,8 @@
 import generatePage from '../../components/generatePage';
-import { Button, Icon } from 'components/index';
+import { Button, Icon } from 'components';
 
 export default generatePage({
-  component: 'button',
+  component: 'buttons',
   markdownList: ['basic', 'text', 'outlined', 'circle-fab', 'round', 'icon', 'size'],
   dependencies: {
     Button,
