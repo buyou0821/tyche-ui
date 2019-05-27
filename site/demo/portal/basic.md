@@ -1,12 +1,18 @@
-import React, { useState } from 'react';
-import { Button, Portal } from 'components/index';
+## Portal 传送门
 
-export default () => {
-  const [PurePortalVisible, setPurePortalVisible] = useState(false);
-  const [PortalVisible, setPortalVisible] = useState(false);
+<!--start-code-->
+
+```jsx
+const Demo = () => {
+  const [PurePortalVisible, setPurePortalVisible] = React.useState(false);
+  const [PortalVisible, setPortalVisible] = React.useState(false);
+
   return (
-    <section>
-      <div style={{ border: '1px solid #f66', width: 400 }} className="demo-portal-conent">
+    <div>
+      <div
+        className="demo-portal-conent"
+        style={{ border: '1px solid #ff5252', width: 400 }}
+      >
         这里是.demo-portal-conent的内容
       </div>
       {PurePortalVisible && (
@@ -21,6 +27,7 @@ export default () => {
       >
         Toggle PurePortal
       </Button>
+
       <Portal
         onCancel={() => {
           setPortalVisible(false);
@@ -32,11 +39,21 @@ export default () => {
         className="tttppp"
         style={{ background: 'rgba(0, 0, 0, 0.2)' }}
       >
-        <p style={{ backgroundColor: '#fff' }}>这里是带mask的Portal动态插入body的内容</p>
+        <p style={{ backgroundColor: '#fff' }}>
+          这里是带mask的Portal动态插入body的内容，可点击遮罩层关闭
+        </p>
       </Portal>
-      <Button style={{ marginLeft: 20 }} onClick={() => setPortalVisible(true)} color="primary">
-        show Portal
+      <Button
+        style={{ marginLeft: 20 }}
+        onClick={() => setPortalVisible(true)}
+        color="primary"
+      >
+        添加带遮罩的Portal到body
       </Button>
-    </section>
+    </div>
   );
 };
+ReactDOM.render(<Demo />);
+```
+
+<!--end-code-->

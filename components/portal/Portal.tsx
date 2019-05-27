@@ -83,7 +83,7 @@ const Portal = forwardRef<PortalImperativeHandlers, PortalProps>((props, ref) =>
   }, [visible, node, parent, style, className]);
 
   useLayoutEffect(() => {
-    if (!visible || !maskClosable) {
+    if (!visible || !mask) {
       return;
     }
     const { position, top, right, bottom, left } = node.style;
@@ -99,7 +99,7 @@ const Portal = forwardRef<PortalImperativeHandlers, PortalProps>((props, ref) =>
       node.style.bottom = bottom;
       node.style.left = left;
     };
-  }, [visible, maskClosable, node]);
+  }, [visible, mask, node]);
 
   useLayoutEffect(() => {
     if (!visible) {
