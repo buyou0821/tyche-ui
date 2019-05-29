@@ -3,8 +3,8 @@
 // @import './oceanic-next.css';
 
 .CodeMirror {
-  padding: 10px;
   height: auto !important;
+  padding: 10px;
   pre {
     padding: 0 20px;
   }
@@ -13,8 +13,8 @@
 .code-view-wrapper {
   position: relative;
   margin-bottom: 18px;
-  border: 1px dashed #f1f1f1;
   padding: 18px 18px 28px 18px;
+  border: 1px dashed #f1f1f1;
   .code-view-toolbar {
     right: 0;
     bottom: 0;
@@ -34,17 +34,17 @@
     }
   }
   .code-view {
-    padding: 10px 0;
     position: relative;
+    padding: 10px 0;
     &:after {
       position: absolute;
       top: 18px;
       left: 18px;
-      font-size: 12px;
-      font-weight: 300;
       color: #959595;
-      text-transform: uppercase;
+      font-weight: 300;
+      font-size: 12px;
       letter-spacing: 1px;
+      text-transform: uppercase;
     }
   }
   .code-view-error {

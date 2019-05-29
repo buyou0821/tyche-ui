@@ -11,7 +11,8 @@ import { getNodeFromSelector } from './util';
 
 export interface PortalProps extends Partial<PurePortalProps> {
   visible?: boolean;
-  mask?: string;
+  mask?: boolean;
+  maskTagName?: string;
   className?: string;
   style?: Partial<CSSStyleDeclaration>;
   maskClosable?: boolean;
@@ -30,7 +31,8 @@ export interface PortalImperativeHandlers {
 
 const Portal = forwardRef<PortalImperativeHandlers, PortalProps>((props, ref) => {
   const {
-    mask = 'div',
+    mask,
+    maskTagName = 'div',
     selector = 'body',
     visible,
     className,
@@ -43,7 +45,7 @@ const Portal = forwardRef<PortalImperativeHandlers, PortalProps>((props, ref) =>
     ...rest
   } = props;
 
-  const node = useMemo(() => document.createElement(mask), [mask]);
+  const node = useMemo(() => document.createElement(maskTagName), [maskTagName, mask]);
   const parent = useMemo(() => getNodeFromSelector(selector), [selector]);
   const purePortalRef = useRef<PurePortal>(null);
 
@@ -86,6 +88,7 @@ const Portal = forwardRef<PortalImperativeHandlers, PortalProps>((props, ref) =>
     if (!visible || !mask) {
       return;
     }
+
     const { position, top, right, bottom, left } = node.style;
     node.style.position = parent === document.body ? 'fixed' : 'absolute';
     node.style.top = '0';
@@ -99,7 +102,7 @@ const Portal = forwardRef<PortalImperativeHandlers, PortalProps>((props, ref) =>
       node.style.bottom = bottom;
       node.style.left = left;
     };
-  }, [visible, mask, node]);
+  }, [visible, mask, maskTagName, node]);
 
   useLayoutEffect(() => {
     if (!visible) {

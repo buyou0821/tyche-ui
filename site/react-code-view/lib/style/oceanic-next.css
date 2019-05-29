@@ -8,9 +8,9 @@
 */
 
 .cm-s-oceanic-next.CodeMirror {
-  background: rgb(40, 44, 52);
   color: #fff;
   tab-size: 1.5em;
+  background: rgb(40, 44, 52);
   border-radius: 6px;
 }
 .cm-s-oceanic-next div.CodeMirror-selected {
@@ -73,7 +73,7 @@
   color: #fff;
 }
 .cm-s-oceanic-next span.cm-def {
-  color: #6699cc;
+  color: #69c;
 }
 .cm-s-oceanic-next span.cm-bracket {
   color: #88c6be !important;
@@ -88,16 +88,16 @@
   color: rgb(197, 165, 197);
 }
 .cm-s-oceanic-next span.cm-error {
-  background: rgb(197, 165, 197);
   color: #f8f8f0;
+  background: rgb(197, 165, 197);
 }
 
 .cm-s-oceanic-next .CodeMirror-activeline-background {
   background: rgba(101, 115, 126, 0.33);
 }
 .cm-s-oceanic-next .CodeMirror-matchingbracket {
-  text-decoration: underline;
   color: white !important;
+  text-decoration: underline;
 }
 
 .cm-s-oceanic-next code,

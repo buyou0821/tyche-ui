@@ -3,10 +3,10 @@
 @import '../../theme/default.scss';
 
 @include b(modal) {
-  margin: 0 auto;
-  max-width: 75%;
   position: relative;
   top: 100px;
+  max-width: 75%;
+  margin: 0 auto;
   color: $--color-black;
   background-color: $--color-white;
   border-radius: 4px;
@@ -42,25 +42,25 @@
   }
 
   @include e(title) {
+    color: $--color-black-heavy;
     font-weight: 500;
     font-size: 16px;
-    color: $--color-black-heavy;
   }
 
   @include e(close) {
     position: absolute;
     top: 50%;
-    bottom: 0;
-    transform: translateY(-50%);
     right: 9px;
+    bottom: 0;
     color: $--color-gray-heavy;
     font-size: 26px;
+    transform: translateY(-50%);
   }
 
   @include e(footer) {
     padding: 10px 16px;
-    border-top: 1px solid $--color-gray;
     text-align: right;
+    border-top: 1px solid $--color-gray;
     button + button {
       margin-left: 8px;
     }
@@ -74,8 +74,8 @@
   @include m(zoom) {
     &-appear,
     &-exit {
-      animation-fill-mode: both;
       animation-play-state: paused;
+      animation-fill-mode: both;
     }
     &-appear-active {
       animation: 160ms $timing-fn-ease-in 0s 1 normal both running ty-zoomin,

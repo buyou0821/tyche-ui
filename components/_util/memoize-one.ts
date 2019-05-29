@@ -30,5 +30,5 @@ export default function<F extends Function>(resultFn: F, isEqual: EqualityFn = a
     return lastResult;
   };
 
-  return result as unknown as F;
+  return (result as unknown) as F;
 }

@@ -1,5 +1,5 @@
 import Modal, { ModalFuncProps } from './Modal';
-import confirm from './Confirm';
+import confirm, { destroyFns } from './Confirm';
 import './style';
 
 Modal.confirm = (props: ModalFuncProps) => {
@@ -7,9 +7,13 @@ Modal.confirm = (props: ModalFuncProps) => {
   return confirm(config);
 };
 
-Modal.info = (props: ModalFuncProps) => {
-  const config = { ...props };
-  return confirm(config);
+Modal.destroyAll = () => {
+  while (destroyFns.length) {
+    const close = destroyFns.pop();
+    if (close) {
+      close();
+    }
+  }
 };
 
 export default Modal;

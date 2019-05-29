@@ -5,8 +5,8 @@
 @include b(row) {
   @extend %clearfix;
   position: relative;
-  box-sizing: border-box;
   display: block;
+  box-sizing: border-box;
 }
 
 @include b('row-flex') {

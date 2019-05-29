@@ -9,10 +9,7 @@ const Demo = () => {
 
   return (
     <div>
-      <div
-        className="demo-portal-conent"
-        style={{ border: '1px solid #ff5252', width: 400 }}
-      >
+      <div className="demo-portal-conent" style={{ border: '1px solid #ff5252', width: 400 }}>
         这里是.demo-portal-conent的内容
       </div>
       {PurePortalVisible && (
@@ -34,6 +31,7 @@ const Demo = () => {
         }}
         visible={PortalVisible}
         append
+        mask
         maskClosable
         closeOnClickOutside
         className="tttppp"
@@ -43,11 +41,7 @@ const Demo = () => {
           这里是带mask的Portal动态插入body的内容，可点击遮罩层关闭
         </p>
       </Portal>
-      <Button
-        style={{ marginLeft: 20 }}
-        onClick={() => setPortalVisible(true)}
-        color="primary"
-      >
+      <Button style={{ marginLeft: 20 }} onClick={() => setPortalVisible(true)} color="primary">
         添加带遮罩的Portal到body
       </Button>
     </div>

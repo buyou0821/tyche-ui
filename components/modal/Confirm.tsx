@@ -1,8 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import Modal, { ModalFuncProps } from './Modal';
-import { Button } from '../index';
 import { usePrefixCls } from '../_util/hooks';
+import ActionButton from './ActionButton';
 
 export const destroyFns: Array<() => void> = [];
 
@@ -21,26 +21,15 @@ const ConfirmDialog: React.FunctionComponent<ConfirmDialogProps> = props => {
     content,
     onOk,
     onCancel,
+    okShape = 'outlined',
+    cancelShape = 'outlined',
     okText = '确 定',
     cancelText = '取 消',
-    okColor,
+    okColor = 'primary',
     cancelColor,
+    ...rest
   } = props;
   const prefixCls = usePrefixCls('confirm');
-
-  const handleOk = () => {
-    if (onOk) {
-      onOk();
-    }
-    close();
-  };
-
-  const handleCancel = () => {
-    if (onCancel) {
-      onCancel();
-    }
-    close();
-  };
 
   return (
     <Modal
@@ -51,6 +40,7 @@ const ConfirmDialog: React.FunctionComponent<ConfirmDialogProps> = props => {
       onCancel={close}
       afterClose={afterClose}
       footer={null}
+      {...rest}
     >
       <div className={`${prefixCls}__body`}>
         <span className={`${prefixCls}__title`}>{title}</span>
@@ -58,14 +48,19 @@ const ConfirmDialog: React.FunctionComponent<ConfirmDialogProps> = props => {
       </div>
       <div className={`${prefixCls}__buttons`}>
         {onCancel && (
-          <Button shape="outlined" color={cancelColor} onClick={handleCancel}>
+          <ActionButton
+            shape={cancelShape}
+            color={cancelColor}
+            closeModal={close}
+            actionFn={onCancel}
+          >
             {cancelText}
-          </Button>
+          </ActionButton>
         )}
         {onOk && (
-          <Button shape="outlined" color={okColor || 'primary'} onClick={handleOk}>
+          <ActionButton shape={okShape} color={okColor} closeModal={close} actionFn={onOk}>
             {okText}
-          </Button>
+          </ActionButton>
         )}
       </div>
     </Modal>
@@ -100,6 +95,14 @@ const confirm = (config: ModalFuncProps) => {
     }
   }
 
+  function update(newConfig: ModalFuncProps) {
+    currentConfig = {
+      ...currentConfig,
+      ...newConfig,
+    };
+    render(currentConfig);
+  }
+
   const render = (props: any) => {
     ReactDOM.render(<ConfirmDialog {...props} />, div);
   };
@@ -110,6 +113,7 @@ const confirm = (config: ModalFuncProps) => {
 
   return {
     destroy: close,
+    update,
   };
 };
 

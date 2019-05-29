@@ -4,9 +4,10 @@ import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 import { Layout } from 'components/index';
 import Buttons from './demo/buttons';
 import Icon from './demo/icon';
-import portal from './demo/portal';
-import IconPage from './pages/Icon';
-import Portal from './pages/Portal';
+import Portal from './demo/portal';
+import Modal from './demo/modal';
+// import IconPage from './pages/Icon';
+// import Portal from './pages/Portal';
 import ModalPage from './pages/Modal';
 import LayoutPage from './pages/Layout';
 import GridPage from './pages/Grid';
@@ -47,8 +48,8 @@ ReactDOM.render(
         <Content>
           <Route path="/icon" component={Icon} />
           <Route path="/buttons" component={Buttons} />
-          <Route path="/portal" component={portal} />
-          <Route path="/modal" component={ModalPage} />
+          <Route path="/portal" component={Portal} />
+          <Route path="/modal" component={Modal} />
           <Route path="/layout" component={LayoutPage} />
           <Route path="/grid" component={GridPage} />
         </Content>

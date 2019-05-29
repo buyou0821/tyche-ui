@@ -1,18 +1,18 @@
 .cm-s-dracula.CodeMirror {
-  tab-size: 1.5em;
-  border-radius: 6px;
+  margin: 12px;
+  font-size: 16px;
 
   font-family: 'Lucida Console', Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
-  font-size: 16px;
   line-height: 24px;
-  box-shadow: rgba(0, 0, 0, 0.55) 0px 1px 12px;
-  margin: 12px;
+  tab-size: 1.5em;
+  border-radius: 6px;
+  box-shadow: rgba(0, 0, 0, 0.55) 0 1px 12px;
 }
 
 .cm-s-dracula.CodeMirror,
 .cm-s-dracula .CodeMirror-gutters {
-  background-color: #282a36 !important;
   color: #f8f8f2 !important;
+  background-color: #282a36 !important;
   border: none;
 }
 .cm-s-dracula .CodeMirror-gutters {
@@ -92,6 +92,6 @@
   background: rgba(255, 255, 255, 0.1);
 }
 .cm-s-dracula .CodeMirror-matchingbracket {
-  text-decoration: underline;
   color: white !important;
+  text-decoration: underline;
 }

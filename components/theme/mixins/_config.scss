@@ -11,18 +11,18 @@ $--xl: 1920px !default;
 
 $--breakpoints: (
   'xs': (
-    max-width: $--sm - 1,
+    max-width: $--sm - 1
   ),
   'sm': (
-    min-width: $--sm,
+    min-width: $--sm
   ),
   'md': (
-    min-width: $--md,
+    min-width: $--md
   ),
   'lg': (
-    min-width: $--lg,
+    min-width: $--lg
   ),
   'xl': (
-    min-width: $--xl,
-  ),
+    min-width: $--xl
+  )
 );

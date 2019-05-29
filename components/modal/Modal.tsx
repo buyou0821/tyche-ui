@@ -6,7 +6,7 @@ import { Portal } from '../index';
 import { CSSTransition } from 'react-transition-group';
 import { ConfigConsumer, ConfigConsumerProps } from '../context/ConfigContext';
 import isBrowser from '../_util/isBrowser';
-import { ButtonColor } from '../button/Button';
+import { ButtonShape, ButtonColor } from '../button';
 
 const TIMEOUT = 300;
 
@@ -20,8 +20,8 @@ let mousePosition: MousePosition = null;
 // Inspired by antd and rc-dialog
 const getClickPosition = (e: MouseEvent) => {
   mousePosition = {
-    x: e.pageX,
-    y: e.pageY,
+    x: e.clientX,
+    y: e.clientY,
   };
   setTimeout(() => {
     mousePosition = null;
@@ -52,6 +52,8 @@ export interface ModalFuncProps {
   content?: React.ReactNode;
   onOk?: (...args: any[]) => any;
   onCancel?: (...args: any[]) => any;
+  okShape?: ButtonShape;
+  cancelShape?: ButtonShape;
   okText?: React.ReactNode;
   cancelText?: React.ReactNode;
   okColor?: ButtonColor;
@@ -62,11 +64,12 @@ export type ModalFunc = (
   props: ModalFuncProps,
 ) => {
   destroy: () => void;
+  update: (config: ModalFuncProps) => void;
 };
 
 class Modal extends Component<ModalProps, ModalState> {
-  static info: ModalFunc;
   static confirm: ModalFunc;
+  static destroyAll: () => void;
 
   static getDerivedStateFromProps(
     { visible }: ModalProps,
@@ -95,10 +98,7 @@ class Modal extends Component<ModalProps, ModalState> {
   };
 
   onExited = () => {
-    const { onCancel, afterClose } = this.props;
-    if (onCancel) {
-      onCancel();
-    }
+    const { afterClose } = this.props;
     if (afterClose) {
       afterClose();
     }
@@ -108,18 +108,28 @@ class Modal extends Component<ModalProps, ModalState> {
   };
 
   render() {
-    const { visible, mask, maskClosable, closeOnESC = true, children, ...reset } = this.props;
+    const {
+      visible,
+      mask,
+      maskClosable,
+      closeOnESC = true,
+      zIndex,
+      maskStyle,
+      children,
+      ...reset
+    } = this.props;
     const { onCancel } = this.props;
     const { exciting } = this.state;
     const portalProps = {
       closeOnESC,
-      onCancel,
     };
     const wrapperProps: ModalWrapperProps = {
       mask,
       maskClosable,
       onCancel,
       visible,
+      zIndex,
+      maskStyle,
     };
 
     if (visible) {

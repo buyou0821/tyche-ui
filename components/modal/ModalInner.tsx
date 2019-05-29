@@ -3,25 +3,59 @@ import clsx from 'clsx';
 import { usePrefixCls } from '../_util/hooks';
 import { Icon, Button } from '../index';
 import { MousePosition } from './Modal';
+import { ButtonShape, ButtonColor } from '../button';
 
 export interface ModalInnerProps {
   width?: string | number;
   title?: React.ReactNode;
   footer?: React.ReactNode;
   onCancel?: (e?: React.MouseEvent<any>) => void;
+  onOk?: (e?: React.MouseEvent<any>) => void;
   mousePosition?: MousePosition;
   className?: string;
+  bodyStyle?: React.CSSProperties;
+  okShape?: ButtonShape;
+  cancelShape?: ButtonShape;
+  okText?: React.ReactNode;
+  cancelText?: React.ReactNode;
+  okColor?: ButtonColor;
+  cancelColor?: ButtonColor;
+  closable?: boolean;
+  style?: React.CSSProperties;
 }
 
 const ModalInnter: React.FunctionComponent<ModalInnerProps> = props => {
-  const { width = 520, title, footer, onCancel, mousePosition, className, children } = props;
+  const {
+    width = 520,
+    title,
+    footer,
+    onCancel,
+    onOk,
+    mousePosition,
+    bodyStyle,
+    className,
+    children,
+    okShape = 'text',
+    cancelShape = 'text',
+    okText = '确 认',
+    cancelText = '取 消',
+    okColor = 'primary',
+    cancelColor,
+    closable = true,
+    style,
+  } = props;
   const prefixCls = usePrefixCls('modal');
-  const style = { width };
   const modalInnerRef = useRef<HTMLDivElement>(null);
 
-  const handleClose = (e: React.MouseEvent<HTMLDivElement>) => {
+  const handleCancel = (e: React.MouseEvent<HTMLButtonElement>) => {
     if (onCancel) {
       onCancel(e);
+    }
+  };
+
+  const handleOk = (e: React.MouseEvent<HTMLButtonElement>) => {
+    if (onOk) {
+      onOk(e);
     }
   };
 
@@ -54,9 +88,11 @@ const ModalInnter: React.FunctionComponent<ModalInnerProps> = props => {
       <div className={`${prefixCls}__header`}>
         <div className={`${prefixCls}__title`}>
           {title}
-          <Button shape="icon" className={`${prefixCls}__close`} onClick={handleClose}>
-            <Icon type="clear" />
-          </Button>
+          {closable && (
+            <Button shape="icon" className={`${prefixCls}__close`} onClick={handleCancel}>
+              <Icon type="clear" />
+            </Button>
+          )}
         </div>
       </div>
     );
@@ -66,11 +102,11 @@ const ModalInnter: React.FunctionComponent<ModalInnerProps> = props => {
   let Footer;
   const defaultFooter = (
     <>
-      <Button shape="text" onClick={handleClose}>
-        取 消
+      <Button shape={cancelShape} color={cancelColor} onClick={handleCancel}>
+        {cancelText}
       </Button>
-      <Button shape="text" color="primary">
-        确 定
+      <Button shape={okShape} color={okColor} onClick={handleOk}>
+        {okText}
       </Button>
     </>
   );
@@ -81,10 +117,14 @@ const ModalInnter: React.FunctionComponent<ModalInnerProps> = props => {
 
   const classes = clsx(`${prefixCls}__body`, className);
 
+  const modalStyle = { width, ...style };
+
   return (
-    <div ref={modalInnerRef} className={`${prefixCls}`} style={{ ...style }}>
+    <div ref={modalInnerRef} className={`${prefixCls}`} style={modalStyle}>
       {Header}
-      <div className={classes}>{children}</div>
+      <div className={classes} style={bodyStyle}>
+        {children}
+      </div>
       {Footer}
     </div>
   );

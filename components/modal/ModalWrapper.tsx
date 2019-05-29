@@ -6,10 +6,20 @@ export interface ModalWrapperProps {
   mask?: boolean;
   maskClosable?: boolean;
   onCancel?: (e: React.MouseEvent<any>) => void;
+  zIndex?: number;
+  maskStyle?: React.CSSProperties;
 }
 
 const ModalWrapper: React.FunctionComponent<ModalWrapperProps> = props => {
-  const { mask = true, maskClosable = true, onCancel, visible, children } = props;
+  const {
+    mask = true,
+    maskClosable = true,
+    onCancel,
+    zIndex,
+    visible,
+    maskStyle,
+    children,
+  } = props;
   const prefixCls = usePrefixCls('modal');
 
   const handleMaskClick = (e: React.MouseEvent<HTMLDivElement>) => {
@@ -20,10 +30,15 @@ const ModalWrapper: React.FunctionComponent<ModalWrapperProps> = props => {
     }
   };
 
+  const maskStyleObj = {
+    ...maskStyle,
+    zIndex,
+  };
+
   return (
     <div className={`${prefixCls}__root`}>
-      {visible && mask && <div className={`${prefixCls}__mask`} />}
-      <div className={`${prefixCls}__wrap`} onClick={handleMaskClick}>
+      {visible && mask && <div style={maskStyleObj} className={`${prefixCls}__mask`} />}
+      <div className={`${prefixCls}__wrap`} style={{ zIndex }} onClick={handleMaskClick}>
         {children}
       </div>
     </div>
