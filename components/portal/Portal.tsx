@@ -7,7 +7,49 @@ import React, {
   useCallback,
 } from 'react';
 import PurePortal, { PurePortalProps } from './PurePortal';
-import { getNodeFromSelector } from './util';
+import { getNodeFromSelector, hasScrollYbar } from './util';
+import getScrollYBarWidth from '../_util/getScrollYBarWidth';
+
+interface PatchMeta {
+  count: number;
+  paddingRight: CSSStyleDeclaration['paddingRight'];
+  overflowY: CSSStyleDeclaration['overflowY'];
+}
+
+const patched = new Map<HTMLElement, PatchMeta>();
+
+const patchElement = (element: HTMLElement): void => {
+  const mate = patched.get(element);
+  if (mate) {
+    mate.count += 1;
+  } else {
+    const { overflowY, paddingRight } = element.style;
+    const originalPadding: string | null = getComputedStyle(element).paddingRight;
+    const newPaddingRight: number = parseFloat(originalPadding || '0') + getScrollYBarWidth();
+    element.style.overflowY = 'hidden';
+    element.style.paddingRight = `${newPaddingRight}px`;
+    const newMate: PatchMeta = {
+      count: 1,
+      overflowY,
+      paddingRight,
+    };
+    patched.set(element, newMate);
+  }
+};
+
+const restoreElement = (element: HTMLElement): void => {
+  const mate = patched.get(element);
+  if (!mate) {
+    throw new Error('restoreElement error');
+  }
+  if (mate.count === 1) {
+    patched.delete(element);
+    element.style.overflowY = mate.overflowY;
+    element.style.paddingRight = mate.paddingRight;
+  } else {
+    mate.count -= 1;
+  }
+};
 
 export interface PortalProps extends Partial<PurePortalProps> {
   visible?: boolean;
@@ -19,6 +61,7 @@ export interface PortalProps extends Partial<PurePortalProps> {
   closeOnClickOutside?: boolean;
   closeOnESC?: boolean;
   onCancel?: (event: KeyboardEvent | TouchEvent | MouseEvent | React.MouseEvent) => void;
+  blockPageScroll?: boolean;
 }
 
 interface PortalComponent<p> extends React.ForwardRefExoticComponent<p> {
@@ -42,6 +85,7 @@ const Portal = forwardRef<PortalImperativeHandlers, PortalProps>((props, ref) =>
     closeOnClickOutside,
     closeOnESC,
     onCancel,
+    blockPageScroll = true,
     ...rest
   } = props;
 
@@ -70,9 +114,6 @@ const Portal = forwardRef<PortalImperativeHandlers, PortalProps>((props, ref) =>
       return;
     }
     parent.appendChild(node);
-    if (className) {
-      node.className = className;
-    }
     if (style) {
       const cssKeys = Object.keys(style) as Array<keyof CSSStyleDeclaration>;
       if (cssKeys.length) {
@@ -82,7 +123,13 @@ const Portal = forwardRef<PortalImperativeHandlers, PortalProps>((props, ref) =>
     return () => {
       parent.removeChild(node);
     };
-  }, [visible, node, parent, style, className]);
+  }, [visible, node, parent, style]);
+
+  useLayoutEffect(() => {
+    if (className) {
+      node.className = className;
+    }
+  }, [className]);
 
   useLayoutEffect(() => {
     if (!visible || !mask) {
@@ -103,6 +150,20 @@ const Portal = forwardRef<PortalImperativeHandlers, PortalProps>((props, ref) =>
       node.style.left = left;
     };
   }, [visible, mask, maskTagName, node]);
+
+  useLayoutEffect(() => {
+    if (
+      !visible ||
+      !blockPageScroll ||
+      !parent ||
+      !(parent instanceof HTMLElement) ||
+      !hasScrollYbar(parent)
+    ) {
+      return;
+    }
+    patchElement(parent);
+    return () => restoreElement(parent);
+  }, [parent, visible, blockPageScroll]);
 
   useLayoutEffect(() => {
     if (!visible) {

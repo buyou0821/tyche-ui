@@ -4,6 +4,7 @@
 | --- | --- | --- | --- |
 | afterClose | Modal 完全关闭后的回调 | function | - |
 | bodyStyle |	Modal body 样式 | object | - |
+| blockPageScroll | 弹出遮罩层后是否阻止浏览器滚动 | boolean | true |
 | cancelColor | 取消按钮颜色，可选值`primary`、 `secondary`、 `success`、 `warning`、 `danger` | string | - |
 | cancelText | 取消按钮文字 | string/ReactNode | 取消 |
 | cancelShape | 取消按钮形状，可选值为 `contained`、 `text` 、 `outlined` 、 `circle`、 `round`、 `icon` 或者不设 | string | Modal默认值`text`，Comfirm默认值`outlined` |

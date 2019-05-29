@@ -36,6 +36,7 @@ export type ModalProps = {
   visible?: boolean;
   closeOnESC?: boolean;
   afterClose?: () => void;
+  blockPageScroll?: boolean;
 } & ModalInnerProps &
   ModalWrapperProps;
 
@@ -116,12 +117,14 @@ class Modal extends Component<ModalProps, ModalState> {
       zIndex,
       maskStyle,
       children,
+      blockPageScroll,
       ...reset
     } = this.props;
     const { onCancel } = this.props;
     const { exciting } = this.state;
     const portalProps = {
       closeOnESC,
+      blockPageScroll,
     };
     const wrapperProps: ModalWrapperProps = {
       mask,

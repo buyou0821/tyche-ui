@@ -3,8 +3,15 @@ export const getNodeFromSelector = (selector: string | Element): Element | null 
   return node;
 };
 
-export function removeAllChildren(node: Node) {
+export const removeAllChildren = (node: Node) => {
   while (node && node.firstChild) {
     node.removeChild(node.firstChild);
   }
-}
+};
+
+export const hasScrollYbar = (element: Element) => {
+  if (element === document.body) {
+    return element.scrollHeight > window.innerHeight;
+  }
+  return element.scrollHeight > element.clientHeight;
+};
