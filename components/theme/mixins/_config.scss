@@ -4,14 +4,16 @@ $modifier-separator: '--';
 $state-prefix: '_';
 
 // Break-point
-$--sm: 768px !default;
-$--md: 992px !default;
-$--lg: 1200px !default;
-$--xl: 1920px !default;
+$--xs: 576px !default;
+$--sm: 576px !default;
+$--md: 768px !default;
+$--lg: 992px !default;
+$--xl: 1200px !default;
+$--xxl: 1600px !default;
 
 $--breakpoints: (
   'xs': (
-    max-width: $--sm - 1
+    max-width: $--xs - 1
   ),
   'sm': (
     min-width: $--sm
@@ -24,5 +26,8 @@ $--breakpoints: (
   ),
   'xl': (
     min-width: $--xl
+  ),
+  'xxl': (
+    min-width: $--xxl
   )
 );

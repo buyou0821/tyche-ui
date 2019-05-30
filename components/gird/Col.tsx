@@ -1,7 +1,7 @@
 import React, { forwardRef, useContext } from 'react';
+import clsx from 'clsx';
 import RowContext from './RowContext';
 import { usePrefixCls } from '../_util/hooks';
-import clsx from 'clsx';
 
 type ColSpanType = number | string;
 
@@ -55,7 +55,8 @@ const Col = forwardRef((props: ColProps, ref: React.RefObject<HTMLDivElement>) =
     sizeClassNames = {
       ...sizeClassNames,
       [`${prefixCls}-${size}-${sizeProps.span}`]: sizeProps.span !== undefined,
-      [`${prefixCls}-${size}-offset-${sizeProps.offset}`]: sizeProps.offset || sizeProps.span === 0,
+      [`${prefixCls}-${size}-offset-${sizeProps.offset}`]:
+        sizeProps.offset || sizeProps.offset === 0,
       [`${prefixCls}-${size}-push-${sizeProps.push}`]: sizeProps.push || sizeProps.push === 0,
       [`${prefixCls}-${size}-pull-${sizeProps.pull}`]: sizeProps.pull || sizeProps.pull === 0,
       [`${prefixCls}-${size}-order-${sizeProps.order}`]: sizeProps.order || sizeProps.order === 0,

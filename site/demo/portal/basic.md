@@ -34,7 +34,7 @@ const Demo = () => {
         mask
         maskClosable
         closeOnClickOutside
-        className="tttppp"
+        className="portal"
         style={{ background: 'rgba(0, 0, 0, 0.2)' }}
       >
         <p style={{ backgroundColor: '#fff' }}>

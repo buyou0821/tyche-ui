@@ -33,7 +33,7 @@
 @mixin handleMedia($key, $map: $--breakpoints) {
   // 循环断点Map，如果存在则返回
   @if map-has-key($map, $key) {
-    $media: 'only screen and ' #{inspect(map-get($map, $key))};
+    $media: #{inspect(map-get($map, $key))};
     @media #{$media} {
       @content;
     }
@@ -42,34 +42,41 @@
   }
 }
 
-$breakpoints: ('xs', 'md', 'lg', 'xl');
+@mixin generateAttributes($breakpoint) {
+  .#{$namespace}-col-#{$breakpoint}-0 {
+    display: none;
+  }
+  @for $i from 0 through 24 {
+    .#{$namespace}-col-#{$breakpoint}-#{$i} {
+      width: 100% / 24 * $i;
+    }
+
+    .#{$namespace}-col-#{$breakpoint}-offset-#{$i} {
+      margin-left: 100% / 24 * $i;
+    }
+
+    .#{$namespace}-col-#{$breakpoint}-pull-#{$i} {
+      position: relative;
+      right: 100% / 24 * $i;
+    }
+
+    .#{$namespace}-col-#{$breakpoint}-push-#{$i} {
+      position: relative;
+      left: 100% / 24 * $i;
+    }
+    .#{$namespace}-col-#{$breakpoint}-order-#{$i} {
+      order: $i;
+    }
+  }
+}
+
+$breakpoints: ('sm', 'md', 'lg', 'xl', 'xxl');
+
+// xs不添加@media
+@include generateAttributes(xs);
 
 @each $breakpoint in $breakpoints {
   @include handleMedia($breakpoint) {
-    .#{$namespace}-col-#{$breakpoint}-0 {
-      display: none;
-    }
-    @for $i from 0 through 24 {
-      .#{$namespace}-col-#{$breakpoint}-#{$i} {
-        width: 100% / 24 * $i;
-      }
-
-      .#{$namespace}-col-#{$breakpoint}-offset-#{$i} {
-        margin-left: 100% / 24 * $i;
-      }
-
-      .#{$namespace}-col-#{$breakpoint}-pull-#{$i} {
-        position: relative;
-        right: 100% / 24 * $i;
-      }
-
-      .#{$namespace}-col-#{$breakpoint}-push-#{$i} {
-        position: relative;
-        left: 100% / 24 * $i;
-      }
-      .#{$namespace}-col-#{$breakpoint}-order-#{$i} {
-        order: $i;
-      }
-    }
+    @include generateAttributes($breakpoint);
   }
 }

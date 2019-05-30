@@ -3,10 +3,20 @@
 
 @include b(layout) {
   display: flex;
+  flex: auto;
   flex-direction: column;
+
+  @include e(header) {
+    height: 64px;
+    line-height: 64px;
+  }
 
   @include e(content) {
     flex: auto;
+  }
+
+  @include e(footer) {
+    padding: 24px 50px;
   }
 
   @include m(hasSider) {

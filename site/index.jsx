@@ -2,11 +2,13 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 import { Layout } from 'components/index';
-import Buttons from './demo/buttons';
-import Icon from './demo/icon';
-import Portal from './demo/portal';
-import Modal from './demo/modal';
-// import IconPage from './pages/Icon';
+import ButtonsMD from './demo/buttons';
+import IconMD from './demo/icon';
+import PortalMD from './demo/portal';
+import ModalMD from './demo/modal';
+import LayoutMD from './demo/layout';
+import GridMD from './demo/grid';
+// import IconPage from './pages/IconMD';
 // import Portal from './pages/Portal';
 import ModalPage from './pages/Modal';
 import LayoutPage from './pages/Layout';
@@ -26,7 +28,7 @@ ReactDOM.render(
           <h2>components</h2>
           <ul>
             <li>
-              <Link to="/icon">Icon</Link>
+              <Link to="/icon">icon</Link>
             </li>
             <li>
               <Link to="/buttons">buttons</Link>
@@ -46,12 +48,12 @@ ReactDOM.render(
           </ul>
         </Sider>
         <Content>
-          <Route path="/icon" component={Icon} />
-          <Route path="/buttons" component={Buttons} />
-          <Route path="/portal" component={Portal} />
-          <Route path="/modal" component={Modal} />
-          <Route path="/layout" component={LayoutPage} />
-          <Route path="/grid" component={GridPage} />
+          <Route path="/icon" component={IconMD} />
+          <Route path="/buttons" component={ButtonsMD} />
+          <Route path="/portal" component={PortalMD} />
+          <Route path="/modal" component={ModalMD} />
+          <Route path="/layout" component={LayoutMD} />
+          <Route path="/grid" component={GridMD} />
         </Content>
       </Layout>
     </Layout>
