@@ -54,7 +54,7 @@ ReactDOM.render(
           <Route path="/buttons" component={ButtonsMD} />
           <Route path="/portal" component={PortalMD} />
           <Route path="/modal" component={ModalMD} />
-          <Route path="/layout" component={LayoutMD} />
+          <Route path="/layout" component={LayoutPage} />
           <Route path="/grid" component={GridMD} />
         </Content>
       </Layout>

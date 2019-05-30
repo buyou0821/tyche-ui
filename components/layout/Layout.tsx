@@ -39,9 +39,11 @@ const Basic: React.FunctionComponent<BasicOrderProps> = props => {
 
 interface LayoutConsumerProps {
   addSider: (id: string) => void;
+  removeSider: (id: string) => void;
 }
 export const LayoutContext: Context<LayoutConsumerProps> = createContext({
   addSider: () => {},
+  removeSider: () => {},
 });
 
 const BasicLayout: React.FunctionComponent<BasicOrderProps> = props => {
@@ -50,7 +52,10 @@ const BasicLayout: React.FunctionComponent<BasicOrderProps> = props => {
 
   const siderHook = {
     addSider: (id: string) => {
-      setSiders([...siders, id]);
+      setSiders(prevSiders => [...prevSiders, id]);
+    },
+    removeSider: (id: string) => {
+      setSiders(prevSiders => prevSiders.filter(currentId => currentId !== id));
     },
   };
 

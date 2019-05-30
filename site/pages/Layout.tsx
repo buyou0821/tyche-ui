@@ -6,24 +6,31 @@ const { Header, Content, Footer, Sider } = Layout;
 export default () => {
   return (
     <div>
-      <p>1</p>
+      {/* <p>1</p>
       <Layout>
         <Header>This is header</Header>
         <Content>This is Content</Content>
         <Footer>This is footer</Footer>
-      </Layout>
+      </Layout> */}
 
       <p>2</p>
       <Layout>
         <Header>Header</Header>
         <Layout>
-          <Sider>Sider</Sider>
+          <Sider
+            breakpoint="md"
+            onBreakpoint={broken => {
+              console.log('@onBreakpoint', broken);
+            }}
+          >
+            Sider
+          </Sider>
           <Content>Content</Content>
         </Layout>
         <Footer>Footer</Footer>
       </Layout>
 
-      <p>3</p>
+      {/* <p>3</p>
       <Layout>
         <Header>Header</Header>
         <Layout>
@@ -41,7 +48,7 @@ export default () => {
           <Content>Content</Content>
           <Footer>Footer</Footer>
         </Layout>
-      </Layout>
+      </Layout> */}
     </div>
   );
 };

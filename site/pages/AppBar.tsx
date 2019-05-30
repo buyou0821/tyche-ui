@@ -6,7 +6,7 @@ const { IconButton, Typography, ToolBar } = AppBar;
 export default () => (
   <AppBar color="primary">
     <IconButton>
-      <Icon style={{ color: '#fff', fontSize: 24 }} type="dehaze" />
+      <Icon style={{ color: '#fff', fontSize: 22 }} type="dehaze" />
     </IconButton>
     <Typography>Tyche UI</Typography>
     <ToolBar>

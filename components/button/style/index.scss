@@ -127,8 +127,8 @@
   @include e(text) {
     background-color: transparent;
     @media (hover: none) {
-      [class*='-button'] &:hover {
-        background-color: transparent;
+      &:hover {
+        background-color: transparent !important;
       }
     }
     @include when(disabled) {
@@ -177,8 +177,8 @@
   @include e(outlined) {
     background-color: transparent;
     @media (hover: none) {
-      [class*='-button'] &:hover {
-        background-color: transparent;
+      &:hover {
+        background-color: transparent !important;
       }
     }
     @include when(disabled) {
@@ -261,8 +261,8 @@
     background-color: transparent;
     border-radius: 50%;
     @media (hover: none) {
-      [class*='-button'] &:hover {
-        background-color: transparent;
+      &:hover {
+        background-color: transparent !important;
       }
     }
     @include when(disabled) {

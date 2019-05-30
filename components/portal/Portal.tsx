@@ -9,6 +9,7 @@ import React, {
 import PurePortal, { PurePortalProps } from './PurePortal';
 import { getNodeFromSelector, hasScrollYbar } from './util';
 import getScrollYBarWidth from '../_util/getScrollYBarWidth';
+import { usePrefixCls } from '../_util/hooks';
 
 interface PatchMeta {
   count: number;
@@ -91,6 +92,8 @@ const Portal = forwardRef<PortalImperativeHandlers, PortalProps>((props, ref) =>
 
   const node = useMemo(() => document.createElement(maskTagName), [maskTagName, mask]);
   const parent = useMemo(() => getNodeFromSelector(selector), [selector]);
+  const appBarCls = usePrefixCls('appbar');
+  const appBar = useMemo(() => getNodeFromSelector(`.${appBarCls}`), [appBarCls]);
   const purePortalRef = useRef<PurePortal>(null);
 
   const contains = useCallback((el: Node) => {
@@ -136,18 +139,20 @@ const Portal = forwardRef<PortalImperativeHandlers, PortalProps>((props, ref) =>
       return;
     }
 
-    const { position, top, right, bottom, left } = node.style;
+    const { position, top, right, bottom, left, zIndex } = node.style;
     node.style.position = parent === document.body ? 'fixed' : 'absolute';
     node.style.top = '0';
     node.style.right = '0';
     node.style.bottom = '0';
     node.style.left = '0';
+    node.style.zIndex = '1000';
     return () => {
       node.style.position = position;
       node.style.top = top;
       node.style.right = right;
       node.style.bottom = bottom;
       node.style.left = left;
+      node.style.zIndex = zIndex;
     };
   }, [visible, mask, maskTagName, node]);
 
@@ -157,12 +162,29 @@ const Portal = forwardRef<PortalImperativeHandlers, PortalProps>((props, ref) =>
       !blockPageScroll ||
       !parent ||
       !(parent instanceof HTMLElement) ||
-      !hasScrollYbar(parent)
+      !hasScrollYbar(parent) ||
+      parent !== document.body
     ) {
       return;
     }
     patchElement(parent);
     return () => restoreElement(parent);
+  }, [parent, visible, blockPageScroll]);
+
+  useLayoutEffect(() => {
+    if (
+      !visible ||
+      !blockPageScroll ||
+      !parent ||
+      !(appBar instanceof HTMLElement) ||
+      !hasScrollYbar(parent) ||
+      !appBar ||
+      !(appBar instanceof HTMLElement)
+    ) {
+      return;
+    }
+    patchElement(appBar);
+    return () => restoreElement(appBar);
   }, [parent, visible, blockPageScroll]);
 
   useLayoutEffect(() => {
