@@ -13,6 +13,7 @@ import GridMD from './demo/grid';
 import ModalPage from './pages/Modal';
 import LayoutPage from './pages/Layout';
 import GridPage from './pages/Grid';
+import AppBarPage from './pages/AppBar';
 import './style';
 
 const { Header, Sider, Content } = Layout;
@@ -20,7 +21,8 @@ const { Header, Sider, Content } = Layout;
 ReactDOM.render(
   <Router>
     <Layout>
-      <Header>
+      <Header className="demo-header">
+        <AppBarPage />
         <div className="logo">Tyche UI</div>
       </Header>
       <Layout>

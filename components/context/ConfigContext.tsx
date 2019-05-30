@@ -8,7 +8,7 @@ export interface ConfigConsumerProps {
   getPrefixCls: (suffixCls: string) => string;
 }
 
-const defaultPrefixCls = 'ty';
+export const defaultPrefixCls = 'ty';
 
 export const ConfigContext: Context<ConfigConsumerProps> = createContext({
   getPrefixCls: (suffixCls: string) => `${defaultPrefixCls}-${suffixCls}`,

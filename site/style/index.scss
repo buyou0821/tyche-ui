@@ -6,7 +6,8 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB',
     'Microsoft YaHei', 'Helvetica Neue', Helvetica, Arial, sans-serif, 'Apple Color Emoji',
     'Segoe UI Emoji', 'Segoe UI Symbol';
-  background-color: #f4f6f9;
+  // background-color: #f4f6f9;
+  background-color: #fafafa;
   // font-family: Roboto, Lato, sans-serif;
   // font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, Courier, monospace;
 }
@@ -25,6 +26,11 @@ html {
 }
 
 .demo {
+  // &-header {
+  //   // position: fixed;
+  //   // top: 0;
+  //   // left: 0;
+  // }
   &-page {
     & > div {
       width: 75%;
@@ -116,7 +122,8 @@ html {
         }
       }
     }
-    .ty-row-flex, .row-responsive {
+    .ty-row-flex,
+    .row-responsive {
       background-color: $--color-white;
     }
     .code-view-toolbar {

@@ -231,7 +231,6 @@ const Portal = forwardRef<PortalImperativeHandlers, PortalProps>((props, ref) =>
       {children}
     </PurePortal>
   ) : null;
-  // return visible ? 123 : 321;
 }) as PortalComponent<PortalProps>;
 
 Portal.PurePortal = PurePortal;

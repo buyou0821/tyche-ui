@@ -64,7 +64,6 @@ const Col = forwardRef((props: ColProps, ref: React.RefObject<HTMLDivElement>) =
   });
 
   const classes = clsx(
-    className,
     prefixCls,
     {
       [`${prefixCls}-${span}`]: span,
@@ -74,6 +73,7 @@ const Col = forwardRef((props: ColProps, ref: React.RefObject<HTMLDivElement>) =
       [`${prefixCls}-order-${order}`]: order,
     },
     sizeClassNames,
+    className,
   );
 
   return (

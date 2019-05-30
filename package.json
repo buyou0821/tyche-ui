@@ -8,7 +8,7 @@
     "test": "cross-env NODE_ENV=test jest --config=jest.config.js --runInBand --no-cache",
     "dev": "cross-env NODE_ENV=development webpack-dev-server --config site/site.config.js",
     "build": "cross-env NODE_ENV=production webpack --config webpack.config.prod.js",
-    "prettier": "prettier --write --config .prettierrc 'components/**/*.{ts,tsx,js}'",
+    "prettier": "prettier --write --config .prettierrc 'components/**/*.{ts,tsx,js,jsx}'",
     "lint-fix:es": "eslint --fix --ext .js,.tsx components && npm run lint:style",
     "lint:ts": "tslint --project tsconfig.json 'components/**/*.{ts,tsx}'",
     "lint:style": "prettier-stylelint --write -q 'components/**/*.{css,scss,less}'",

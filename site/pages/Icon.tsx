@@ -1,5 +1,5 @@
 import React from 'react';
-import { Icon } from 'components/index';
+import { Icon } from 'components';
 
 export default () => {
   const IconFont = Icon.createFromIconfont({

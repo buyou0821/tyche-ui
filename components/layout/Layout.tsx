@@ -10,8 +10,9 @@ interface GeneratorProps {
 
 interface BasicProps extends React.HTMLAttributes<HTMLDivElement> {}
 
-interface BasicOrderProps {
-  className: string;
+interface BasicOrderProps extends BasicProps {
+  prefixCls?: string;
+  className?: string;
   tagName: 'header' | 'footer' | 'main' | 'section';
   ref: React.RefObject<HTMLElement>;
 }
@@ -20,15 +21,20 @@ const generator = ({ suffixCls, tagName }: GeneratorProps) => (
   BasicComponent: React.FunctionComponent<BasicOrderProps>,
 ) =>
   forwardRef((props: BasicProps, ref: React.RefObject<HTMLElement>) => {
-    const classString = suffixCls
+    const prefixCls = suffixCls
       ? `${usePrefixCls('layout')}__${suffixCls}`
       : usePrefixCls('layout');
-    return <BasicComponent ref={ref} className={classString} tagName={tagName} {...props} />;
+    return <BasicComponent ref={ref} prefixCls={prefixCls} tagName={tagName} {...props} />;
   });
 
 const Basic: React.FunctionComponent<BasicOrderProps> = props => {
-  const { tagName, className, children, ...rest } = props;
-  return React.createElement(tagName, { className, ...rest }, children);
+  const { tagName: Tag, className, prefixCls, children, ...rest } = props;
+  const classes = clsx(prefixCls, className);
+  return (
+    <Tag className={classes} {...rest}>
+      {children}
+    </Tag>
+  );
 };
 
 interface LayoutConsumerProps {
@@ -39,7 +45,7 @@ export const LayoutContext: Context<LayoutConsumerProps> = createContext({
 });
 
 const BasicLayout: React.FunctionComponent<BasicOrderProps> = props => {
-  const { tagName: Tag, children, className, ...rest } = props;
+  const { tagName: Tag, prefixCls, children, className, ...rest } = props;
   const [siders, setSiders] = useState<Array<string>>([]);
 
   const siderHook = {
@@ -48,7 +54,7 @@ const BasicLayout: React.FunctionComponent<BasicOrderProps> = props => {
     },
   };
 
-  const classes = clsx(`${className}`, {
+  const classes = clsx(prefixCls, className, {
     [`${usePrefixCls('layout')}--hasSider`]: siders.length > 0,
   });
 

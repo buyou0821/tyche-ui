@@ -1,0 +1,54 @@
+@import '../../theme/mixins/mixins.scss';
+@import '../../theme/default.scss';
+
+@include b(appbar) {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  display: flex;
+  padding: 0 24px;
+  z-index: 101;
+  color: $--color-white;
+  box-shadow: 0 3px 5px -1px rgba(0, 0, 0, 0.2), 0 6px 10px 0 rgba(0, 0, 0, 0.14),
+    0 1px 18px 0 rgba(0, 0, 0, 0.12);
+  @include m(default) {
+    background-color: $--color-white-heavy;
+  }
+  @include m(primary) {
+    background-color: $--color-primary;
+  }
+  @include m(primary-dark) {
+    background-color: $--color-primary-dark;
+  }
+  @include m(secondary) {
+    background-color: $--color-secondary;
+  }
+  @include m(success) {
+    background-color: $--color-success;
+  }
+  @include m(warning) {
+    background-color: $--color-warning;
+  }
+  @include m(danger) {
+    background-color: $--color-danger;
+  }
+
+  @include e(icon) {
+    margin-right: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+
+  @include e(typography) {
+    font-size: 20px;
+    flex: 1;
+  }
+
+  @include e(toolBar) {
+    display: flex;
+    align-items: center;
+  }
+}

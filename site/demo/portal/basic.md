@@ -37,7 +37,7 @@ const Demo = () => {
         className="portal"
         style={{ background: 'rgba(0, 0, 0, 0.2)' }}
       >
-        <p style={{ backgroundColor: '#fff' }}>
+        <p style={{ backgroundColor: '#fff', marginTop: 200 }}>
           这里是带mask的Portal动态插入body的内容，可点击遮罩层关闭
         </p>
       </Portal>
