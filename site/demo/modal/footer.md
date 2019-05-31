@@ -28,6 +28,7 @@ const BasicModal = () => {
       <Modal
         title="Basic Modal"
         visible={visible}
+        onCancel={handleCancel}
         footer={[
           <Button key="return" color="warning" shape="outlined" onClick={handleCancel}>
             Return

@@ -162,8 +162,7 @@ const Portal = forwardRef<PortalImperativeHandlers, PortalProps>((props, ref) =>
       !blockPageScroll ||
       !parent ||
       !(parent instanceof HTMLElement) ||
-      !hasScrollYbar(parent) ||
-      parent !== document.body
+      !hasScrollYbar(parent)
     ) {
       return;
     }
@@ -176,10 +175,11 @@ const Portal = forwardRef<PortalImperativeHandlers, PortalProps>((props, ref) =>
       !visible ||
       !blockPageScroll ||
       !parent ||
-      !(appBar instanceof HTMLElement) ||
+      !(parent instanceof HTMLElement) ||
       !hasScrollYbar(parent) ||
       !appBar ||
-      !(appBar instanceof HTMLElement)
+      !(appBar instanceof HTMLElement) ||
+      parent !== document.body
     ) {
       return;
     }

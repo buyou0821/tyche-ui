@@ -11,6 +11,7 @@ const instance = (
     <Icon type="code-close" />
     <Icon type="dehaze" />
     <Icon type="github" />
+    <Icon type="tyche-ui" />
   </div>
 );
 ReactDOM.render(instance);

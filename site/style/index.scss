@@ -33,7 +33,7 @@ html {
   // }
   &-page {
     & > div {
-      width: 75%;
+      width: 90%;
       max-width: 820px;
       margin: 18px auto 0;
       .code-view-wrapper {
@@ -161,6 +161,37 @@ html {
     }
     .code-view-toolbar {
       margin-top: 12px;
+    }
+  }
+  &-sider--hide {
+    display: none;
+  }
+  &-sider {
+    position: fixed;
+    height: 100vh;
+    background-color: $--color-white;
+    border-right: 1px solid $--color-gray;
+  }
+  &-content--hasSider {
+    padding-left: 255px;
+  }
+  &-sider {
+    &__title {
+      line-height: 36px;
+    }
+    &__nav {
+      padding-top: 10px;
+      & > a {
+        display: block;
+      }
+      button {
+        border-radius: 0;
+        width: 100%;
+        .ty-btn__wrapper {
+          padding-left: 55px;
+          justify-content: flex-start;
+        }
+      }
     }
   }
 }

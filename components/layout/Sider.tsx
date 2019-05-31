@@ -1,4 +1,5 @@
-import React, { forwardRef, useContext, useLayoutEffect, useMemo, useState } from 'react';
+import React, { forwardRef, useContext, useLayoutEffect, useMemo } from 'react';
+import clsx from 'clsx';
 import { usePrefixCls } from '../_util/hooks';
 import { LayoutContext } from './Layout';
 
@@ -34,15 +35,17 @@ const BreakpointMap = {
 };
 
 interface SiderProps extends React.HTMLAttributes<HTMLDivElement> {
+  width?: number | string;
+  style?: React.CSSProperties;
   breakpoint?: 'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'xxl';
   onBreakpoint?: (broken: boolean) => void;
 }
 
 const Sider = forwardRef((props: SiderProps, ref: React.RefObject<HTMLElement>) => {
-  const { children, breakpoint, onBreakpoint, ...rest } = props;
+  const { children, breakpoint, onBreakpoint, width, style, className, ...rest } = props;
   const { addSider, removeSider } = useContext(LayoutContext);
   const prefixCls = usePrefixCls('layout');
-  const [below, setBelow] = useState<boolean>(false);
+  const siderStyle = { width, ...style };
 
   useLayoutEffect(() => {
     const uniqueId: string = generateId(`${prefixCls}-sider`);
@@ -65,7 +68,6 @@ const Sider = forwardRef((props: SiderProps, ref: React.RefObject<HTMLElement>) 
   }, [breakpoint]);
 
   const responsiveHandler = (mediaQueryList: MediaQueryListEvent | MediaQueryList) => {
-    setBelow(mediaQueryList.matches);
     if (onBreakpoint) {
       onBreakpoint(mediaQueryList.matches);
     }
@@ -83,8 +85,10 @@ const Sider = forwardRef((props: SiderProps, ref: React.RefObject<HTMLElement>) 
     };
   }, [mql]);
 
+  const classes = clsx(`${prefixCls}__sider`, className);
+
   return (
-    <aside className={`${prefixCls}__sider`} ref={ref} {...rest}>
+    <aside style={siderStyle} className={classes} ref={ref} {...rest}>
       {children}
     </aside>
   );

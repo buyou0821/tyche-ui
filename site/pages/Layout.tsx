@@ -18,6 +18,7 @@ export default () => {
         <Header>Header</Header>
         <Layout>
           <Sider
+            width={300}
             breakpoint="md"
             onBreakpoint={broken => {
               console.log('@onBreakpoint', broken);
