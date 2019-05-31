@@ -7,7 +7,7 @@
 
 ```jsx
 const IconFont = Icon.createFromIconfont({
-  scriptUrl: '//at.alicdn.com/t/font_8d5l8fzk5b87iudi.js',
+  scriptUrl: 'http://at.alicdn.com/t/font_8d5l8fzk5b87iudi.js',
 });
 
 const instance = (

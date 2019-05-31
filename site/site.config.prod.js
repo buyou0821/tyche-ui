@@ -1,15 +1,11 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const base = require('../webpack.config');
-const webpack = require('webpack');
 
 module.exports = Object.assign({}, base, {
-  mode: 'development',
+  mode: 'production',
   entry: {
     site: path.resolve(__dirname, './index'),
-  },
-  output: {
-    publicPath: '/',
   },
   resolve: {
     extensions: ['.ts', '.tsx', '.js', '.jsx'],
@@ -17,18 +13,15 @@ module.exports = Object.assign({}, base, {
       components: path.resolve(__dirname, '../components'),
     },
   },
+  output: {
+    path: path.resolve(__dirname, '../docs'),
+  },
   plugins: [
+    ...base.plugins,
     new HtmlWebpackPlugin({
       title: 'tyche-ui',
       template: path.resolve(__dirname, './index.html'),
+      favicon: path.resolve(__dirname, './tycheUI.png'),
     }),
-    new webpack.HotModuleReplacementPlugin(),
   ],
-  devServer: {
-    host: '0.0.0.0',
-    port: '8088',
-    historyApiFallback: true,
-    noInfo: true,
-    progress: true,
-  },
 });
