@@ -3831,6 +3831,8 @@ html {
   padding-top: 10px; }
   .demo-sider__nav > a {
     display: block; }
+    .demo-sider__nav > a.active .ty-btn__wrapper {
+      color: #2196f3; }
   .demo-sider__nav button {
     border-radius: 0;
     width: 100%; }
