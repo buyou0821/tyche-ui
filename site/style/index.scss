@@ -183,6 +183,9 @@ html {
       padding-top: 10px;
       & > a {
         display: block;
+        &.active .ty-btn__wrapper {
+          color: $--color-primary;
+        }
       }
       button {
         border-radius: 0;

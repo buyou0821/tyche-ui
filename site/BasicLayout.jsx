@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
+import React, { useState, useLayoutEffect } from 'react';
 import clsx from 'clsx';
 import { Layout, Button, Row, Col } from 'components';
-import { Route, Link } from 'react-router-dom';
+import { Route, NavLink } from 'react-router-dom';
 import AppBarPage from './pages/AppBar';
 import ButtonsMD from './demo/buttons';
 import IconMD from './demo/icon';
@@ -44,30 +44,30 @@ const BasicLayout = () => {
             <Row className="demo-sider__title">
               <Col offset={3}>通用</Col>
             </Row>
-            <Link to="/icon">
+            <NavLink to="/icon">
               <Button shape="text">Icon 图标</Button>
-            </Link>
-            <Link to="/buttons">
+            </NavLink>
+            <NavLink to="/buttons">
               <Button shape="text">Buttons 按钮</Button>
-            </Link>
-            <Link to="/portal">
+            </NavLink>
+            <NavLink to="/portal">
               <Button shape="text">Portal 传送门</Button>
-            </Link>
+            </NavLink>
             <Row className="demo-sider__title">
               <Col offset={3}>布局</Col>
             </Row>
-            <Link to="/layout">
+            <NavLink to="/layout">
               <Button shape="text">Loyout 布局</Button>
-            </Link>
-            <Link to="/grid">
+            </NavLink>
+            <NavLink to="/grid">
               <Button shape="text">Grid 栅格</Button>
-            </Link>
+            </NavLink>
             <Row className="demo-sider__title">
               <Col offset={3}>反馈</Col>
             </Row>
-            <Link to="/modal">
+            <NavLink to="/modal">
               <Button shape="text">Modal 对话框</Button>
-            </Link>
+            </NavLink>
           </div>
         </Sider>
         <Content className={hasSiderClasses}>
