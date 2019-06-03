@@ -14,6 +14,7 @@ import GridMD from './demo/grid';
 import ModalPage from './pages/Modal';
 import LayoutPage from './pages/Layout';
 import GridPage from './pages/Grid';
+import DrawerPage from './pages/Drawer';
 
 const { Header, Sider, Content } = Layout;
 
@@ -68,6 +69,9 @@ const BasicLayout = () => {
             <NavLink to="/modal">
               <Button shape="text">Modal 对话框</Button>
             </NavLink>
+            <NavLink to="/drawer">
+              <Button shape="text">Drawer 抽屉</Button>
+            </NavLink>
           </div>
         </Sider>
         <Content className={hasSiderClasses}>
@@ -77,6 +81,7 @@ const BasicLayout = () => {
           <Route path="/modal" component={ModalMD} />
           <Route path="/layout" component={LayoutMD} />
           <Route path="/grid" component={GridMD} />
+          <Route path="/drawer" component={DrawerPage} />
         </Content>
       </Layout>
     </Layout>

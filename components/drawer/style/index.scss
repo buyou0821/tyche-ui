@@ -1,0 +1,30 @@
+@import '../../theme/mixins/mixins.scss';
+@import '../../theme/default.scss';
+
+@include b(drawer) {
+  @include e(mask) {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1000;
+    height: 100%;
+    background-color: $--color-black;
+    opacity: 0;
+    &-appear-active {
+      opacity: 1;
+      transition: opacity 225ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+    }
+    &-appear-done {
+      opacity: 1;
+    }
+    &-exit {
+      opacity: 0;
+      transition: opacity 195ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+    }
+    // &-appear-done {
+    //   opacity: 0;
+    // }
+  }
+}

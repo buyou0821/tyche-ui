@@ -22,7 +22,6 @@ module.exports = Object.assign({}, base, {
       title: 'tyche-ui',
       template: path.resolve(__dirname, './index.html'),
     }),
-    new webpack.HotModuleReplacementPlugin(),
   ],
   devServer: {
     host: '0.0.0.0',
