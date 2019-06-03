@@ -20,6 +20,18 @@
     z-index: 1000;
     height: 100%;
     background-color: $--color-black;
+    opacity: 0;
+    &-appear-active {
+      opacity: 1;
+      transition: opacity 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+    }
+    &-appear-done {
+      opacity: 1;
+    }
+    &-exit {
+      opacity: 0;
+      transition: opacity 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+    }
   }
 
   @include e(wrap) {

@@ -8,7 +8,7 @@ import { ConfigConsumer, ConfigConsumerProps } from '../context/ConfigContext';
 import isBrowser from '../_util/isBrowser';
 import { ButtonShape, ButtonColor } from '../button';
 
-const TIMEOUT = 300;
+export const TIMEOUT = 300;
 
 export type MousePosition = {
   x: number;
