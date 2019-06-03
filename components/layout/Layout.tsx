@@ -42,8 +42,8 @@ interface LayoutConsumerProps {
   removeSider: (id: string) => void;
 }
 export const LayoutContext: Context<LayoutConsumerProps> = createContext({
-  addSider: () => {},
-  removeSider: () => {},
+  addSider: (id: string) => {},
+  removeSider: (id: string) => {},
 });
 
 const BasicLayout: React.FunctionComponent<BasicOrderProps> = props => {
