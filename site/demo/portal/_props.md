@@ -4,6 +4,7 @@
 | --- | --- | --- | --- |
 | append | 是否是在目标元素结尾追加元素 | boolean | false |
 | blockPageScroll | 弹出遮罩层后是否阻止浏览器滚动 | boolean | true |
+| className | 插入容器的className | string | - |
 | closeOnClickOutside | 点击child外部时，是否调用`onCancel`，需要和`maskClosable`一起使用 | boolean | false |
 | closeOnESC | 是否支持键盘`ESC`键调用`onCancel` | boolean | false |
 | mask | 是否渲染遮罩层 | boolean | false |

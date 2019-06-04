@@ -3,6 +3,7 @@ import clsx from 'clsx';
 import { Layout, Button, Row, Col } from 'components';
 import { Route, NavLink } from 'react-router-dom';
 import AppBarPage from './pages/AppBar';
+import SiderNav from './pages/SiderNav';
 import ButtonsMD from './demo/buttons';
 import IconMD from './demo/icon';
 import PortalMD from './demo/portal';
@@ -10,6 +11,7 @@ import ModalMD from './demo/modal';
 import LayoutMD from './demo/layout';
 import GridMD from './demo/grid';
 import AppBarMD from './demo/appBar';
+import DrawerMD from './demo/drawer';
 // import IconPage from './pages/IconMD';
 // import Portal from './pages/Portal';
 import ModalPage from './pages/Modal';
@@ -38,48 +40,10 @@ const BasicLayout = () => {
     <Layout>
       <Header className="demo-header">
         <AppBarPage />
-        <div className="logo">Tyche UI</div>
       </Header>
       <Layout>
         <Sider width={255} className={siderClasses} breakpoint="md" onBreakpoint={handleBreakpoint}>
-          <div className="demo-sider__nav">
-            <Row className="demo-sider__title">
-              <Col offset={3}>通用</Col>
-            </Row>
-            <NavLink to="/icon">
-              <Button shape="text">Icon 图标</Button>
-            </NavLink>
-            <NavLink to="/buttons">
-              <Button shape="text">Buttons 按钮</Button>
-            </NavLink>
-            <NavLink to="/portal">
-              <Button shape="text">Portal 传送门</Button>
-            </NavLink>
-            <Row className="demo-sider__title">
-              <Col offset={3}>布局</Col>
-            </Row>
-            <NavLink to="/layout">
-              <Button shape="text">Loyout 布局</Button>
-            </NavLink>
-            <NavLink to="/grid">
-              <Button shape="text">Grid 栅格</Button>
-            </NavLink>
-            <Row className="demo-sider__title">
-              <Col offset={3}>导航</Col>
-            </Row>
-            <NavLink to="/appbar">
-              <Button shape="text">AppBar 应用栏</Button>
-            </NavLink>
-            <Row className="demo-sider__title">
-              <Col offset={3}>反馈</Col>
-            </Row>
-            <NavLink to="/modal">
-              <Button shape="text">Modal 对话框</Button>
-            </NavLink>
-            <NavLink to="/drawer">
-              <Button shape="text">Drawer 抽屉</Button>
-            </NavLink>
-          </div>
+          <SiderNav />
         </Sider>
         <Content className={hasSiderClasses}>
           <Route path="/icon" component={IconMD} />
@@ -89,7 +53,7 @@ const BasicLayout = () => {
           <Route path="/layout" component={LayoutMD} />
           <Route path="/grid" component={GridMD} />
           <Route path="/appbar" component={AppBarMD} />
-          <Route path="/drawer" component={DrawerPage} />
+          <Route path="/drawer" component={DrawerMD} />
         </Content>
       </Layout>
     </Layout>

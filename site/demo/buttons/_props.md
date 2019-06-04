@@ -7,6 +7,7 @@
 | 属性 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |
 | color | 设置按钮颜色类型，可选值为`primary`、 `secondary`、 `success`、 `warning`、 `danger` 或者不设 | string | default |
+| className | `Button`的`className` | string | - |
 | shape | 设置按钮形状，可选值为 `contained`、 `text` 、 `outlined` 、 `circle`、 `round`、 `icon` 或者不设 | string | contained |
 | disabled | 按钮失效状态 | boolean | false |
 | loading | 设置按钮载入状态 | boolean | false |

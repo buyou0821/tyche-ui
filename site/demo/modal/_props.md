@@ -20,4 +20,4 @@
 | title |	标题 | string/ReactNode | - |
 | visible |	对话框是否可见 | boolean | - |
 | width |	宽度 | string/number | Modal默认值`520`Confirm默认值`416` |
-| zIndex |	设置Modal的`z-index` | number | 1000 |
+| zIndex |	设置`Modal`的`z-index` | number | 1000 |

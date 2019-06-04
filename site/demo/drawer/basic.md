@@ -1,11 +1,13 @@
-import React, { useState } from 'react';
-import { Button, Drawer } from 'components';
+## Drawer 抽屉
 
-export default () => {
-  const [leftVisible, setLeftVisible] = useState(false);
-  const [rightVisible, setRightVisible] = useState(false);
-  const [topVisible, setTopVisible] = useState(false);
-  const [bottomVisible, setBottomVisible] = useState(false);
+<!--start-code-->
+
+```js
+const Drawers = () => {
+  const [leftVisible, setLeftVisible] = React.useState(false);
+  const [rightVisible, setRightVisible] = React.useState(false);
+  const [topVisible, setTopVisible] = React.useState(false);
+  const [bottomVisible, setBottomVisible] = React.useState(false);
 
   return (
     <div>
@@ -15,14 +17,16 @@ export default () => {
           setLeftVisible(!leftVisible);
         }}
       >
-        left
+        Left
       </Button>
       <Drawer
         visible={leftVisible}
         onClose={() => {
           setLeftVisible(false);
         }}
-      >sider</Drawer>
+      >
+        Left
+      </Drawer>
 
       <Button
         color="primary"
@@ -30,7 +34,7 @@ export default () => {
           setRightVisible(!rightVisible);
         }}
       >
-        right
+        Right
       </Button>
       <Drawer
         placement="right"
@@ -38,7 +42,9 @@ export default () => {
         onClose={() => {
           setRightVisible(false);
         }}
-      />
+      >
+        Right
+      </Drawer>
 
       <Button
         color="primary"
@@ -46,7 +52,7 @@ export default () => {
           setTopVisible(!topVisible);
         }}
       >
-        top
+        Top
       </Button>
       <Drawer
         placement="top"
@@ -54,7 +60,9 @@ export default () => {
         onClose={() => {
           setTopVisible(false);
         }}
-      />
+      >
+        Top
+      </Drawer>
 
       <Button
         color="primary"
@@ -62,7 +70,7 @@ export default () => {
           setBottomVisible(!bottomVisible);
         }}
       >
-        bottom
+        Bottom
       </Button>
       <Drawer
         placement="bottom"
@@ -70,7 +78,13 @@ export default () => {
         onClose={() => {
           setBottomVisible(false);
         }}
-      />
+      >
+        Bottom
+      </Drawer>
     </div>
   );
 };
+ReactDOM.render(<Drawers />);
+```
+
+<!--end-code-->

@@ -1,0 +1,84 @@
+import React from 'react';
+import { Button, Row, Col } from 'components';
+import { NavLink } from 'react-router-dom';
+
+const navRoutes = [
+  {
+    title: '通用',
+    children: [
+      {
+        to: 'icon',
+        text: 'Icon 图标',
+      },
+      {
+        to: 'buttons',
+        text: 'Buttons 按钮',
+      },
+      {
+        to: 'portal',
+        text: 'Portal 传送门',
+      },
+    ],
+  },
+  {
+    title: '布局',
+    children: [
+      {
+        to: 'layout',
+        text: 'Loyout 布局',
+      },
+      {
+        to: 'grid',
+        text: 'Grid 栅格',
+      },
+    ],
+  },
+  {
+    title: '导航',
+    children: [
+      {
+        to: 'appBar',
+        text: 'AppBar 应用栏',
+      },
+    ],
+  },
+  {
+    title: '反馈',
+    children: [
+      {
+        to: 'modal',
+        text: 'Modal 对话框',
+      },
+      {
+        to: 'drawer',
+        text: 'Drawer 抽屉',
+      },
+    ],
+  },
+];
+
+interface SiderNavProps {
+  linkClick?: (e?: React.MouseEvent<any>) => void;
+}
+
+export default (props: SiderNavProps) => {
+  const { linkClick } = props;
+  return (
+    <div className="demo-sider__nav">
+      {navRoutes.map(item => (
+        <>
+          <Row className="demo-sider__title">
+            <Col offset={3}>{item.title}</Col>
+          </Row>
+          {item.children.map(child => (
+            <NavLink to={`/${child.to}`}>
+              <Button shape="text" onClick={linkClick}>
+                {child.text}
+              </Button>
+            </NavLink>
+          ))}
+        </>
+      ))}
+    </div>
+  );
+};

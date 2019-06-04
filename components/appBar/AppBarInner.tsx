@@ -3,22 +3,24 @@ import clsx from 'clsx';
 import { usePrefixCls } from '../_util/hooks';
 import { Col, Button } from '../';
 import { ColProps } from '../gird/Col';
+import { ButtonProps as IButtonProps } from '../button';
 
 interface IconButtonProps extends ColProps {
   className?: string;
   style?: React.CSSProperties;
   children?: React.ReactNode;
+  ButtonProps?: IButtonProps;
 }
 
 export const IconButton = forwardRef(
   (props: IconButtonProps, ref: React.RefObject<HTMLDivElement>) => {
-    const { className, children, ...rest } = props;
+    const { className, children, ButtonProps, ...rest } = props;
     const prefixCls = usePrefixCls('appbar');
     const classes = clsx(`${prefixCls}__icon`, className);
 
     return (
       <Col ref={ref} className={classes} {...rest}>
-        <Button center shape="icon" className={`${prefixCls}__icon-btn`}>
+        <Button center shape="icon" className={`${prefixCls}__icon-btn`} {...ButtonProps}>
           {children}
         </Button>
       </Col>

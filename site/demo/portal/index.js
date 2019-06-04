@@ -3,7 +3,7 @@ import { Portal, Button } from 'components';
 
 export default generatePage({
   component: 'portal',
-  markdownList: ['basic', '_props'],
+  markdownList: ['purePortal', 'portal', '_props'],
   dependencies: {
     Portal,
     Button,

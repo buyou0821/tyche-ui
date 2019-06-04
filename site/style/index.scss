@@ -164,6 +164,9 @@ html {
     .code-view-toolbar {
       margin-top: 12px;
     }
+    &-logo {
+      animation: rotation 30s linear infinite;
+    }
   }
   &-sider--hide {
     display: none;
@@ -204,5 +207,21 @@ html {
     .code-view-toolbar {
       margin-top: 12px;
     }
+  }
+  &-drawer {
+    button {
+      margin-right: 24px;
+      margin-bottom: 24px;
+      vertical-align: middle;
+    }
+  }
+}
+
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
   }
 }

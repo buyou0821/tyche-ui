@@ -2,14 +2,15 @@
 @import '../../theme/default.scss';
 
 @include b(drawer) {
+  position: fixed;
+  top: 0;
+  z-index: 201;
   @include e(mask) {
     position: fixed;
     top: 0;
     right: 0;
     bottom: 0;
     left: 0;
-    z-index: 1000;
-    height: 100%;
     background-color: $--color-black;
     opacity: 0;
     &-appear-active {
@@ -22,6 +23,30 @@
     &-exit {
       opacity: 0;
       transition: opacity 195ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+    }
+  }
+  @include e(sider) {
+    position: fixed;
+    height: 100%;
+    overflow: auto;
+    background-color: $--color-white;
+    box-shadow: 0 8px 10px -5px rgba(0, 0, 0, 0.2), 0 16px 24px 2px rgba(0, 0, 0, 0.14),
+      0 6px 30px 5px rgba(0, 0, 0, 0.12);
+    @include m(left) {
+      left: 0;
+    }
+    @include m(right) {
+      right: 0;
+    }
+    @include m(top) {
+      top: 0;
+      right: 0;
+      left: 0;
+    }
+    @include m(bottom) {
+      right: 0;
+      bottom: 0;
+      left: 0;
     }
   }
 }
