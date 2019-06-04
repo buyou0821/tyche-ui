@@ -8,6 +8,7 @@ const AppBarColors = tuple('primary', 'secondary', 'success', 'warning', 'danger
 export type AppBarColor = (typeof AppBarColors)[number];
 
 interface AppBarProps {
+  className?: string;
   children?: React.ReactNode;
   color?: AppBarColor;
   style?: React.CSSProperties;
@@ -20,10 +21,10 @@ interface AppBarComponent<p> extends React.ForwardRefExoticComponent<p> {
 }
 
 const AppBar = forwardRef((props: AppBarProps, ref: React.RefObject<HTMLDivElement>) => {
-  const { color = 'default', children, ...rest } = props;
+  const { color = 'default', className, children, ...rest } = props;
   const prefixCls = usePrefixCls('appbar');
 
-  const classes = clsx(prefixCls, {
+  const classes = clsx(prefixCls, className, {
     [`${prefixCls}--${color}`]: color,
   });
 

@@ -9,6 +9,7 @@ import PortalMD from './demo/portal';
 import ModalMD from './demo/modal';
 import LayoutMD from './demo/layout';
 import GridMD from './demo/grid';
+import AppBarMD from './demo/appBar';
 // import IconPage from './pages/IconMD';
 // import Portal from './pages/Portal';
 import ModalPage from './pages/Modal';
@@ -64,6 +65,12 @@ const BasicLayout = () => {
               <Button shape="text">Grid 栅格</Button>
             </NavLink>
             <Row className="demo-sider__title">
+              <Col offset={3}>导航</Col>
+            </Row>
+            <NavLink to="/appbar">
+              <Button shape="text">AppBar 应用栏</Button>
+            </NavLink>
+            <Row className="demo-sider__title">
               <Col offset={3}>反馈</Col>
             </Row>
             <NavLink to="/modal">
@@ -81,6 +88,7 @@ const BasicLayout = () => {
           <Route path="/modal" component={ModalMD} />
           <Route path="/layout" component={LayoutMD} />
           <Route path="/grid" component={GridMD} />
+          <Route path="/appbar" component={AppBarMD} />
           <Route path="/drawer" component={DrawerPage} />
         </Content>
       </Layout>

@@ -4,8 +4,8 @@ import { AppBar, Icon, Button } from 'components';
 const { IconButton, Typography, ToolBar } = AppBar;
 
 export default () => (
-  <AppBar color="primary">
-    <IconButton>
+  <AppBar color="primary" className="demo-layout-appBar">
+    <IconButton md={0}>
       <Icon style={{ color: '#fff', fontSize: 22 }} type="dehaze" />
     </IconButton>
     <Typography>

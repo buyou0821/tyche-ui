@@ -1,49 +1,64 @@
 import React, { forwardRef } from 'react';
+import clsx from 'clsx';
 import { usePrefixCls } from '../_util/hooks';
 import { Col, Button } from '../';
+import { ColProps } from '../gird/Col';
 
-interface IconButtonProps {
+interface IconButtonProps extends ColProps {
+  className?: string;
+  style?: React.CSSProperties;
   children?: React.ReactNode;
 }
 
 export const IconButton = forwardRef(
   (props: IconButtonProps, ref: React.RefObject<HTMLDivElement>) => {
-    const { children } = props;
+    const { className, children, ...rest } = props;
     const prefixCls = usePrefixCls('appbar');
+    const classes = clsx(`${prefixCls}__icon`, className);
 
     return (
-      <Col md={0} ref={ref} className={`${prefixCls}__icon`}>
-        <Button shape="icon">{children}</Button>
+      <Col ref={ref} className={classes} {...rest}>
+        <Button shape="icon" style={{ color: '#fff' }}>
+          {children}
+        </Button>
       </Col>
     );
   },
 );
 
-interface TitleProps {
+interface TypographyProps {
+  className?: string;
+  style?: React.CSSProperties;
   children?: React.ReactNode;
 }
 
-export const Typography = forwardRef((props: TitleProps, ref: React.RefObject<HTMLDivElement>) => {
-  const { children } = props;
-  const prefixCls = usePrefixCls('appbar');
+export const Typography = forwardRef(
+  (props: TypographyProps, ref: React.RefObject<HTMLDivElement>) => {
+    const { className, children, ...rest } = props;
+    const prefixCls = usePrefixCls('appbar');
+    const classes = clsx(`${prefixCls}__typography`, className);
 
-  return (
-    <div ref={ref} className={`${prefixCls}__typography`}>
-      {children}
-    </div>
-  );
-});
+    return (
+      <div ref={ref} className={classes} {...rest}>
+        {children}
+      </div>
+    );
+  },
+);
 
 interface ToolBarProps {
+  className?: string;
+  style?: React.CSSProperties;
   children?: React.ReactNode;
 }
 
 export const ToolBar = forwardRef((props: ToolBarProps, ref: React.RefObject<HTMLDivElement>) => {
-  const { children } = props;
+  const { className, children, ...rest } = props;
   const prefixCls = usePrefixCls('appbar');
+  const classes = clsx(`${prefixCls}__toolBar`, className);
 
   return (
-    <div ref={ref} className={`${prefixCls}__toolBar`}>
+    <div ref={ref} className={classes} {...rest}>
       {children}
     </div>
   );

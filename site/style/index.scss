@@ -26,11 +26,13 @@ html {
 }
 
 .demo {
-  // &-header {
-  //   // position: fixed;
-  //   // top: 0;
-  //   // left: 0;
-  // }
+  &-layout-appBar {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 101;
+  }
   &-page {
     & > div {
       width: 90%;
@@ -196,6 +198,11 @@ html {
           padding-left: 55px;
         }
       }
+    }
+  }
+  &-appBar {
+    .code-view-toolbar {
+      margin-top: 12px;
     }
   }
 }

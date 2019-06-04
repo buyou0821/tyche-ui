@@ -2,11 +2,7 @@
 @import '../../theme/default.scss';
 
 @include b(appbar) {
-  position: fixed;
-  top: 0;
-  right: 0;
-  left: 0;
-  z-index: 101;
+  line-height: 64px;
   display: flex;
   padding: 0 24px;
   color: $--color-white;
