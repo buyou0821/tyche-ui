@@ -176,6 +176,7 @@ html {
     padding-left: 255px;
   }
   &-sider {
+    overflow: hidden;
     &__title {
       line-height: 36px;
     }

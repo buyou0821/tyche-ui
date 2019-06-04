@@ -1,7 +1,7 @@
 import React from 'react';
 import { CSSTransition } from 'react-transition-group';
 import { usePrefixCls } from '../_util/hooks';
-import { TIMEOUT } from './Modal';
+import { duration } from '../_util/transition';
 
 export interface ModalWrapperProps {
   visible?: boolean;
@@ -40,7 +40,15 @@ const ModalWrapper: React.FunctionComponent<ModalWrapperProps> = props => {
   return (
     <div className={`${prefixCls}__root`}>
       {mask && (
-        <CSSTransition in={visible} appear classNames={`${prefixCls}__mask`} timeout={TIMEOUT}>
+        <CSSTransition
+          in={visible}
+          appear
+          classNames={`${prefixCls}__mask`}
+          timeout={{
+            enter: duration.enteringScreen,
+            exit: duration.leavingScreen,
+          }}
+        >
           <div style={maskStyleObj} className={`${prefixCls}__mask`} />
         </CSSTransition>
       )}

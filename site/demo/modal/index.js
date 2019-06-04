@@ -8,6 +8,7 @@ export default generatePage({
     'footer',
     'confirm',
     'confirm-props',
+    'promise',
     'confirm-destroyAll',
     'confirm-update',
     '_props',
