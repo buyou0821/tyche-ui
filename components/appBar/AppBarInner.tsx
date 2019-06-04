@@ -18,7 +18,7 @@ export const IconButton = forwardRef(
 
     return (
       <Col ref={ref} className={classes} {...rest}>
-        <Button shape="icon" style={{ color: '#fff' }}>
+        <Button center shape="icon" className={`${prefixCls}__icon-btn`}>
           {children}
         </Button>
       </Col>

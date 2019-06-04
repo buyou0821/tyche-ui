@@ -37,6 +37,11 @@
     margin-right: 8px;
     margin-left: -10px;
     overflow: hidden;
+    &-btn {
+      width: 42px;
+      height: 42px;
+      color: $--color-white;
+    }
   }
 
   @include e(typography) {
