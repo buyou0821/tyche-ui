@@ -3844,6 +3844,9 @@ html {
 .demo-grid .row-align .ty-row-flex {
   height: 70px; }
 
+.demo-layout .ty-layout {
+  overflow: hidden; }
+
 .demo-layout section + section {
   margin-top: 48px; }
 
@@ -3888,9 +3891,9 @@ html {
     line-height: 36px; }
   .demo-sider__nav {
     padding-top: 10px; }
-    .demo-sider__nav > a {
+    .demo-sider__nav a {
       display: block; }
-      .demo-sider__nav > a.active .ty-btn__wrapper {
+      .demo-sider__nav a.active .ty-btn__wrapper {
         color: #2196f3; }
     .demo-sider__nav button {
       width: 100%;
