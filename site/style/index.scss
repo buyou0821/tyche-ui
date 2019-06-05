@@ -138,6 +138,9 @@ html {
     }
   }
   &-layout {
+    .ty-layout {
+      overflow: hidden;
+    }
     section + section {
       margin-top: 48px;
     }
@@ -187,7 +190,7 @@ html {
     }
     &__nav {
       padding-top: 10px;
-      & > a {
+      a {
         display: block;
         &.active .ty-btn__wrapper {
           color: $--color-primary;

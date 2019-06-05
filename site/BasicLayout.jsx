@@ -4,16 +4,7 @@ import { Layout, Button, Row, Col } from 'components';
 import { Route, NavLink } from 'react-router-dom';
 import AppBarPage from './pages/AppBar';
 import SiderNav from './pages/SiderNav';
-import ButtonsMD from './demo/buttons';
-import IconMD from './demo/icon';
-import PortalMD from './demo/portal';
-import ModalMD from './demo/modal';
-import LayoutMD from './demo/layout';
-import GridMD from './demo/grid';
-import AppBarMD from './demo/appBar';
-import DrawerMD from './demo/drawer';
-// import IconPage from './pages/IconMD';
-// import Portal from './pages/Portal';
+import { appBar, buttons, drawer, grid, icon, layout, modal, portal } from './demo';
 import ModalPage from './pages/Modal';
 import LayoutPage from './pages/Layout';
 import GridPage from './pages/Grid';
@@ -46,14 +37,14 @@ const BasicLayout = () => {
           <SiderNav />
         </Sider>
         <Content className={hasSiderClasses}>
-          <Route path="/icon" component={IconMD} />
-          <Route path="/buttons" component={ButtonsMD} />
-          <Route path="/portal" component={PortalMD} />
-          <Route path="/modal" component={ModalMD} />
-          <Route path="/layout" component={LayoutMD} />
-          <Route path="/grid" component={GridMD} />
-          <Route path="/appbar" component={AppBarMD} />
-          <Route path="/drawer" component={DrawerMD} />
+          <Route path="/icon" component={icon} />
+          <Route path="/buttons" component={buttons} />
+          <Route path="/portal" component={portal} />
+          <Route path="/modal" component={modal} />
+          <Route path="/layout" component={layout} />
+          <Route path="/grid" component={grid} />
+          <Route path="/appbar" component={appBar} />
+          <Route path="/drawer" component={drawer} />
         </Content>
       </Layout>
     </Layout>

@@ -66,18 +66,18 @@ export default (props: SiderNavProps) => {
   return (
     <div className="demo-sider__nav">
       {navRoutes.map(item => (
-        <>
+        <div key={item.title}>
           <Row className="demo-sider__title">
             <Col offset={3}>{item.title}</Col>
           </Row>
           {item.children.map(child => (
-            <NavLink to={`/${child.to}`}>
+            <NavLink to={`/${child.to}`} key={child.to}>
               <Button shape="text" onClick={linkClick}>
                 {child.text}
               </Button>
             </NavLink>
           ))}
-        </>
+        </div>
       ))}
     </div>
   );
