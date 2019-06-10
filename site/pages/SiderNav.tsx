@@ -55,6 +55,15 @@ const navRoutes = [
       },
     ],
   },
+  {
+    title: '表单',
+    children: [
+      {
+        to: 'input',
+        text: 'Input 输入框',
+      },
+    ],
+  },
 ];
 
 interface SiderNavProps {

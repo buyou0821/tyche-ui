@@ -9,6 +9,7 @@ import ModalPage from './pages/Modal';
 import LayoutPage from './pages/Layout';
 import GridPage from './pages/Grid';
 import DrawerPage from './pages/Drawer';
+import InputPage from './pages/Input';
 
 const { Header, Sider, Content } = Layout;
 
@@ -45,6 +46,7 @@ const BasicLayout = () => {
           <Route path="/grid" component={grid} />
           <Route path="/appbar" component={appBar} />
           <Route path="/drawer" component={drawer} />
+          <Route path="/input" component={InputPage} />
         </Content>
       </Layout>
     </Layout>
