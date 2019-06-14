@@ -101,6 +101,8 @@
     "yarn": "^1.13.0"
   },
   "dependencies": {
+    "@types/autosize": "^3.0.6",
+    "autosize": "^4.0.2",
     "clsx": "^1.0.4",
     "enquire.js": "^2.1.6",
     "react": "^16.8.5",

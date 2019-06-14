@@ -1,4 +1,6 @@
 node_modules/
+.idea
+*.iml
 /dist
 /coverage
 /test-results
@@ -10,3 +12,4 @@ npm-debug.log
 package-lock.json
 yarn-error.log
 *.swp
+yarn.lock

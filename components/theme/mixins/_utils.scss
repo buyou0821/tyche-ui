@@ -7,8 +7,15 @@
       display: table;
       content: '';
     }
+
     #{$selector}::after {
       clear: both;
     }
   }
+}
+
+%ellipsis {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }

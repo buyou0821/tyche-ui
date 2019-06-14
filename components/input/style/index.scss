@@ -53,6 +53,9 @@
     @include e(icon) {
       color: $--color-danger;
     }
+    @include e(length) {
+      color: $--color-danger;
+    }
   }
 
   @include m(disabled) {
@@ -80,12 +83,10 @@
     position: absolute;
     top: 6px;
     max-width: 90%;
-    overflow: hidden;
-    white-space: nowrap;
-    text-overflow: ellipsis;
     transform-origin: top left;
     transition: 0.3s cubic-bezier(0.25, 0.8, 0.5, 1);
     pointer-events: none;
+    @extend %ellipsis;
     @include m(focused) {
       max-width: 133%;
       transform: translateY(-18px) scale(0.75);
@@ -119,9 +120,26 @@
     }
   }
 
-  @include e(errorMessage) {
-    color: $--color-danger;
-    font-size: 12px;
+  @include e(info) {
+    display: flex;
+    margin-top: 4px;
+    @include e(errorMessage) {
+      flex: 1;
+      color: $--color-danger;
+      font-size: 12px;
+      @extend %ellipsis;
+    }
+    @include e(length) {
+      color: $--color-black;
+      font-size: 12px;
+      line-height: 14px;
+    }
+  }
+
+  @include e(textarea) {
+    height: 54px;
+    padding-top: 6px;
+    resize: none;
   }
 
   display: block;
