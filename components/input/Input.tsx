@@ -9,6 +9,7 @@ export type InputType = 'text' | 'number' | 'password' | 'textarea';
 
 interface InputPorps extends Omit<React.InputHTMLAttributes<HTMLInputElement>, 'prefix'> {
   className?: string;
+  autoFocus?: boolean;
   errorMessage?: string;
   label?: string;
   labelFloat?: boolean;
@@ -38,11 +39,18 @@ const Input = forwardRef((props: InputPorps, ref: React.RefObject<HTMLDivElement
     value = '',
     showCount,
     autoSize,
+    autoFocus,
   } = props;
   const inputRef = useRef<any>(null);
   const [focused, setFocused] = useState<boolean>(false);
   const [isFloat, setIsFloat] = useState<boolean>(false);
   const isTextArea = type.toLowerCase() === 'textarea';
+
+  useLayoutEffect(() => {
+    if (autoFocus) {
+      inputRef.current.focus();
+    }
+  }, [autoFocus]);
 
   const handleFocus = (event: React.FocusEvent<any>) => {
     setFocused(true);
@@ -127,7 +135,7 @@ const Input = forwardRef((props: InputPorps, ref: React.RefObject<HTMLDivElement
   } else {
     delete inputProps.placeholder;
   }
-  const count = (value as string).length;
+  const count = `${value}`.length;
 
   const TextField = isTextArea ? (
     <Textarea

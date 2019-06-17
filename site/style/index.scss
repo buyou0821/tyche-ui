@@ -32,6 +32,13 @@ html {
     left: 0;
     z-index: 101;
   }
+  &-appBar,
+  &-input,
+  &-layout {
+    .code-view-toolbar {
+      margin-top: 12px;
+    }
+  }
   &-page {
     & > div {
       width: 90%;
@@ -163,9 +170,6 @@ html {
         background-color: $--color-primary;
       }
     }
-    .code-view-toolbar {
-      margin-top: 12px;
-    }
     &-logo {
       animation: rotation 30s linear infinite;
     }
@@ -205,16 +209,16 @@ html {
       }
     }
   }
-  &-appBar {
-    .code-view-toolbar {
-      margin-top: 12px;
-    }
-  }
   &-drawer {
     button {
       margin-right: 24px;
       margin-bottom: 24px;
       vertical-align: middle;
+    }
+  }
+  &-input {
+    .ty-input__wrapper {
+      // min-width: 200px;
     }
   }
 }
