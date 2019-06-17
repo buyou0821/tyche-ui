@@ -9,3 +9,6 @@ npm-debug.log
 package-lock.json
 yarn-error.log
 *.swp
+/.idea
+*.iml
+yarn.lock
