@@ -1,4 +1,5 @@
 module.exports = {
+  preset: 'ts-jest/presets/js-with-babel',
   verbose: true,
   // collectCoverage: true,
   coverageDirectory: 'coverage',
@@ -12,6 +13,7 @@ module.exports = {
     '!components/*/__tests__/**/type.tsx',
     '!components/**/*/interface.{ts,tsx}',
   ],
+  transformIgnorePatterns: ['./node_modules/(?!(lodash-es|fecha)/)'],
   moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx', 'json', 'md'],
   setupFiles: ['./tests/setup.js'],
   globals: {
