@@ -12,3 +12,4 @@ yarn-error.log
 /.idea
 *.iml
 yarn.lock
+/.history
