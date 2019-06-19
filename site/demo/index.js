@@ -7,3 +7,4 @@ export { default as layout } from './layout';
 export { default as modal } from './modal';
 export { default as portal } from './portal';
 export { default as input } from './input';
+export { default as radio } from './radio';

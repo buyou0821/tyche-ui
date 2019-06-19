@@ -4,7 +4,7 @@ import { Layout, Button, Row, Col } from 'components';
 import { Route, NavLink } from 'react-router-dom';
 import AppBarPage from './pages/AppBar';
 import SiderNav from './pages/SiderNav';
-import { appBar, buttons, drawer, grid, icon, layout, modal, portal, input } from './demo';
+import { appBar, buttons, drawer, grid, icon, layout, modal, portal, input, radio } from './demo';
 import ModalPage from './pages/Modal';
 import LayoutPage from './pages/Layout';
 import GridPage from './pages/Grid';
@@ -48,7 +48,7 @@ const BasicLayout = () => {
           <Route path="/appbar" component={appBar} />
           <Route path="/drawer" component={drawer} />
           <Route path="/input" component={input} />
-          <Route path="/radio" component={RadioPage} />
+          <Route path="/radio" component={radio} />
         </Content>
       </Layout>
     </Layout>

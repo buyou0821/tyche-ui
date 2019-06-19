@@ -36,6 +36,7 @@ const RadioGroup = forwardRef((props: RadioGroupProps, ref: React.RefObject<HTML
       color,
       disabled,
       onRadioChange: onChange,
+      hasRadioGroup: true,
     }),
     [],
   );

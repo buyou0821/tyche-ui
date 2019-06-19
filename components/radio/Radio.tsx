@@ -38,8 +38,8 @@ const Radio = forwardRef((props: RadioProps, ref: React.RefObject<HTMLLabelEleme
   const [isChecked, setIsChecked] = useState<boolean>(checked);
 
   useLayoutEffect(() => {
-    const { onRadioChange, isValueEqual } = context;
-    if (onRadioChange) {
+    const { isValueEqual, hasRadioGroup } = context;
+    if (hasRadioGroup) {
       setIsChecked(isValueEqual(value, context.value));
     } else {
       setIsChecked(checked);
@@ -50,9 +50,7 @@ const Radio = forwardRef((props: RadioProps, ref: React.RefObject<HTMLLabelEleme
     const { disabled } = props;
     const result: RadioProps = {};
 
-    if (context.onRadioChange) {
-      result.disabled = context.disabled || disabled;
-    }
+    result.disabled = context.disabled || disabled;
 
     // props fisrt
     ['color'].reduce((prev, key) => {

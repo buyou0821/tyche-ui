@@ -8,6 +8,7 @@ export interface RadioContext {
   color: RadioColor;
   isValueEqual: (a: unknown, b: unknown) => boolean;
   disabled: boolean;
+  hasRadioGroup: boolean;
 }
 
 const RadioContext = createContext<RadioContext>({
@@ -16,6 +17,7 @@ const RadioContext = createContext<RadioContext>({
   onRadioChange: null,
   color: 'primary',
   disabled: false,
+  hasRadioGroup: false,
 });
 
 export default RadioContext;
