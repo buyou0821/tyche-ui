@@ -9,3 +9,4 @@ export { default as Col } from './col';
 export { default as AppBar } from './appBar';
 export { default as Drawer } from './drawer';
 export { default as Input } from './input';
+export { default as Radio } from './radio';

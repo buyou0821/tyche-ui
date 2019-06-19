@@ -13,3 +13,4 @@ package-lock.json
 yarn-error.log
 *.swp
 yarn.lock
+.history

@@ -18,4 +18,12 @@ $--color-gray-heavy: #8c8c8c;
 
 $--button-disable-background: rgba(0, 0, 0, 0.12);
 $--button-loading-background: #d6d8db;
-$--button-disable-color: rgba(0, 0, 0, 0.26);
+$--color-disabled: rgba(0, 0, 0, 0.26);
+
+$--colors: (
+  'primary': $--color-primary,
+  'secondary': $--color-secondary,
+  'success': $--color-success,
+  'warning': $--color-warning,
+  'danger': $--color-danger
+);

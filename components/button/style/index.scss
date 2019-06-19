@@ -53,7 +53,7 @@
   cursor: pointer;
 
   @include when(disabled) {
-    color: $--button-disable-color;
+    color: $--color-disabled;
     box-shadow: none;
     cursor: not-allowed;
   }
@@ -258,6 +258,7 @@
     width: 40px;
     height: 40px;
     padding: 0;
+    overflow: hidden;
     background-color: transparent;
     border-radius: 50%;
     @media (hover: none) {

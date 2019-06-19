@@ -10,6 +10,7 @@ import LayoutPage from './pages/Layout';
 import GridPage from './pages/Grid';
 import DrawerPage from './pages/Drawer';
 import InputPage from './pages/Input';
+import RadioPage from './pages/Radio';
 
 const { Header, Sider, Content } = Layout;
 
@@ -47,6 +48,7 @@ const BasicLayout = () => {
           <Route path="/appbar" component={appBar} />
           <Route path="/drawer" component={drawer} />
           <Route path="/input" component={input} />
+          <Route path="/radio" component={RadioPage} />
         </Content>
       </Layout>
     </Layout>

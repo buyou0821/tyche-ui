@@ -102,9 +102,11 @@
   },
   "dependencies": {
     "@types/autosize": "^3.0.6",
+    "@types/lodash-es": "^4.17.3",
     "autosize": "^4.0.2",
     "clsx": "^1.0.4",
     "enquire.js": "^2.1.6",
+    "lodash-es": "^4.17.11",
     "react": "^16.8.5",
     "react-dom": "^16.8.5"
   },

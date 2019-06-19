@@ -62,6 +62,10 @@ const navRoutes = [
         to: 'input',
         text: 'Input 输入框',
       },
+      {
+        to: 'radio',
+        text: 'Radio 单选框',
+      },
     ],
   },
 ];
