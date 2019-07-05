@@ -5,7 +5,7 @@ const markdownRenderer = require('react-markdown-reader').renderer;
 
 module.exports = {
   entry: {
-    index: './components/index.ts',
+    index: './components/index',
   },
   resolve: {
     extensions: ['.ts', '.tsx', '.js', '.jsx'],

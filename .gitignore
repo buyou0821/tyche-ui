@@ -14,3 +14,5 @@ yarn-error.log
 *.swp
 yarn.lock
 .history
+es
+lib
