@@ -38,12 +38,12 @@ const Basic: React.FunctionComponent<BasicOrderProps> = props => {
 };
 
 interface LayoutConsumerProps {
-  addSider: (id: string) => void;
-  removeSider: (id: string) => void;
+  addSider: (id?: string) => void;
+  removeSider: (id?: string) => void;
 }
 export const LayoutContext: Context<LayoutConsumerProps> = createContext({
-  addSider: (id: string) => {},
-  removeSider: (id: string) => {},
+  addSider: () => {},
+  removeSider: () => {},
 });
 
 const BasicLayout: React.FunctionComponent<BasicOrderProps> = props => {

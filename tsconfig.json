@@ -5,10 +5,8 @@
     "paths": {
       "components/*": ["components/"]
     },
-    "outDir": "dist",
-    "module": "es6",
     "target": "es5",
-    "lib": ["es6", "dom"],
+    "lib": ["dom", "es2017"],
     "sourceMap": true,
     "jsx": "react",
     "moduleResolution": "node",
