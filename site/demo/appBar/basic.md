@@ -8,7 +8,7 @@ const { IconButton, Typography, ToolBar } = AppBar;
 const appBar = (
   <AppBar color="primary">
     <IconButton>
-      <Icon style={{ fontSize: 22 }} type="dehaze" />
+      <Icon style={{ fontSize: 22 }} type="list" />
     </IconButton>
     <Typography>Title</Typography>
     <ToolBar>

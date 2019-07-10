@@ -1,9 +1,9 @@
-import React from 'react';
+import React, { useLayoutEffect, forwardRef } from 'react';
 import clsx from 'clsx';
 import { usePrefixCls } from '../_util/hooks';
 import { svgBaseProps } from './utils';
 import createFromIconfont from './IconFont';
-import './importSVG';
+import loadSvgSprite from './loadSvgSprite';
 import './style';
 
 export interface IconProps extends React.DOMAttributes<HTMLElement> {
@@ -26,11 +26,10 @@ interface CustomIconComponentProps {
   style?: React.CSSProperties;
 }
 
-interface IconComponent<p> extends React.FunctionComponent<p> {
+interface IconComponent<p> extends React.ForwardRefExoticComponent<p> {
   createFromIconfont: typeof createFromIconfont;
 }
-
-const Icon: IconComponent<IconProps> = props => {
+const Icon = forwardRef((props: IconProps, ref: React.RefObject<HTMLElement>) => {
   const { className, children, material, type, spin, rotate, style, left, right, ...rest } = props;
   const prefixCls = usePrefixCls('icon');
 
@@ -62,6 +61,13 @@ const Icon: IconComponent<IconProps> = props => {
 
   let innerNode = null;
 
+  useLayoutEffect(() => {
+    if (typeof type !== 'string') {
+      return;
+    }
+    loadSvgSprite();
+  }, [type]);
+
   // defalut icons
   if (typeof type === 'string') {
     innerNode = (
@@ -86,11 +92,11 @@ const Icon: IconComponent<IconProps> = props => {
   }
 
   return (
-    <i className={classString} {...styleProps} {...rest}>
+    <i ref={ref} className={classString} {...styleProps} {...rest}>
       {innerNode}
     </i>
   );
-};
+}) as IconComponent<IconProps>;
 
 Icon.createFromIconfont = createFromIconfont;
 

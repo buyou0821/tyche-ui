@@ -9,9 +9,8 @@ const instance = (
     <Icon type="clear" />
     <Icon type="code-open" />
     <Icon type="code-close" />
-    <Icon type="dehaze" />
+    <Icon type="list" />
     <Icon type="github" />
-    <Icon type="tyche-ui" />
   </div>
 );
 ReactDOM.render(instance);

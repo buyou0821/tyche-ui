@@ -17,14 +17,10 @@ export default () => {
   return (
     <AppBar color="primary" className="demo-layout-appBar">
       <IconButton md={0} ButtonProps={{ onClick: handleIconButtonClick }}>
-        <Icon style={{ color: '#fff', fontSize: 22 }} type="dehaze" />
+        <Icon style={{ color: '#fff', fontSize: 22 }} type="list" />
       </IconButton>
       <Typography>
-        <Icon
-          className="demo-layout-logo"
-          type="tycheUI"
-          style={{ fontSize: 32, marginRight: 12 }}
-        />
+        <i className="demo-layout-logo" style={{ fontSize: 32, marginRight: 12 }} />
         Tyche UI
       </Typography>
       <ToolBar>
@@ -32,11 +28,7 @@ export default () => {
           <Icon style={{ color: '#fff', fontSize: 24 }} type="github" />
         </Button>
       </ToolBar>
-      <Drawer
-        style={{ overflow: 'hidden' }}
-        visible={drawerVisible}
-        onClose={closeDrawer}
-      >
+      <Drawer style={{ overflow: 'hidden' }} visible={drawerVisible} onClose={closeDrawer}>
         <SiderNav linkClick={closeDrawer} />
       </Drawer>
     </AppBar>
