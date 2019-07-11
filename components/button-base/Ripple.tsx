@@ -3,7 +3,6 @@ import { Transition } from 'react-transition-group';
 import clsx from 'clsx';
 import { usePrefixCls } from '../_util/hooks';
 import { RippleProps } from './TouchRipple';
-import './style';
 
 const DURATION = 500;
 

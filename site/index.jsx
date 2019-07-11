@@ -5,6 +5,11 @@ import BasicLayout from './BasicLayout';
 
 import './style';
 
+const req = require.context('../components', true, /^\.\/[^_][\w-]+\/style\/index\.tsx?$/);
+req.keys().forEach(mod => {
+  req(mod);
+});
+
 const ScrollToTopComp = ({ children, location: { pathname } }) => {
   React.useLayoutEffect(() => {
     window.scrollTo(0, 0);

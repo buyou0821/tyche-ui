@@ -2,7 +2,6 @@ import React, { useState, memo } from 'react';
 import { TransitionGroup } from 'react-transition-group';
 import { usePrefixCls } from '../_util/hooks';
 import Ripple from './Ripple';
-import './style';
 
 interface TouchRippleProps {
   center?: boolean;

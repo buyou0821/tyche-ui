@@ -4,7 +4,6 @@ import { usePrefixCls } from '../_util/hooks';
 import { Omit, tuple } from '../_util/type';
 import TouchRipple from './TouchRipple';
 import Loading from './Loading';
-import './style';
 
 const ButtonHTMLTypes = tuple('submit', 'button', 'reset');
 export type ButtonHTMLType = (typeof ButtonHTMLTypes)[number];

@@ -1,6 +1,5 @@
 import Modal, { ModalFuncProps } from './Modal';
 import confirm, { destroyFns } from './Confirm';
-import './style';
 
 Modal.confirm = (props: ModalFuncProps) => {
   const config = { ...props };

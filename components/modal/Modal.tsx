@@ -118,7 +118,7 @@ class Modal extends Component<ModalProps, ModalState> {
       maskStyle,
       children,
       blockPageScroll,
-      ...reset
+      ...rest
     } = this.props;
     const { onCancel } = this.props;
     const { exciting } = this.state;
@@ -155,7 +155,7 @@ class Modal extends Component<ModalProps, ModalState> {
                 classNames={`${getPrefixCls('modal')}--zoom`}
                 onExited={this.onExited}
               >
-                <ModalInner mousePosition={this.mousePosition} {...reset}>
+                <ModalInner mousePosition={this.mousePosition} {...rest}>
                   {children}
                 </ModalInner>
               </CSSTransition>

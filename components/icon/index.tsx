@@ -4,7 +4,6 @@ import { usePrefixCls } from '../_util/hooks';
 import { svgBaseProps } from './utils';
 import createFromIconfont from './IconFont';
 import loadSvgSprite from './loadSvgSprite';
-import './style';
 
 export interface IconProps extends React.DOMAttributes<HTMLElement> {
   name?: string;
