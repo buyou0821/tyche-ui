@@ -14,7 +14,6 @@ const appBar = (
     <ToolBar>
       <Button
         shape="text"
-        color="default"
         style={{ height: '100%', color: '#fff', marginRight: '-16px' }}
       >
         Login

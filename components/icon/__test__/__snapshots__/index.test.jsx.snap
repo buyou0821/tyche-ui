@@ -27,7 +27,7 @@ exports[`Icon should support iconfont 1`] = `
 `;
 
 exports[`Icon should support loading 1`] = `
-<Icon
+<ForwardRef
   type="loading"
 >
   <i
@@ -46,5 +46,5 @@ exports[`Icon should support loading 1`] = `
       />
     </svg>
   </i>
-</Icon>
+</ForwardRef>
 `;

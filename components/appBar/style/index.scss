@@ -4,30 +4,25 @@
 @include b(appbar) {
   display: flex;
   padding: 0 24px;
-  color: $--color-white;
   line-height: 64px;
   box-shadow: 0 3px 5px -1px rgba(0, 0, 0, 0.2), 0 6px 10px 0 rgba(0, 0, 0, 0.14),
-    0 1px 18px 0 rgba(0, 0, 0, 0.12);
+    0 1px 18px 0 #0000001f;
+
+  @each $key, $color in $--colors {
+    @include m($key) {
+      color: $--color-white;
+      background-color: $color;
+      @include e(icon-btn) {
+        color: $--color-white;
+      }
+    }
+  }
   @include m(default) {
+    color: $--color-black;
     background-color: $--color-white-heavy;
-  }
-  @include m(primary) {
-    background-color: $--color-primary;
-  }
-  @include m(primary-dark) {
-    background-color: $--color-primary-dark;
-  }
-  @include m(secondary) {
-    background-color: $--color-secondary;
-  }
-  @include m(success) {
-    background-color: $--color-success;
-  }
-  @include m(warning) {
-    background-color: $--color-warning;
-  }
-  @include m(danger) {
-    background-color: $--color-danger;
+    @include e('icon-btn') {
+      color: $--color-black;
+    }
   }
 
   @include e(icon) {
@@ -37,11 +32,6 @@
     margin-right: 8px;
     margin-left: -10px;
     overflow: hidden;
-    &-btn {
-      width: 42px;
-      height: 42px;
-      color: $--color-white;
-    }
   }
 
   @include e(typography) {
