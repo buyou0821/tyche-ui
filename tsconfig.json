@@ -20,12 +20,11 @@
     "allowSyntheticDefaultImports": true,
     "suppressImplicitAnyIndexErrors": true
   },
-  "include": ["site/**/*", "examples/**/*", "types/**/*", "components/**/*", "test/**/*"],
+  "include": ["site/**/*",  "scripts/**/*", "examples/**/*", "types/**/*", "components/**/*", "test/**/*"],
   "exclude": [
     "node_modules",
     "build",
     "dist",
-    "scripts",
     "acceptance-tests",
     "webpack",
     "jest",

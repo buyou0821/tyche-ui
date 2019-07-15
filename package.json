@@ -6,17 +6,17 @@
   "module": "es/index.js",
   "scripts": {
     "test": "cross-env NODE_ENV=test jest --config=jest.config.js --runInBand --no-cache",
-    "doc": "cross-env NODE_ENV=production webpack --config site/site.config.prod.js",
-    "dev": "cross-env NODE_ENV=development webpack-dev-server --config site/site.config.js",
-    "build": "cross-env NODE_ENV=production webpack --config webpack.config.prod.js",
+    "dev": "cross-env NODE_ENV=development webpack-dev-server --config scripts/config/webpack.site.dev.ts",
+    "docs": "cross-env NODE_ENV=production webpack --config scripts/config/webpack.site.docs.ts",
+    "dist": "cross-env NODE_ENV=production webpack --config scripts/config/webpack.dist.ts",
+    "svg": "ts-node scripts/template/svg.ts && yarn lint:fix",
+    "watch:svg": "nodemon --exec ts-node -- scripts/template/svg.ts",
     "prettier": "prettier --write --config .prettierrc 'components/**/*.{ts,tsx,js,jsx}'",
     "lint-fix:es": "eslint --fix --ext .js,.tsx components && npm run lint:style",
     "lint:ts": "tslint --project tsconfig.json 'components/**/*.{ts,tsx}'",
     "lint:style": "prettier-stylelint --write -q 'components/**/*.{css,scss,less}'",
     "lint:fix": "npm run prettier && tslint --fix --project tsconfig.json 'components/**/*.{ts,tsx}' && npm run lint:style",
-    "ci": "cross-env NODE_ENV=test JEST_JUNIT_OUTPUT=./test-results/jest/results.xml jest --no-cache --config=.jest.ci.js",
-    "svg": "ts-node scripts/template/svg.ts && yarn lint:fix",
-    "watch:svg": "nodemon --exec ts-node -- scripts/template/svg.ts"
+    "ci": "cross-env NODE_ENV=test JEST_JUNIT_OUTPUT=./test-results/jest/results.xml jest --no-cache --config=.jest.ci.js"
   },
   "repository": {
     "type": "git",
@@ -41,13 +41,18 @@
     "@babel/preset-env": "^7.4.2",
     "@babel/preset-react": "^7.0.0",
     "@types/classnames": "^2.2.7",
+    "@types/html-webpack-plugin": "^3.2.1",
     "@types/jest": "^24.0.11",
+    "@types/mini-css-extract-plugin": "^0.2.1",
     "@types/react": "^16.8.8",
     "@types/react-dom": "^16.8.3",
     "@types/react-router-dom": "^4.3.1",
     "@types/react-test-renderer": "^16.8.1",
     "@types/react-transition-group": "^2.8.0",
     "@types/svgo": "^1.2.0",
+    "@types/webpack": "^4.4.35",
+    "@types/webpack-dev-server": "^3.1.7",
+    "@types/webpack-merge": "^4.1.5",
     "add": "^2.0.6",
     "awesome-typescript-loader": "^5.2.1",
     "babel-eslint": "^10.0.1",
@@ -77,12 +82,14 @@
     "markdown-loader": "2.0.0",
     "mini-css-extract-plugin": "^0.5.0",
     "node-sass": "^4.11.0",
+    "postcss-loader": "^3.0.0",
     "prettier": "^1.16.4",
     "prettier-stylelint": "^0.4.2",
     "react-markdown-reader": "^1.1.0",
     "react-router-dom": "^5.0.0",
     "react-test-renderer": "^16.8.5",
     "react-transition-group": "^2.9.0",
+    "rucksack-css": "^1.0.2",
     "sass-loader": "^7.1.0",
     "style-loader": "^0.23.1",
     "stylelint-config-prettier": "^5.0.0",
@@ -116,7 +123,9 @@
     "react-dom": "^16.8.5"
   },
   "files": [
-    "dist"
+    "dist",
+    "lib",
+    "es"
   ],
   "activationEvents": [
     "workspaceContains:node_modules/.bin/jest",

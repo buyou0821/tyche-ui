@@ -1,19 +1,10 @@
-const path = require('path');
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+import webpack from 'webpack';
+import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 const markdownRenderer = require('react-markdown-reader').renderer;
-// const CleanWebpackPlugin = require('clean-webpack-plugin');
 
-module.exports = {
-  entry: {
-    index: './components/index',
-  },
+const config: webpack.Configuration = {
   resolve: {
     extensions: ['.ts', '.tsx', '.js', '.jsx'],
-  },
-  output: {
-    path: path.resolve(__dirname, 'dist'),
-    library: 'tyche-ui',
-    libraryTarget: 'umd',
   },
   module: {
     rules: [
@@ -21,14 +12,14 @@ module.exports = {
         test: /\.tsx?$/,
         loader: 'awesome-typescript-loader',
       },
-      {
-        test: /\.scss$/,
-        use: [
-          process.env.NODE_ENV !== 'production' ? 'style-loader' : MiniCssExtractPlugin.loader,
-          'css-loader',
-          'sass-loader',
-        ],
-      },
+      // {
+      //   test: /\.scss$/,
+      //   use: [
+      //     process.env.NODE_ENV !== 'production' ? 'style-loader' : MiniCssExtractPlugin.loader,
+      //     'css-loader',
+      //     'sass-loader',
+      //   ],
+      // },
       {
         test: /\.svg$/,
         loader: 'svg-sprite-loader',
@@ -71,8 +62,10 @@ module.exports = {
   plugins: [
     // new CleanWebpackPlugin(),
     new MiniCssExtractPlugin({
-      filename: '[name].css',
+      filename: 'tyche.css',
       chunkFilename: '[id].css',
     }),
   ],
 };
+
+export default config;
