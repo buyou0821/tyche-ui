@@ -20,13 +20,13 @@ jobs:
           root: .
           paths:
             - node_modules
-  build:
+  dist:
     <<: *defaults
     steps:
       - checkout
       - attach_workspace:
           at: .
-      - run: yarn build
+      - run: yarn dist
       - persist_to_workspace:
           root: .
           paths:
@@ -34,6 +34,18 @@ jobs:
             - package.json
             - README.md
             - LICENSE
+  compile: 
+    <<: *defaults
+    steps:
+      - checkout
+      - attach_workspace:
+          at: .
+      - run: yarn compile
+      - persist_to_workspace:
+          root: .
+          paths:
+            - lib
+            - es
   test:
     <<: *defaults
     steps:
@@ -57,17 +69,22 @@ workflows:
   build_accept_deploy:
     jobs:
       - prepare
-      - build:
-          requires:
-            - test
       - test:
           requires:
             - prepare
-      - publish:
+      - dist:
           requires:
-            - build
+            - test
           filters:
             branches:
               only: deploy
-            tags:
-              only: /^v[0-9]+(\.[0-9]+)*$/
+      - compile:
+          requires:
+            - test
+          filters:
+            branches:
+              only: deploy
+      - publish:
+          requires:
+            - dist
+            - compile
