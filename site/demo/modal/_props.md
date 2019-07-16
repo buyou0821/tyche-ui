@@ -15,6 +15,7 @@
 | onOk | 点击确定回调 | function(e) | - |
 | okShape | 确定按钮形状，可选值为 `contained`、 `text` 、 `outlined` 、 `circle`、 `round`、 `icon` 或者不设 | string | Modal默认值`text`，Comfirm默认值`outlined` |
 | okText | 确定按钮文字 | string/ReactNode | 确定 |
+| maskClosable | 点击遮罩时是否触发onCancel | boolean | Modal默认值`true`，Comfirm默认值`false` |
 | maskStyle |	遮罩样式 | object | {} |
 | style |	可用于设置浮层的样式，调整浮层位置等 | object | {} |
 | title |	标题 | string/ReactNode | - |

@@ -51,6 +51,7 @@
   border-radius: 2px;
   outline: none;
   cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
 
   @include when(disabled) {
     color: $--color-disabled;

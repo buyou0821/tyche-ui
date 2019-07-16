@@ -89,7 +89,6 @@
     "react-markdown-reader": "^1.1.0",
     "react-router-dom": "^5.0.0",
     "react-test-renderer": "^16.8.5",
-    "react-transition-group": "^2.9.0",
     "rucksack-css": "^1.0.2",
     "sass-loader": "^7.1.0",
     "style-loader": "^0.23.1",
@@ -122,7 +121,8 @@
     "enquire.js": "^2.1.6",
     "lodash-es": "^4.17.11",
     "react": "^16.8.5",
-    "react-dom": "^16.8.5"
+    "react-dom": "^16.8.5",
+    "react-transition-group": "^2.9.0"
   },
   "files": [
     "dist",

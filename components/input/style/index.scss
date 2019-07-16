@@ -6,6 +6,7 @@
     display: flex;
     margin-top: 2px;
     padding-top: 28px;
+    padding-bottom: 1px;
   }
   @include e(main) {
     flex: 1;
