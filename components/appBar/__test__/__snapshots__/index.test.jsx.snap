@@ -1,0 +1,61 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AppBar should render correctly 1`] = `
+<div
+  class="ty-appbar ty-appbar--primary"
+>
+  <div
+    class="ty-col ty-appbar__icon"
+  >
+    <button
+      class="ty-ripple ty-btn ty-appbar__icon-btn ty-btn__icon ty-btn__icon--default"
+    >
+      <span
+        class="ty-btn__wrapper"
+      >
+        <i
+          class="ty-icon"
+          style="font-size:22px"
+        >
+          <svg
+            aria-hidden="true"
+            class=""
+            fill="currentColor"
+            height="1em"
+            width="1em"
+          >
+            <use
+              href="#list"
+            />
+          </svg>
+        </i>
+      </span>
+      <span
+        class="ty-ripple__wrapper"
+      />
+    </button>
+  </div>
+  <div
+    class="ty-appbar__typography"
+  >
+    Title
+  </div>
+  <div
+    class="ty-appbar__toolBar"
+  >
+    <button
+      class="ty-ripple ty-btn ty-btn__text ty-btn__text--default"
+      style="height:100%;color:#fff;margin-right:-16px"
+    >
+      <span
+        class="ty-btn__wrapper"
+      >
+        Login
+      </span>
+      <span
+        class="ty-ripple__wrapper"
+      />
+    </button>
+  </div>
+</div>
+`;

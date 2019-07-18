@@ -1,0 +1,161 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Input should support maxLength 1`] = `
+<ForwardRef
+  maxLength={10}
+  placeholder="input..."
+>
+  <div
+    className="ty-input__wrapper"
+  >
+    <div
+      className="ty-input__main"
+    >
+      <div
+        className="ty-input__content"
+      >
+        <input
+          className="ty-input"
+          maxLength={10}
+          onBlur={[Function]}
+          onFocus={[Function]}
+          onKeyDown={[Function]}
+          placeholder="input..."
+          type="text"
+        />
+      </div>
+      <div
+        className="ty-input__info"
+      >
+        <div
+          className="ty-input__errorMessage"
+        />
+      </div>
+    </div>
+  </div>
+</ForwardRef>
+`;
+
+exports[`Input should support prefix and suffix 1`] = `
+<ForwardRef
+  label="Regular"
+  prefix="$"
+  suffix="元"
+>
+  <div
+    className="ty-input__wrapper"
+  >
+    <div
+      className="ty-input__main"
+    >
+      <div
+        className="ty-input__content"
+      >
+        <label
+          className="ty-input__label ty-input__label--focused"
+        >
+          Regular
+        </label>
+        <span
+          className="ty-input__prefix"
+        >
+          $
+        </span>
+        <input
+          className="ty-input"
+          onBlur={[Function]}
+          onFocus={[Function]}
+          onKeyDown={[Function]}
+          type="text"
+        />
+        <span
+          className="ty-input__suffix"
+        >
+          元
+        </span>
+      </div>
+    </div>
+  </div>
+</ForwardRef>
+`;
+
+exports[`Textarea should support disabled 1`] = `
+<ForwardRef
+  disabled={true}
+  type="textarea"
+>
+  <div
+    className="ty-input__wrapper ty-input--disabled"
+  >
+    <div
+      className="ty-input__main"
+    >
+      <div
+        className="ty-input__content"
+      >
+        <ForwardRef
+          className="ty-input ty-input__textarea"
+          disabled={true}
+          onBlur={[Function]}
+          onFocus={[Function]}
+          onKeyDown={[Function]}
+          type="textarea"
+        >
+          <textarea
+            className="ty-input ty-input__textarea"
+            disabled={true}
+            onBlur={[Function]}
+            onFocus={[Function]}
+            onKeyDown={[Function]}
+            type="textarea"
+          />
+        </ForwardRef>
+      </div>
+    </div>
+  </div>
+</ForwardRef>
+`;
+
+exports[`Textarea should support maxLength 1`] = `
+<ForwardRef
+  maxLength={10}
+  type="textarea"
+>
+  <div
+    className="ty-input__wrapper"
+  >
+    <div
+      className="ty-input__main"
+    >
+      <div
+        className="ty-input__content"
+      >
+        <ForwardRef
+          className="ty-input ty-input__textarea"
+          maxLength={10}
+          onBlur={[Function]}
+          onFocus={[Function]}
+          onKeyDown={[Function]}
+          type="textarea"
+        >
+          <textarea
+            className="ty-input ty-input__textarea"
+            maxLength={10}
+            onBlur={[Function]}
+            onFocus={[Function]}
+            onKeyDown={[Function]}
+            type="textarea"
+          />
+        </ForwardRef>
+      </div>
+      <div
+        className="ty-input__info"
+      >
+        <div
+          className="ty-input__errorMessage"
+        />
+      </div>
+    </div>
+  </div>
+</ForwardRef>
+`;

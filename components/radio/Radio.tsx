@@ -25,6 +25,7 @@ interface RadioProps {
   value?: any;
   style?: React.CSSProperties;
   children?: React.ReactNode;
+  className?: string;
   onChange?: (e: RadioEvent) => void;
 }
 
@@ -33,7 +34,7 @@ interface RadioGroupComponent<p> extends React.ForwardRefExoticComponent<p> {
 }
 
 const Radio = forwardRef((props: RadioProps, ref: React.RefObject<HTMLLabelElement>) => {
-  const { value, checked = false, children } = props;
+  const { value, checked = false, children, className } = props;
   const context = useContext(RadioContext);
   const [isChecked, setIsChecked] = useState<boolean>(checked);
 
@@ -88,7 +89,7 @@ const Radio = forwardRef((props: RadioProps, ref: React.RefObject<HTMLLabelEleme
   };
 
   const prefixCls = usePrefixCls('radio');
-  const classes = clsx(prefixCls, {
+  const classes = clsx(prefixCls, className, {
     [`${prefixCls}--${color}`]: isChecked && !disabled,
     [`${prefixCls}--checked`]: isChecked,
     [`${prefixCls}--disabled`]: disabled,

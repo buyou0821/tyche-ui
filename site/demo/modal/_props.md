@@ -12,6 +12,8 @@
 | content |	内容 | string/ReactNode | - |
 | onCancel | 点击遮罩层或右上角叉或取消按钮的回调 | function(e) | - |
 | okColor | 确定按钮颜色，可选值`primary`、 `secondary`、 `success`、 `warning`、 `danger` | string | primary |
+| destroy | `comfirm`销毁自身实例 | - | - |
+| destroyAll | 通过`Modal.destroyAll()`销毁所有`confirm`实例 | - | - |
 | onOk | 点击确定回调 | function(e) | - |
 | okShape | 确定按钮形状，可选值为 `contained`、 `text` 、 `outlined` 、 `circle`、 `round`、 `icon` 或者不设 | string | Modal默认值`text`，Comfirm默认值`outlined` |
 | okText | 确定按钮文字 | string/ReactNode | 确定 |

@@ -14,7 +14,6 @@ const Demo = () => {
           setPortalVisible(false);
         }}
         visible={PortalVisible}
-        append
         mask
         maskClosable
         closeOnClickOutside

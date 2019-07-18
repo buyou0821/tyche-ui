@@ -1,0 +1,448 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Modal should render correctly 1`] = `
+<Modal
+  title="Basic Modal"
+  visible={true}
+>
+  <TychePortal
+    closeOnESC={true}
+    visible={true}
+  >
+    <PurePortal
+      selector={
+        <div>
+          <div
+            class="ty-modal__root"
+          >
+            <div
+              class="ty-modal__mask ty-modal__mask-appear ty-modal__mask-appear-active"
+            />
+            <div
+              class="ty-modal__wrap"
+            >
+              <div
+                class="ty-modal ty-modal--zoom-appear ty-modal--zoom-appear-active"
+                style="width: 520px;"
+              >
+                <div
+                  class="ty-modal__header"
+                >
+                  <div
+                    class="ty-modal__title"
+                  >
+                    Basic Modal
+                    <button
+                      class="ty-ripple ty-btn ty-modal__close ty-btn__icon ty-btn__icon--default"
+                    >
+                      <span
+                        class="ty-btn__wrapper"
+                      >
+                        <i
+                          class="ty-icon"
+                        >
+                          <svg
+                            aria-hidden="true"
+                            class=""
+                            fill="currentColor"
+                            height="1em"
+                            width="1em"
+                          >
+                            <use
+                              xlink:href="#clear"
+                            />
+                          </svg>
+                        </i>
+                      </span>
+                      <span
+                        class="ty-ripple__wrapper"
+                      />
+                    </button>
+                  </div>
+                </div>
+                <div
+                  class="ty-modal__body"
+                >
+                  <div>
+                    Some contents...
+                  </div>
+                </div>
+                <div
+                  class="ty-modal__footer"
+                >
+                  <button
+                    class="ty-ripple ty-btn ty-btn__text ty-btn__text--default"
+                  >
+                    <span
+                      class="ty-btn__wrapper"
+                    >
+                      取 消
+                    </span>
+                    <span
+                      class="ty-ripple__wrapper"
+                    />
+                  </button>
+                  <button
+                    class="ty-ripple ty-btn ty-btn__text ty-btn__text--primary"
+                  >
+                    <span
+                      class="ty-btn__wrapper"
+                    >
+                      确 认
+                    </span>
+                    <span
+                      class="ty-ripple__wrapper"
+                    />
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      }
+    >
+      <Portal
+        containerInfo={
+          <div>
+            <div
+              class="ty-modal__root"
+            >
+              <div
+                class="ty-modal__mask ty-modal__mask-appear ty-modal__mask-appear-active"
+              />
+              <div
+                class="ty-modal__wrap"
+              >
+                <div
+                  class="ty-modal ty-modal--zoom-appear ty-modal--zoom-appear-active"
+                  style="width: 520px;"
+                >
+                  <div
+                    class="ty-modal__header"
+                  >
+                    <div
+                      class="ty-modal__title"
+                    >
+                      Basic Modal
+                      <button
+                        class="ty-ripple ty-btn ty-modal__close ty-btn__icon ty-btn__icon--default"
+                      >
+                        <span
+                          class="ty-btn__wrapper"
+                        >
+                          <i
+                            class="ty-icon"
+                          >
+                            <svg
+                              aria-hidden="true"
+                              class=""
+                              fill="currentColor"
+                              height="1em"
+                              width="1em"
+                            >
+                              <use
+                                xlink:href="#clear"
+                              />
+                            </svg>
+                          </i>
+                        </span>
+                        <span
+                          class="ty-ripple__wrapper"
+                        />
+                      </button>
+                    </div>
+                  </div>
+                  <div
+                    class="ty-modal__body"
+                  >
+                    <div>
+                      Some contents...
+                    </div>
+                  </div>
+                  <div
+                    class="ty-modal__footer"
+                  >
+                    <button
+                      class="ty-ripple ty-btn ty-btn__text ty-btn__text--default"
+                    >
+                      <span
+                        class="ty-btn__wrapper"
+                      >
+                        取 消
+                      </span>
+                      <span
+                        class="ty-ripple__wrapper"
+                      />
+                    </button>
+                    <button
+                      class="ty-ripple ty-btn ty-btn__text ty-btn__text--primary"
+                    >
+                      <span
+                        class="ty-btn__wrapper"
+                      >
+                        确 认
+                      </span>
+                      <span
+                        class="ty-ripple__wrapper"
+                      />
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        }
+      >
+        <ModalWrapper
+          visible={true}
+        >
+          <div
+            className="ty-modal__root"
+          >
+            <CSSTransition
+              appear={true}
+              classNames="ty-modal__mask"
+              in={true}
+              timeout={
+                Object {
+                  "enter": 225,
+                  "exit": 195,
+                }
+              }
+            >
+              <Transition
+                appear={true}
+                enter={true}
+                exit={true}
+                in={true}
+                mountOnEnter={false}
+                onEnter={[Function]}
+                onEntered={[Function]}
+                onEntering={[Function]}
+                onExit={[Function]}
+                onExited={[Function]}
+                onExiting={[Function]}
+                timeout={
+                  Object {
+                    "enter": 225,
+                    "exit": 195,
+                  }
+                }
+                unmountOnExit={false}
+              >
+                <div
+                  className="ty-modal__mask"
+                  style={
+                    Object {
+                      "zIndex": undefined,
+                    }
+                  }
+                />
+              </Transition>
+            </CSSTransition>
+            <div
+              className="ty-modal__wrap"
+              onClick={[Function]}
+              style={
+                Object {
+                  "zIndex": undefined,
+                }
+              }
+            >
+              <CSSTransition
+                appear={true}
+                classNames="ty-modal--zoom"
+                in={true}
+                mountOnEnter={true}
+                onExited={[Function]}
+                timeout={300}
+                unmountOnExit={true}
+              >
+                <Transition
+                  appear={true}
+                  enter={true}
+                  exit={true}
+                  in={true}
+                  mountOnEnter={true}
+                  onEnter={[Function]}
+                  onEntered={[Function]}
+                  onEntering={[Function]}
+                  onExit={[Function]}
+                  onExited={[Function]}
+                  onExiting={[Function]}
+                  timeout={300}
+                  unmountOnExit={true}
+                >
+                  <ModalInnter
+                    mousePosition={null}
+                    title="Basic Modal"
+                  >
+                    <div
+                      className="ty-modal"
+                      style={
+                        Object {
+                          "width": 520,
+                        }
+                      }
+                    >
+                      <div
+                        className="ty-modal__header"
+                      >
+                        <div
+                          className="ty-modal__title"
+                        >
+                          Basic Modal
+                          <Button
+                            className="ty-modal__close"
+                            onClick={[Function]}
+                            shape="icon"
+                          >
+                            <BaseButton
+                              className="ty-btn ty-modal__close ty-btn__icon ty-btn__icon--default"
+                              onClick={[Function]}
+                            >
+                              <button
+                                className="ty-ripple ty-btn ty-modal__close ty-btn__icon ty-btn__icon--default"
+                                onClick={[Function]}
+                              >
+                                <span
+                                  className="ty-btn__wrapper"
+                                >
+                                  <ForwardRef
+                                    type="clear"
+                                  >
+                                    <i
+                                      className="ty-icon"
+                                      style={Object {}}
+                                    >
+                                      <svg
+                                        aria-hidden="true"
+                                        className=""
+                                        fill="currentColor"
+                                        height="1em"
+                                        width="1em"
+                                      >
+                                        <use
+                                          xlinkHref="#clear"
+                                        />
+                                      </svg>
+                                    </i>
+                                  </ForwardRef>
+                                </span>
+                                <Memo()>
+                                  <span
+                                    className="ty-ripple__wrapper"
+                                    onMouseDown={[Function]}
+                                    onMouseLeave={[Function]}
+                                    onMouseUp={[Function]}
+                                    onTouchEnd={[Function]}
+                                    onTouchMove={[Function]}
+                                    onTouchStart={[Function]}
+                                  >
+                                    <TransitionGroup
+                                      childFactory={[Function]}
+                                      component={null}
+                                    />
+                                  </span>
+                                </Memo()>
+                              </button>
+                            </BaseButton>
+                          </Button>
+                        </div>
+                      </div>
+                      <div
+                        className="ty-modal__body"
+                      >
+                        <div>
+                          Some contents...
+                        </div>
+                      </div>
+                      <div
+                        className="ty-modal__footer"
+                      >
+                        <Button
+                          onClick={[Function]}
+                          shape="text"
+                        >
+                          <BaseButton
+                            className="ty-btn ty-btn__text ty-btn__text--default"
+                            onClick={[Function]}
+                          >
+                            <button
+                              className="ty-ripple ty-btn ty-btn__text ty-btn__text--default"
+                              onClick={[Function]}
+                            >
+                              <span
+                                className="ty-btn__wrapper"
+                              >
+                                取 消
+                              </span>
+                              <Memo()>
+                                <span
+                                  className="ty-ripple__wrapper"
+                                  onMouseDown={[Function]}
+                                  onMouseLeave={[Function]}
+                                  onMouseUp={[Function]}
+                                  onTouchEnd={[Function]}
+                                  onTouchMove={[Function]}
+                                  onTouchStart={[Function]}
+                                >
+                                  <TransitionGroup
+                                    childFactory={[Function]}
+                                    component={null}
+                                  />
+                                </span>
+                              </Memo()>
+                            </button>
+                          </BaseButton>
+                        </Button>
+                        <Button
+                          color="primary"
+                          onClick={[Function]}
+                          shape="text"
+                        >
+                          <BaseButton
+                            className="ty-btn ty-btn__text ty-btn__text--primary"
+                            onClick={[Function]}
+                          >
+                            <button
+                              className="ty-ripple ty-btn ty-btn__text ty-btn__text--primary"
+                              onClick={[Function]}
+                            >
+                              <span
+                                className="ty-btn__wrapper"
+                              >
+                                确 认
+                              </span>
+                              <Memo()>
+                                <span
+                                  className="ty-ripple__wrapper"
+                                  onMouseDown={[Function]}
+                                  onMouseLeave={[Function]}
+                                  onMouseUp={[Function]}
+                                  onTouchEnd={[Function]}
+                                  onTouchMove={[Function]}
+                                  onTouchStart={[Function]}
+                                >
+                                  <TransitionGroup
+                                    childFactory={[Function]}
+                                    component={null}
+                                  />
+                                </span>
+                              </Memo()>
+                            </button>
+                          </BaseButton>
+                        </Button>
+                      </div>
+                    </div>
+                  </ModalInnter>
+                </Transition>
+              </CSSTransition>
+            </div>
+          </div>
+        </ModalWrapper>
+      </Portal>
+    </PurePortal>
+  </TychePortal>
+</Modal>
+`;
