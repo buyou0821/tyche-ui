@@ -24,6 +24,14 @@ html {
   }
 }
 
+
+.ty-drawer {
+  .demo-sider__nav {
+    height: calc(100% - 20px);
+    overflow-y: auto;
+  }
+}
+
 .demo {
   &-layout-appBar {
     position: fixed;
@@ -193,10 +201,17 @@ html {
   }
   &-sider {
     overflow: hidden;
+    &:hover {
+      overflow-y: auto;
+    }
+    .ty-col-offset-3 {
+      margin-left: 25px;
+    }
     &__title {
       line-height: 36px;
     }
     &__nav {
+      padding-bottom: 64px;
       padding-top: 10px;
       a {
         display: block;
@@ -209,7 +224,7 @@ html {
         border-radius: 0;
         .ty-btn__wrapper {
           justify-content: flex-start;
-          padding-left: 55px;
+          padding-left: 50px;
         }
       }
     }

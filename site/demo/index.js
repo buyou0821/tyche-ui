@@ -8,3 +8,5 @@ export { default as modal } from './modal';
 export { default as portal } from './portal';
 export { default as input } from './input';
 export { default as radio } from './radio';
+export { default as createReactApp } from './create-react-app';
+export { default as umi } from './umi';

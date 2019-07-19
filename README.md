@@ -5,4 +5,5 @@
 [![CircleCI](https://circleci.com/gh/buyou0821/tyche-ui.svg?style=svg)](https://circleci.com/gh/buyou0821/tyche-ui)
 ![CircleCI (all branches)](https://img.shields.io/circleci/project/github/buyou0821/tyche-ui.svg?style=flat-square)
 ![Codecov](https://img.shields.io/codecov/c/github/buyou0821/tyche-ui.svg?style=flat-square)
+![npm type definitions](https://img.shields.io/npm/types/tyche-ui.svg?style=flat-square)
 ![npm](https://img.shields.io/npm/v/tyche-ui.svg?style=flat-square)
