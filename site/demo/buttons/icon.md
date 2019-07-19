@@ -42,8 +42,8 @@ const instance = (
         警告
         <Icon right material="warning" />
       </Button>
-      <Button color="danger">
-        <Icon left material="send" disabled />
+      <Button color="danger" disabled>
+        <Icon left material="send" />
         SEND
       </Button>
     </div>
