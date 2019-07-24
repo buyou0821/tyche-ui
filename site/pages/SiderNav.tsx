@@ -79,6 +79,10 @@ const navRoutes = [
         to: 'radio',
         text: 'Radio 单选框',
       },
+      {
+        to: 'checkbox',
+        text: 'Checkbox 复选框',
+      },
     ],
   },
 ];

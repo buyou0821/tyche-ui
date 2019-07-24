@@ -3,7 +3,7 @@
 @include b(icon) {
   display: inline-block;
   line-height: 0;
-  vertical-align: -0.125em;
+  // vertical-align: -0.125em;
   @include m(spin) {
     animation: loadingCircle 1s infinite linear;
   }

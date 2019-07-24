@@ -45,12 +45,6 @@
     z-index: 1;
   }
 
-  @include m(primary) {
-    @include e(icon) {
-      color: $--color-primary;
-    }
-  }
-
   @each $key, $color in $--colors {
     @include m($key) {
       @include e(icon) {

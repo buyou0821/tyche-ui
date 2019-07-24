@@ -24,6 +24,7 @@ import GridPage from './pages/Grid';
 import DrawerPage from './pages/Drawer';
 import InputPage from './pages/Input';
 import RadioPage from './pages/Radio';
+import CheckboxPage from './pages/Checkbox';
 
 const { Header, Sider, Content } = Layout;
 
@@ -64,6 +65,7 @@ const BasicLayout = () => {
           <Route path="/drawer" component={drawer} />
           <Route path="/input" component={input} />
           <Route path="/radio" component={radio} />
+          <Route path="/checkbox" component={CheckboxPage} />
         </Content>
       </Layout>
     </Layout>

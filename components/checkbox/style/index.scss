@@ -1,0 +1,84 @@
+@import '../../theme/mixins/mixins.scss';
+@import '../../theme/default.scss';
+
+@include b(checkbox) {
+  display: inline-flex;
+  align-items: center;
+  cursor: pointer;
+  margin-right: 6px;
+
+  @include m(checked) {
+    @include e(border) {
+      opacity: 0;
+    }
+    @include e(inner) {
+      transform: scale(1);
+      transition: transform 225ms cubic-bezier(0, 0, 0.2, 1);
+    }
+  }
+
+  @include m(disabled) {
+    color: $--color-disabled;
+    cursor: not-allowed;
+    @include e(icon) {
+      color: inherit;
+    }
+    @include e(border) {
+      color: inherit;
+    }
+  }
+
+  @each $key, $color in $--colors {
+    @include m($key) {
+      @include e(icon) {
+        color: $color;
+      }
+    }
+  }
+
+  @include e(icon) {
+    position: relative;
+    padding: 8px;
+
+    %icon-svg {
+      vertical-align: middle;
+      display: inline-block;
+      width: 1em;
+      height: 1em;
+      font-size: 1.5em;
+      fill: currentColor;
+    }
+
+    @include e(border) {
+      @extend %icon-svg;
+      color: $--color-black;
+      opacity: 1;
+      transition: opacity 225ms cubic-bezier(0, 0, 0.2, 1);
+    }
+    @include e(inner) {
+      position: absolute;
+      left: 8px;
+      top: 8px;
+
+      @extend %icon-svg;
+      transform: scale(0);
+    }
+
+    @include e(ripple) {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    @include e(input) {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      opacity: 0;
+    }
+  }
+}

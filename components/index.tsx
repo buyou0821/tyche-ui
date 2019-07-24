@@ -10,6 +10,7 @@ export { default as AppBar } from './appBar';
 export { default as Drawer } from './drawer';
 export { default as Input } from './input';
 export { default as Radio } from './radio';
+export { default as Checkbox } from './checkbox';
 
 /* @remove-on-es-build-begin */
 // this file is not used if use https://github.com/ant-design/babel-plugin-import

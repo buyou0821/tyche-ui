@@ -24,7 +24,6 @@ html {
   }
 }
 
-
 .ty-drawer {
   .demo-sider__nav {
     height: calc(100% - 20px);
@@ -211,8 +210,8 @@ html {
       line-height: 36px;
     }
     &__nav {
-      padding-bottom: 64px;
       padding-top: 10px;
+      padding-bottom: 64px;
       a {
         display: block;
         &.active .ty-btn__wrapper {

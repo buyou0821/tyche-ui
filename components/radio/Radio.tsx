@@ -34,8 +34,8 @@ interface RadioGroupComponent<p> extends React.ForwardRefExoticComponent<p> {
 }
 
 const Radio = forwardRef((props: RadioProps, ref: React.RefObject<HTMLLabelElement>) => {
-  const { value, checked = false, children, className } = props;
   const context = useContext(RadioContext);
+  const { value, checked = false, children, className } = props;
   const [isChecked, setIsChecked] = useState<boolean>(checked);
 
   useLayoutEffect(() => {
@@ -48,16 +48,10 @@ const Radio = forwardRef((props: RadioProps, ref: React.RefObject<HTMLLabelEleme
   }, [value, context.value, checked]);
 
   const getRadioState = (): RadioProps => {
-    const { disabled } = props;
     const result: RadioProps = {};
 
-    result.disabled = context.disabled || disabled;
-
-    // props fisrt
-    ['color'].reduce((prev, key) => {
-      prev[key] = props[key] !== undefined ? props[key] : context[key];
-      return prev;
-    }, result);
+    result.color = props.color || context.color;
+    result.disabled = context.disabled || props.disabled;
 
     return result;
   };
