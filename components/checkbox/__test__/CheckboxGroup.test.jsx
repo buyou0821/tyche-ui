@@ -1,40 +1,39 @@
 import React from 'react';
-import { mount } from 'enzyme';
+import { render, fireEvent } from '@testing-library/react';
 import Checkbox from '..';
 
 describe('Checkbox Group', () => {
   it('initial value', () => {
-    const initialVal = [1, 2];
-    const wrapper = mount(
+    const initialVal = ['apple', 'banana'];
+    const { container } = render(
       <Checkbox.Group value={initialVal}>
-        <Checkbox value={1}>1</Checkbox>
-        <Checkbox value={2}>2</Checkbox>
-        <Checkbox value={3}>3</Checkbox>
+        <Checkbox value="apple">apple</Checkbox>
+        <Checkbox value="banana">banana</Checkbox>
+        <Checkbox value="orange">orange</Checkbox>
       </Checkbox.Group>,
     );
 
-    expect(
-      wrapper
-        .find(Checkbox)
-        .at(0)
-        .children()
-        .hasClass('ty-checkbox--checked'),
-    ).toBe(true);
+    expect(container.querySelectorAll('label')[0].classList).toContain('ty-checkbox--checked');
+    expect(container.querySelectorAll('label')[1].classList).toContain('ty-checkbox--checked');
+    expect(container.querySelectorAll('label')[2].classList).not.toContain('ty-checkbox--checked');
+  });
 
-    expect(
-      wrapper
-        .find(Checkbox)
-        .at(1)
-        .children()
-        .hasClass('ty-checkbox--checked'),
-    ).toBe(true);
+  it('onChange', () => {
+    let value = ['apple'];
+    const handleChange = checkedList => {
+      value = checkedList;
+    };
+    const { getByLabelText } = render(
+      <Checkbox.Group value={value} onChange={handleChange}>
+        <Checkbox value="apple">apple</Checkbox>
+        <Checkbox value="banana">banana</Checkbox>
+        <Checkbox value="orange">orange</Checkbox>
+      </Checkbox.Group>,
+    );
+    fireEvent.click(getByLabelText('banana'));
+    expect(value).toEqual(['apple', 'banana']);
 
-    expect(
-      wrapper
-        .find(Checkbox)
-        .at(2)
-        .children()
-        .hasClass('ty-checkbox--checked'),
-    ).toBe(false);
+    fireEvent.click(getByLabelText('apple'));
+    expect(value).toEqual([]);
   });
 });
