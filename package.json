@@ -17,7 +17,7 @@
     "lint:ts": "tslint --project tsconfig.json 'components/**/*.{ts,tsx}'",
     "lint:style": "prettier-stylelint --write -q 'components/**/*.{css,scss,less}'",
     "lint:fix": "npm run prettier && tslint --fix --project tsconfig.json 'components/**/*.{ts,tsx}' && npm run lint:style",
-    "ci": "cross-env NODE_ENV=test JEST_JUNIT_OUTPUT=./test-results/jest/results.xml jest --no-cache --config=.jest.ci.js"
+    "ci": "cross-env NODE_ENV=test JEST_JUNIT_OUTPUT=./test-results/jest/results.xml jest -w 1 --no-cache --config=.jest.ci.js"
   },
   "repository": {
     "type": "git",
