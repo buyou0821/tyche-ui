@@ -3,14 +3,14 @@ import clsx from 'clsx';
 import { usePrefixCls } from '../_util/hooks';
 import Sider from './Sider';
 
-interface GeneratorProps {
+export interface GeneratorProps {
   suffixCls?: string;
   tagName: 'header' | 'footer' | 'main' | 'section';
 }
 
-interface BasicProps extends React.HTMLAttributes<HTMLDivElement> {}
+export interface BasicProps extends React.HTMLAttributes<HTMLDivElement> {}
 
-interface BasicOrderProps extends BasicProps {
+export interface BasicOrderProps extends BasicProps {
   prefixCls?: string;
   className?: string;
   tagName: 'header' | 'footer' | 'main' | 'section';
@@ -37,7 +37,7 @@ const Basic: React.FunctionComponent<BasicOrderProps> = props => {
   );
 };
 
-interface LayoutConsumerProps {
+export interface LayoutConsumerProps {
   addSider: (id?: string) => void;
   removeSider: (id?: string) => void;
 }

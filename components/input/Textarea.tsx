@@ -1,7 +1,7 @@
 import React, { forwardRef, useEffect } from 'react';
 import autosize from 'autosize';
 
-interface TextareaPorps extends React.TextareaHTMLAttributes<HTMLTextAreaElement> {
+export interface TextareaPorps extends React.TextareaHTMLAttributes<HTMLTextAreaElement> {
   className?: string;
   autoSize?: boolean;
 }

@@ -3,9 +3,9 @@ import clsx from 'clsx';
 import RowContext from './RowContext';
 import { usePrefixCls } from '../_util/hooks';
 
-type ColSpanType = number | string;
+export type ColSpanType = number | string;
 
-interface ColSize {
+export interface ColSize {
   span?: ColSpanType;
   order?: ColSpanType;
   offset?: ColSpanType;

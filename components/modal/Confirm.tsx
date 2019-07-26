@@ -6,7 +6,7 @@ import ActionButton from './ActionButton';
 
 export const destroyFns: Array<() => void> = [];
 
-interface ConfirmDialogProps extends ModalFuncProps {
+export interface ConfirmDialogProps extends ModalFuncProps {
   afterClose?: () => void;
   close: (...args: any[]) => void;
 }

@@ -11,7 +11,7 @@ import { getNodeFromSelector, hasScrollYbar } from './util';
 import getScrollYBarWidth from '../_util/getScrollYBarWidth';
 import { usePrefixCls } from '../_util/hooks';
 
-interface PatchMeta {
+export interface PatchMeta {
   count: number;
   paddingRight: CSSStyleDeclaration['paddingRight'];
   overflowY: CSSStyleDeclaration['overflowY'];

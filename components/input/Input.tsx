@@ -7,7 +7,7 @@ import Textarea from './Textarea';
 
 export type InputType = 'text' | 'number' | 'password' | 'textarea';
 
-interface InputPorps extends Omit<React.InputHTMLAttributes<HTMLInputElement>, 'prefix'> {
+export interface InputPorps extends Omit<React.InputHTMLAttributes<HTMLInputElement>, 'prefix'> {
   className?: string;
   autoFocus?: boolean;
   errorMessage?: string;

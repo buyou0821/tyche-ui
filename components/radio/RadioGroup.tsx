@@ -5,7 +5,7 @@ import { RadioEvent, RadioColor } from './Radio';
 
 const { Provider } = RadioContext;
 
-interface RadioGroupProps {
+export interface RadioGroupProps {
   color?: RadioColor;
   children?: ReactNode;
   disabled?: boolean;

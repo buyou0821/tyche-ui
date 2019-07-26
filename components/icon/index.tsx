@@ -17,7 +17,7 @@ export interface IconProps extends React.DOMAttributes<HTMLElement> {
   right?: boolean;
 }
 
-interface CustomIconComponentProps {
+export interface CustomIconComponentProps {
   width: string | number;
   height: string | number;
   fill: string;
@@ -25,9 +25,10 @@ interface CustomIconComponentProps {
   style?: React.CSSProperties;
 }
 
-interface IconComponent<p> extends React.ForwardRefExoticComponent<p> {
+export interface IconComponent<p> extends React.ForwardRefExoticComponent<p> {
   createFromIconfont: typeof createFromIconfont;
 }
+
 const Icon = forwardRef((props: IconProps, ref: React.RefObject<HTMLElement>) => {
   const { className, children, material, type, spin, rotate, style, left, right, ...rest } = props;
   const prefixCls = usePrefixCls('icon');

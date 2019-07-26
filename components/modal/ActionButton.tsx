@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Button, { ButtonShape, ButtonColor } from '../button';
 
-interface ActionButtonProps {
+export interface ActionButtonProps {
   shape?: ButtonShape;
   color?: ButtonColor;
   actionFn?: (...args: any[]) => any | PromiseLike<any>;

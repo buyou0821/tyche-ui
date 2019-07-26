@@ -1,6 +1,6 @@
 import { createContext, Context } from 'react';
 
-interface RowContextState {
+export interface RowContextState {
   gutter?: number;
 }
 

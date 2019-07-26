@@ -7,14 +7,14 @@ import { IconButton, Typography, ToolBar } from './AppBarInner';
 const AppBarColors = tuple('primary', 'secondary', 'success', 'warning', 'danger');
 export type AppBarColor = (typeof AppBarColors)[number];
 
-interface AppBarProps {
+export interface AppBarProps {
   className?: string;
   children?: React.ReactNode;
   color?: AppBarColor;
   style?: React.CSSProperties;
 }
 
-interface AppBarComponent<p> extends React.ForwardRefExoticComponent<p> {
+export interface AppBarComponent<p> extends React.ForwardRefExoticComponent<p> {
   IconButton: typeof IconButton;
   Typography: typeof Typography;
   ToolBar: typeof ToolBar;

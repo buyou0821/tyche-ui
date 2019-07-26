@@ -3,7 +3,7 @@ import Icon, { IconProps } from './index';
 
 const urlCache = new Set<string>();
 
-interface CustomIconOptions {
+export interface CustomIconOptions {
   scriptUrl: string;
 }
 

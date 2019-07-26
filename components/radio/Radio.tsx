@@ -18,7 +18,7 @@ export interface RadioEvent {
   stopPropagation(): void;
 }
 
-interface RadioProps {
+export interface RadioProps {
   color?: RadioColor;
   checked?: boolean;
   disabled?: boolean;
@@ -29,7 +29,7 @@ interface RadioProps {
   onChange?: (e: RadioEvent) => void;
 }
 
-interface RadioGroupComponent<p> extends React.ForwardRefExoticComponent<p> {
+export interface RadioGroupComponent<p> extends React.ForwardRefExoticComponent<p> {
   Group: typeof RadioGroup;
 }
 

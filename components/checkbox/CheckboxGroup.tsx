@@ -21,7 +21,6 @@ export interface CheckboxGroupProps {
   defaultValue?: Array<CheckboxValueType>;
   color?: CheckboxColor;
   disabled?: boolean;
-  readOnly?: boolean;
   isValueEqual?: (a: CheckboxValueType, b: CheckboxValueType) => boolean;
   onChange?: (values: Array<CheckboxValueType>) => void;
   options?: Array<CheckboxOptionType | string>;
@@ -33,7 +32,6 @@ const CheckboxGroup = forwardRef(
     const {
       color = 'primary',
       disabled = false,
-      readOnly = false,
       isValueEqual = eq,
       onChange,
       options,
@@ -83,7 +81,7 @@ const CheckboxGroup = forwardRef(
         onCheckboxChange: handleChange,
         hasCheckboxGroup: true,
       }),
-      [value, color, disabled, readOnly, isValueEqual, groupValue],
+      [value, color, disabled, isValueEqual, groupValue],
     );
 
     const getOptions = (): Array<CheckboxOptionType> => {
@@ -98,7 +96,7 @@ const CheckboxGroup = forwardRef(
       });
     };
 
-    let children = props.children;
+    let { children } = props;
     if (options && options.length > 0) {
       children = getOptions().map(option => (
         <Checkbox

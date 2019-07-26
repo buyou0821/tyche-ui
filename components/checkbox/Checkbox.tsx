@@ -73,10 +73,9 @@ const Checkbox = forwardRef((props: CheckboxProps, ref: React.RefObject<HTMLLabe
 
   useLayoutEffect(() => {
     if (context.hasCheckboxGroup) {
-      const checked =
-        (context.value as Array<CheckboxValueType>).find((val: CheckboxValueType) =>
-          context.isValueEqual(val, value),
-        );
+      const checked = (context.value as Array<CheckboxValueType>).find((val: CheckboxValueType) =>
+        context.isValueEqual(val, value),
+      );
       setIsChecked(!!checked);
     } else {
       setIsChecked(checked);

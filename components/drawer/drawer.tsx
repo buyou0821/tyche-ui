@@ -5,7 +5,7 @@ import { duration } from '../_util/transition';
 import Portal from '../portal';
 import Sider, { SiderProps } from './Sider';
 
-interface DrawerProps extends Partial<SiderProps> {
+export interface DrawerProps extends Partial<SiderProps> {
   visible?: boolean;
   mask?: boolean;
   onClose?: (e: React.MouseEvent) => void;

@@ -34,7 +34,7 @@ const BreakpointMap = {
   xxl: '1600px',
 };
 
-interface SiderProps extends React.HTMLAttributes<HTMLDivElement> {
+export interface SiderProps extends React.HTMLAttributes<HTMLDivElement> {
   width?: number | string;
   style?: React.CSSProperties;
   breakpoint?: 'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'xxl';

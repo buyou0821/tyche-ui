@@ -3,7 +3,7 @@ import { TransitionGroup } from 'react-transition-group';
 import { usePrefixCls } from '../_util/hooks';
 import Ripple from './Ripple';
 
-interface TouchRippleProps {
+export interface TouchRippleProps {
   center?: boolean;
 }
 
@@ -13,7 +13,7 @@ export interface RippleProps {
   rippleSize: number;
 }
 
-interface EventAttr {
+export interface EventAttr {
   type: string;
   clientX: number;
   clientY: number;
