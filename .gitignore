@@ -13,3 +13,5 @@ yarn-error.log
 *.iml
 yarn.lock
 /.history
+es
+lib
