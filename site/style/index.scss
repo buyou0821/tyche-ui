@@ -238,6 +238,11 @@ html {
   &-radio {
     padding: 20px;
   }
+  &-checkbox {
+    .ty-checkbox__group {
+      display: block;
+    }
+  }
 }
 
 @keyframes rotation {

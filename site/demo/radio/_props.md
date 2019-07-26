@@ -1,4 +1,5 @@
-## Radio
+## API 
+#### Radio
 
 | 参数 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |
@@ -6,7 +7,7 @@
 | value | 根据`value`进行比较，判断是否选中 | any | - |
 | color | 设置颜色类型，可选值为`primary`、 `secondary`、 `success`、 `warning`、 `danger` 或者不设 | string | primary |
 
-## Radio.Group
+#### Radio.Group
 
 | 参数 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |

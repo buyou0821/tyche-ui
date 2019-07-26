@@ -60,21 +60,6 @@ exports[`Button render correctly 4`] = `
 </button>
 `;
 
-exports[`Button should has click ripple effect 1`] = `
-<button
-  class="ty-ripple ty-btn ty-btn__contained ty-btn__contained--default"
->
-  <span
-    class="ty-btn__wrapper"
-  >
-    button
-  </span>
-  <span
-    class="ty-ripple__wrapper"
-  />
-</button>
-`;
-
 exports[`Button should not render as link button when href is undefined 1`] = `
 <button
   class="ty-ripple ty-btn ty-btn__contained ty-btn__contained--default"

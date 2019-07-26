@@ -1,7 +1,7 @@
 ## textarea 输入框
 
-将`type`属性设置为`textarea`可以使用`textarea`控件  
-使用`autoSize`属性让控件自动计算高度
+将`type`属性设置为`textarea`可以使用`textarea`控件。
+使用`autoSize`属性让控件自动计算高度。
 
 <!--start-code-->
 

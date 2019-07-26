@@ -1,6 +1,6 @@
 ## 显示计数器
 
-受控组件使用`maxLength`和`showCount`属性，可以显示计数器
+受控组件使用`maxLength`和`showCount`属性，可以显示计数器。
 
 <!--start-code-->
 

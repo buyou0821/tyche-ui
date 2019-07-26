@@ -7,6 +7,10 @@
   cursor: pointer;
   margin-right: 6px;
 
+  @include e(group) {
+    display: inline-block;
+  }
+
   @include m(checked) {
     @include e(border) {
       opacity: 0;

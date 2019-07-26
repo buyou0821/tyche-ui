@@ -1,6 +1,6 @@
 ## 错误状态
 
-使用`errorMessage`可以使`Input`以错误状态显示
+使用`errorMessage`可以使`Input`以错误状态显示。
 
 <!--start-code-->
 

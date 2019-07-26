@@ -1,6 +1,6 @@
 ## 禁用状态
 
-在`Radio.Group`或`Radio`上使用`disabled`设置禁用状态
+在`Radio.Group`或`Radio`上使用`disabled`设置禁用状态。
 
 <!--start-code-->
 

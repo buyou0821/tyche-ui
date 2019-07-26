@@ -15,7 +15,7 @@ module.exports = {
   ],
   transformIgnorePatterns: ['/node_modules/(?!(lodash-es|fecha)/)'],
   moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx', 'json', 'md'],
-  setupFilesAfterEnv: ['@testing-library/react/cleanup-after-each'],
+  setupFilesAfterEnv: ['jest-extended', '@testing-library/react/cleanup-after-each'],
   setupFiles: ['./tests/setup.js'],
   globals: {
     'ts-jest': {

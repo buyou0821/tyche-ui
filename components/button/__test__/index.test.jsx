@@ -52,11 +52,6 @@ describe('Button', () => {
     expect(wrapper.find('.ty-btn__loading').length).toBe(1);
   });
 
-  it('should has click ripple effect', () => {
-    const wrapper = mount(<Button>button</Button>);
-    expect(wrapper.render()).toMatchSnapshot();
-  });
-
   it('should not render as link button when href is undefined', () => {
     const wrapper = mount(<Button href={undefined}>button</Button>);
     expect(wrapper.render()).toMatchSnapshot();

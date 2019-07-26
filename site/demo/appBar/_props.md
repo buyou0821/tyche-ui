@@ -1,5 +1,6 @@
 ## API
 
+#### AppBar
 AppBar包含组件`IconButton` `Typography` `ToolBar`可以用来组成应用栏
 
 | 属性 | 说明 | 类型 | 默认值 |
@@ -9,7 +10,7 @@ AppBar包含组件`IconButton` `Typography` `ToolBar`可以用来组成应用栏
 | Typography | 组件中间的内容 | string/ReactNode | - |
 | ToolBar | 组件右边的内容 | string/ReactNode | - |
 
-## AppBar.IconButton
+#### AppBar.IconButton
 
 | 属性 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |

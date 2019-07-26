@@ -1,6 +1,6 @@
 ## 修饰输入
 
-使用`prefix`和`suffix`属性，可以向`Input`添加前缀或后缀
+使用`prefix`和`suffix`属性，可以向`Input`添加前缀或后缀。
 
 <!--start-code-->
 

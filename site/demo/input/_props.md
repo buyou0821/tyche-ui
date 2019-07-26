@@ -1,5 +1,6 @@
 ## API
 
+#### Input
 | 参数 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |
 | autoFocus | `Input`自动focus | boolean | false |
@@ -16,7 +17,7 @@
 | showCount | 显示计数，需要和`maxLength`配合使用 | boolean | false |
 | suffix | 后缀 | ReactNode | - |
 
-## Textarea
+#### Textarea
 | 参数 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |
 | autoSize | 自动高度 | boolean | false |

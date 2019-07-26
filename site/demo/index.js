@@ -1,3 +1,5 @@
+export { default as createReactApp } from './create-react-app';
+export { default as umi } from './umi';
 export { default as appBar } from './appBar';
 export { default as buttons } from './buttons';
 export { default as drawer } from './drawer';
@@ -8,5 +10,4 @@ export { default as modal } from './modal';
 export { default as portal } from './portal';
 export { default as input } from './input';
 export { default as radio } from './radio';
-export { default as createReactApp } from './create-react-app';
-export { default as umi } from './umi';
+export { default as checkbox } from './checkbox';

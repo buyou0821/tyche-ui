@@ -1,4 +1,5 @@
-## Portal API
+## API
+#### Portal
 
 | 参数 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |
@@ -16,7 +17,8 @@
 | visible | 是否渲染child | boolean | false |
 
 
-## PurePortal API
+#### PurePortal
+
 | 参数 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |
 | append | 是否是在目标元素结尾追加元素 | boolean | false |

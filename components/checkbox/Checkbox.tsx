@@ -4,7 +4,7 @@ import Button from '../button';
 import { usePrefixCls } from '../_util/hooks';
 import { tuple } from '../_util/type';
 import CheckboxContext from './CheckboxContext';
-import Group from './CheckboxGroup';
+import Group, { CheckboxValueType } from './CheckboxGroup';
 
 const CheckboxColors = tuple('primary', 'secondary', 'success', 'warning', 'danger');
 export type CheckboxColor = (typeof CheckboxColors)[number];
@@ -27,9 +27,8 @@ export interface CheckboxComponent<p> extends React.ForwardRefExoticComponent<p>
 export interface CheckboxProps {
   checked?: boolean;
   color?: CheckboxColor;
-  value?: unknown;
+  value?: CheckboxValueType;
   disabled?: boolean;
-  readOnly?: boolean;
   indeterminate?: boolean;
   onChange?: (e: CheckboxEvent) => void;
   className?: string;
@@ -74,14 +73,21 @@ const Checkbox = forwardRef((props: CheckboxProps, ref: React.RefObject<HTMLLabe
 
   useLayoutEffect(() => {
     if (context.hasCheckboxGroup) {
-      const checked = !!(context.value as unknown[]).find((val: unknown) =>
-        context.isValueEqual(val, value),
-      );
+      const checked =
+        (context.value as Array<CheckboxValueType>).find((val: CheckboxValueType) =>
+          context.isValueEqual(val, value),
+        );
+      setIsChecked(!!checked);
+    } else {
       setIsChecked(checked);
     }
-  }, [context.value, value]);
+  }, [context.value, value, checked]);
 
   const handleChange: React.ChangeEventHandler<HTMLInputElement> = event => {
+    if (!context.onCheckboxChange && !props.onChange) {
+      setIsChecked(!isChecked);
+      return;
+    }
     const evt: CheckboxEvent = {
       target: {
         ...props,
@@ -95,19 +101,17 @@ const Checkbox = forwardRef((props: CheckboxProps, ref: React.RefObject<HTMLLabe
         event.stopPropagation();
       },
     };
+    if (props.onChange) {
+      props.onChange(evt);
+    }
     if (context.onCheckboxChange) {
       context.onCheckboxChange(evt);
-    } else if (props.onChange) {
-      props.onChange(evt);
-    } else {
-      setIsChecked(!isChecked);
     }
   };
 
-  let { disabled, readOnly } = props;
+  let { disabled } = props;
   if (context.hasCheckboxGroup) {
     disabled = context.disabled || disabled;
-    readOnly = context.readOnly || readOnly;
   }
 
   const prefixCls = usePrefixCls('checkbox');
@@ -132,7 +136,6 @@ const Checkbox = forwardRef((props: CheckboxProps, ref: React.RefObject<HTMLLabe
           className={`${prefixCls}__input`}
           disabled={disabled}
           checked={isChecked && !indeterminate}
-          readOnly={readOnly}
           onChange={handleChange}
         />
         {renderIcon()}

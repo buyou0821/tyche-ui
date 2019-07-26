@@ -1,6 +1,6 @@
 ## 更改颜色
 
-在`Radio.Group`或`Radio`上使用`color`设置组件颜色
+在`Radio.Group`或`Radio`上使用`color`设置组件颜色。
 
 <!--start-code-->
 

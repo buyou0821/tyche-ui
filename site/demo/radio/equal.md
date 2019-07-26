@@ -1,6 +1,6 @@
 ## 自定义比较函数
 
-在`Radio.Group`上使用`isValueEqual`自定义比较函数
+在`Radio.Group`上使用`isValueEqual`自定义比较函数。
 
 <!--start-code-->
 

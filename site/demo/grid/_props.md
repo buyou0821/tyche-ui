@@ -1,4 +1,6 @@
-## Row
+## API
+
+#### Row
 
 | 参数 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |
@@ -7,7 +9,7 @@
 | justify | flex 布局下的水平排列方式：`start` `end` `center` `space-around` `space-between` | string | - |
 | type | 布局模式，可选 `flex` | string | - |
 
-## Col
+#### Col
 
 | 参数 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |

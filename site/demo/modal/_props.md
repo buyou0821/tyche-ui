@@ -1,5 +1,6 @@
 ## API
 
+#### Modal
 | 参数 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |
 | afterClose | Modal 完全关闭后的回调 | function | - |

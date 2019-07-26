@@ -5,6 +5,8 @@ import { Route, NavLink } from 'react-router-dom';
 import AppBarPage from './pages/AppBar';
 import SiderNav from './pages/SiderNav';
 import {
+  createReactApp,
+  umi,
   appBar,
   buttons,
   drawer,
@@ -15,8 +17,7 @@ import {
   portal,
   input,
   radio,
-  createReactApp,
-  umi,
+  checkbox,
 } from './demo';
 import ModalPage from './pages/Modal';
 import LayoutPage from './pages/Layout';
@@ -65,7 +66,7 @@ const BasicLayout = () => {
           <Route path="/drawer" component={drawer} />
           <Route path="/input" component={input} />
           <Route path="/radio" component={radio} />
-          <Route path="/checkbox" component={CheckboxPage} />
+          <Route path="/checkbox" component={checkbox} />
         </Content>
       </Layout>
     </Layout>

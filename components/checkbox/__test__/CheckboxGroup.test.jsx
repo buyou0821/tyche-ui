@@ -4,12 +4,12 @@ import Checkbox from '..';
 
 describe('Checkbox Group', () => {
   it('initial value', () => {
-    const initialVal = ['apple', 'banana'];
+    const initialVal = ['Apple', 'Pear'];
     const { container } = render(
       <Checkbox.Group value={initialVal}>
-        <Checkbox value="apple">apple</Checkbox>
-        <Checkbox value="banana">banana</Checkbox>
-        <Checkbox value="orange">orange</Checkbox>
+        <Checkbox value="Apple">Apple</Checkbox>
+        <Checkbox value="Pear">Pear</Checkbox>
+        <Checkbox value="Orange">Orange</Checkbox>
       </Checkbox.Group>,
     );
 
@@ -19,21 +19,63 @@ describe('Checkbox Group', () => {
   });
 
   it('onChange', () => {
-    let value = ['apple'];
+    let value = ['Apple'];
     const handleChange = checkedList => {
       value = checkedList;
     };
     const { getByLabelText } = render(
       <Checkbox.Group value={value} onChange={handleChange}>
-        <Checkbox value="apple">apple</Checkbox>
-        <Checkbox value="banana">banana</Checkbox>
-        <Checkbox value="orange">orange</Checkbox>
+        <Checkbox value="Apple">Apple</Checkbox>
+        <Checkbox value="Banana">Banana</Checkbox>
+        <Checkbox value="Orange">Orange</Checkbox>
       </Checkbox.Group>,
     );
-    fireEvent.click(getByLabelText('banana'));
-    expect(value).toEqual(['apple', 'banana']);
+    fireEvent.click(getByLabelText('Banana'));
+    expect(value).toEqual(['Apple', 'Banana']);
 
-    fireEvent.click(getByLabelText('apple'));
+    fireEvent.click(getByLabelText('Apple'));
     expect(value).toEqual([]);
+  });
+
+  it('options', () => {
+    const options = [
+      'Apple',
+      { label: 'Banana', value: 'Banana' },
+      { label: 'Orange', value: 'Orange', disabled: true },
+    ];
+    let value = ['Apple'];
+    const handleChange = checkedList => {
+      value = checkedList;
+    };
+    const { getByLabelText, container } = render(
+      <Checkbox.Group value={value} options={options} onChange={handleChange} />,
+    );
+    fireEvent.click(getByLabelText('Banana'));
+    expect(value).toEqual(['Apple', 'Banana']);
+
+    fireEvent.click(getByLabelText('Apple'));
+    expect(value).toEqual([]);
+
+    expect(container.querySelectorAll('.ty-checkbox')[2].classList).toContain(
+      'ty-checkbox--disabled',
+    );
+  });
+
+  it('onChange', () => {
+    const groupChange = jest.fn();
+    const checkboxChange = jest.fn();
+    const options = [
+      {
+        label: 'Orange',
+        value: 'Orange',
+        onChange() {
+          checkboxChange();
+        },
+      },
+    ];
+    const { getByLabelText } = render(<Checkbox.Group options={options} onChange={groupChange} />);
+
+    fireEvent.click(getByLabelText('Orange'));
+    expect(checkboxChange).toHaveBeenCalledBefore(groupChange);
   });
 });

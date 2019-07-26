@@ -7,12 +7,12 @@ const navRoutes = [
     title: '指南',
     children: [
       {
-        to: 'use-with-umi',
-        text: '在UmiJS中使用',
-      },
-      {
         to: 'use-with-create-react-app',
         text: '在create-react-app中使用',
+      },
+      {
+        to: 'use-with-umi',
+        text: '在UmiJS中使用',
       },
     ],
   },
@@ -81,7 +81,7 @@ const navRoutes = [
       },
       {
         to: 'checkbox',
-        text: 'Checkbox 复选框',
+        text: 'Checkbox 多选框',
       },
     ],
   },
