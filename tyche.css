@@ -1634,13 +1634,7 @@ html {
   .ty-checkbox--checked .ty-checkbox__border {
     opacity: 0; }
   .ty-checkbox--checked .ty-checkbox__inner {
-    -webkit-transform: scale(1);
-        -ms-transform: scale(1);
-            transform: scale(1);
-    -webkit-transition: -webkit-transform 225ms cubic-bezier(0, 0, 0.2, 1);
-    transition: -webkit-transform 225ms cubic-bezier(0, 0, 0.2, 1);
-    transition: transform 225ms cubic-bezier(0, 0, 0.2, 1);
-    transition: transform 225ms cubic-bezier(0, 0, 0.2, 1), -webkit-transform 225ms cubic-bezier(0, 0, 0.2, 1); }
+    opacity: 1; }
   .ty-checkbox--disabled {
     color: rgba(0, 0, 0, 0.26);
     cursor: not-allowed; }
@@ -1670,16 +1664,12 @@ html {
       fill: currentColor; }
     .ty-checkbox__border {
       color: rgba(0, 0, 0, 0.65);
-      opacity: 1;
-      -webkit-transition: opacity 225ms cubic-bezier(0, 0, 0.2, 1);
-      transition: opacity 225ms cubic-bezier(0, 0, 0.2, 1); }
+      opacity: 1; }
     .ty-checkbox__inner {
       position: absolute;
       top: 8px;
       left: 8px;
-      -webkit-transform: scale(0);
-          -ms-transform: scale(0);
-              transform: scale(0); }
+      opacity: 0; }
     .ty-checkbox__ripple {
       position: absolute;
       top: 0;
@@ -5248,13 +5238,7 @@ html {
       fill: currentColor; }
     .ty-radio__circle {
       position: absolute;
-      -webkit-transform: scale(0);
-          -ms-transform: scale(0);
-              transform: scale(0);
-      -webkit-transition: -webkit-transform 150ms cubic-bezier(0.4, 0, 1, 1);
-      transition: -webkit-transform 150ms cubic-bezier(0.4, 0, 1, 1);
-      transition: transform 150ms cubic-bezier(0.4, 0, 1, 1);
-      transition: transform 150ms cubic-bezier(0.4, 0, 1, 1), -webkit-transform 150ms cubic-bezier(0.4, 0, 1, 1); }
+      opacity: 0; }
   .ty-radio__input {
     position: absolute;
     top: 0;
@@ -5276,13 +5260,7 @@ html {
   .ty-radio--danger .ty-radio__icon {
     color: #ff5252; }
   .ty-radio--checked .ty-radio__circle {
-    -webkit-transform: scale(1);
-        -ms-transform: scale(1);
-            transform: scale(1);
-    -webkit-transition: -webkit-transform 150ms cubic-bezier(0, 0, 0.2, 1);
-    transition: -webkit-transform 150ms cubic-bezier(0, 0, 0.2, 1);
-    transition: transform 150ms cubic-bezier(0, 0, 0.2, 1);
-    transition: transform 150ms cubic-bezier(0, 0, 0.2, 1), -webkit-transform 150ms cubic-bezier(0, 0, 0.2, 1); }
+    opacity: 1; }
   .ty-radio--disabled {
     color: rgba(0, 0, 0, 0.26);
     cursor: not-allowed; }
