@@ -11,3 +11,4 @@ export { default as portal } from './portal';
 export { default as input } from './input';
 export { default as radio } from './radio';
 export { default as checkbox } from './checkbox';
+export { default as message } from './message';

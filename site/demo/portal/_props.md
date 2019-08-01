@@ -14,7 +14,7 @@
 | onCancel | 关闭时的回调 | function(e) | - |
 | selector | 渲染child的DOM节点 | string/DOM Element | body |
 | style | 遮罩层的`style` | object | - |
-| visible | 是否渲染child | boolean | false |
+| visible | 是否渲染child | boolean | true |
 
 
 #### PurePortal

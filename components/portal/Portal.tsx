@@ -78,7 +78,7 @@ const Portal = forwardRef<PortalImperativeHandlers, PortalProps>((props, ref) =>
     mask,
     maskTagName = 'div',
     selector = 'body',
-    visible,
+    visible = true,
     className,
     style,
     children,

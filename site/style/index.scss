@@ -98,6 +98,7 @@ html {
   &-icon {
     .ty-icon {
       margin-right: 24px;
+      margin-bottom: 16px;
       color: $--color-black-heavy;
       font-size: 18px;
     }
@@ -241,6 +242,15 @@ html {
   &-checkbox {
     .ty-checkbox__group {
       display: block;
+    }
+  }
+  &-message {
+    .code-view {
+      button {
+        margin-right: 24px;
+        margin-bottom: 24px;
+        vertical-align: middle;
+      }
     }
   }
 }

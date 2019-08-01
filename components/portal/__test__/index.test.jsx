@@ -41,15 +41,14 @@ describe('PurePortal', () => {
   });
 
   it('should render null no matter what is passed as child', () => {
-    expect(
-      mount(
-        <div>
-          <PurePortal>
-            <p>will not render</p>
-          </PurePortal>
-        </div>,
-      ).contains(<div>will not render</div>),
-    ).toBe(false);
+    const wrapper = mount(
+      <div>
+        <PurePortal>
+          <p>will not render</p>
+        </PurePortal>
+      </div>,
+    );
+    expect(wrapper.contains(<div>will not render</div>)).toBe(false);
   });
 });
 
@@ -85,7 +84,7 @@ describe('Portal', () => {
   it('should render null no matter what is passed as child', () => {
     expect(
       mount(
-        <Portal>
+        <Portal visible={false}>
           <div>will not render</div>
         </Portal>,
       ).contains(<div>will not render</div>),

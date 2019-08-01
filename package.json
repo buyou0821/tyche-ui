@@ -9,7 +9,7 @@
     "dev": "cross-env NODE_ENV=development webpack-dev-server --config scripts/config/webpack.site.dev.ts",
     "docs": "cross-env NODE_ENV=production webpack --config scripts/config/webpack.site.docs.ts",
     "dist": "cross-env NODE_ENV=production webpack --config scripts/config/webpack.dist.ts",
-    "svg": "ts-node scripts/template/svg.ts && yarn lint:fix",
+    "svg": "ts-node scripts/template/svg.ts",
     "watch:svg": "nodemon --exec ts-node -- scripts/template/svg.ts",
     "compile": "tyche-tools run compile",
     "prettier": "prettier --write --config .prettierrc 'components/**/*.{ts,tsx,js,jsx}'",

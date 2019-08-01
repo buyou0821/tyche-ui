@@ -1,0 +1,84 @@
+@import '../../theme/mixins/mixins.scss';
+@import '../../theme/default.scss';
+
+.ty-message {
+  position: fixed;
+  top: 16px;
+  left: 0;
+  z-index: 10000;
+  width: 100%;
+  text-align: center;
+  pointer-events: none;
+}
+
+@include b(message) {
+  @include e(notice) {
+    padding: 8px 0;
+    @include e(content) {
+      display: inline-flex;
+      align-items: center;
+      box-sizing: border-box;
+      min-width: 256px;
+      max-width: 96%;
+      min-height: 46px;
+      padding: 6px 16px;
+      border-radius: 2px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+      pointer-events: all;
+    }
+  }
+
+  @include e(icon) {
+    margin-right: 12px;
+    font-size: 20px;
+  }
+
+  $--message--colors: (
+    'default': $--color-black-bg,
+    'primary': $--color-primary,
+    'success': $--color-success,
+    'warning': $--color-warning,
+    'danger': $--color-danger,
+  );
+  @each $key, $color in $--message--colors {
+    @include m($key) {
+      color: $--color-white;
+      background-color: $color;
+    }
+  }
+
+  &-appear {
+    &-active {
+      animation: notifyMoveIn 225ms cubic-bezier(0.4, 0, 0.2, 1);
+    }
+  }
+  &-exit {
+    &-active {
+      animation: notifyMoveOut 195ms cubic-bezier(0.4, 0, 0.2, 1) both;
+    }
+  }
+}
+
+@keyframes notifyMoveIn {
+  0% {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateY(0%);
+    opacity: 1;
+  }
+}
+
+@keyframes notifyMoveOut {
+  0% {
+    transform: translateY(0%);
+    opacity: 1;
+  }
+
+  100% {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+}

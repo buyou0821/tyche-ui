@@ -11,6 +11,10 @@ const instance = (
     <Icon type="code-close" />
     <Icon type="list" />
     <Icon type="github" />
+    <Icon type="checked" />
+    <Icon type="info" />
+    <Icon type="circle-info" />
+    <Icon type="warning" />
   </div>
 );
 ReactDOM.render(instance);

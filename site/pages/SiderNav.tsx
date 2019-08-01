@@ -63,6 +63,10 @@ const navRoutes = [
         text: 'Modal 对话框',
       },
       {
+        to: 'message',
+        text: 'Message 全局提示',
+      },
+      {
         to: 'drawer',
         text: 'Drawer 抽屉',
       },

@@ -10,15 +10,16 @@ $--color-secondary: #ec407a !default;
 $--color-success: #4caf50 !default;
 $--color-warning: #fb8c00 !default;
 $--color-danger: #ff5252 !default;
-$--color-black: rgba(0, 0, 0, 0.65);
-$--color-black-light: rgba(0, 0, 0, 0.38);
-$--color-black-heavy: rgba(0, 0, 0, 0.85);
-$--color-gray: #e0e0e0;
-$--color-gray-heavy: #8c8c8c;
+$--color-black-bg: #242424 !default;
+$--color-black: rgba(0, 0, 0, 0.65) !default;
+$--color-black-light: rgba(0, 0, 0, 0.38) !default;
+$--color-black-heavy: rgba(0, 0, 0, 0.85) !default;
+$--color-gray: #e0e0e0 !default;
+$--color-gray-heavy: #8c8c8c !default;
 
-$--button-disable-background: rgba(0, 0, 0, 0.12);
-$--button-loading-background: #d6d8db;
-$--color-disabled: rgba(0, 0, 0, 0.26);
+$--button-disable-background: rgba(0, 0, 0, 0.12) !default;
+$--button-loading-background: #d6d8db !default;
+$--color-disabled: rgba(0, 0, 0, 0.26) !default;
 
 $--colors: (
   'primary': $--color-primary,
