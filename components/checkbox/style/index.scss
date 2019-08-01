@@ -16,8 +16,9 @@
       opacity: 0;
     }
     @include e(inner) {
-      transform: scale(1);
-      transition: transform 225ms cubic-bezier(0, 0, 0.2, 1);
+      opacity: 1;
+      // transform: scale(1);
+      // transition: transform 225ms cubic-bezier(0, 0, 0.2, 1);
     }
   }
 
@@ -57,13 +58,14 @@
       @extend %icon-svg;
       color: $--color-black;
       opacity: 1;
-      transition: opacity 225ms cubic-bezier(0, 0, 0.2, 1);
+      // transition: opacity 225ms cubic-bezier(0, 0, 0.2, 1);
     }
     @include e(inner) {
       position: absolute;
       top: 8px;
       left: 8px;
-      transform: scale(0);
+      opacity: 0;
+      // transform: scale(0);
 
       @extend %icon-svg;
     }
