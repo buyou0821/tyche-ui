@@ -24,7 +24,7 @@ ReactDOM.render(
   <Router>
     <ScrollToTop>
       <BasicLayout />
-      <Route exact path="/" render={() => <Redirect to="/icon" />} />
+      <Route exact path="/" render={() => <Redirect to="/use-with-create-react-app" />} />
     </ScrollToTop>
   </Router>,
   document.getElementById('root'),

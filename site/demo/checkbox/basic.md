@@ -7,7 +7,11 @@
 <!--start-code-->
 
 ```jsx
-ReactDOM.render(<Checkbox>A</Checkbox>);
+ReactDOM.render(
+  <div>
+    <Checkbox>A</Checkbox>
+  </div>,
+);
 ```
 
 <!--end-code-->

@@ -10,22 +10,22 @@ function onChange(checkedValues) {
 }
 
 ReactDOM.render(
-  <Checkbox.Group onChange={onChange}>
+  <Checkbox.Group defaultValue={['A', 'B', 'D']} onChange={onChange}>
     <Row>
       <Col span={8}>
         <Checkbox value="A">A</Checkbox>
       </Col>
       <Col span={8}>
-        <Checkbox value="B">B</Checkbox>
+        <Checkbox color="secondary" value="B">B</Checkbox>
       </Col>
       <Col span={8}>
-        <Checkbox value="C">C</Checkbox>
+        <Checkbox color="success" value="C">C</Checkbox>
       </Col>
       <Col span={8}>
-        <Checkbox value="D">D</Checkbox>
+        <Checkbox color="warning" value="D">D</Checkbox>
       </Col>
       <Col span={8}>
-        <Checkbox value="E">E</Checkbox>
+        <Checkbox color="danger" value="E">E</Checkbox>
       </Col>
     </Row>
   </Checkbox.Group>,

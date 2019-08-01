@@ -9,7 +9,7 @@ const Demo = () => {
 
   return (
     <div>
-      <div className="demo-portal-conent" style={{ border: '1px solid #ff5252', width: '100%' }}>
+      <div className="demo-portal-conent" style={{ width: '100%' }}>
         这里是.demo-portal-conent的内容
       </div>
       {PurePortalVisible && (
