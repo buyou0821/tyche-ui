@@ -890,6 +890,7 @@ html {
 
 .demo-icon .ty-icon {
   margin-right: 24px;
+  margin-bottom: 16px;
   color: rgba(0, 0, 0, 0.85);
   font-size: 18px; }
 
@@ -1026,6 +1027,11 @@ html {
 .demo-checkbox .ty-checkbox__group {
   display: block; }
 
+.demo-message .code-view button {
+  margin-right: 24px;
+  margin-bottom: 24px;
+  vertical-align: middle; }
+
 @-webkit-keyframes rotation {
   from {
     -webkit-transform: rotate(0deg);
@@ -1083,6 +1089,8 @@ html {
   .demo-markdown .doc-highlight p,
   .demo-markdown .doc-highlight pre {
     margin: 1em 0; }
+  .demo-markdown ul {
+    padding-left: 0; }
   .demo-markdown ul > li {
     margin-left: 20px;
     padding-left: 4px;
@@ -1619,8 +1627,8 @@ html {
   -webkit-align-items: center;
       -ms-flex-align: center;
           align-items: center;
-  cursor: pointer;
-  margin-right: 6px; }
+  margin-right: 6px;
+  cursor: pointer; }
   .ty-checkbox__group {
     display: inline-block; }
   .ty-checkbox--checked .ty-checkbox__border {
@@ -1654,11 +1662,11 @@ html {
     position: relative;
     padding: 8px; }
     .ty-checkbox__icon .ty-checkbox__border, .ty-checkbox__icon .ty-checkbox__inner {
-      vertical-align: middle;
       display: inline-block;
       width: 1em;
       height: 1em;
       font-size: 1.5em;
+      vertical-align: middle;
       fill: currentColor; }
     .ty-checkbox__border {
       color: rgba(0, 0, 0, 0.65);
@@ -1667,15 +1675,15 @@ html {
       transition: opacity 225ms cubic-bezier(0, 0, 0.2, 1); }
     .ty-checkbox__inner {
       position: absolute;
-      left: 8px;
       top: 8px;
+      left: 8px;
       -webkit-transform: scale(0);
           -ms-transform: scale(0);
               transform: scale(0); }
     .ty-checkbox__ripple {
       position: absolute;
-      left: 0;
       top: 0;
+      left: 0;
       width: 100%;
       height: 100%; }
     .ty-checkbox__input {
@@ -4951,6 +4959,109 @@ html {
             flex-direction: row; }
     .ty-layout--hasSider .ty-layout__content {
       overflow-x: hidden; }
+
+.ty-message {
+  position: fixed;
+  top: 16px;
+  left: 0;
+  z-index: 10000;
+  width: 100%;
+  text-align: center;
+  pointer-events: none; }
+
+.ty-message__notice {
+  padding: 8px 0; }
+  .ty-message__content {
+    display: -webkit-inline-box;
+    display: -webkit-inline-flex;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    min-width: 256px;
+    max-width: 96%;
+    min-height: 46px;
+    padding: 6px 16px;
+    border-radius: 2px;
+    -webkit-box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    pointer-events: all; }
+
+.ty-message__icon {
+  margin-right: 12px;
+  font-size: 20px; }
+
+.ty-message--default {
+  color: #fff;
+  background-color: #242424; }
+
+.ty-message--primary {
+  color: #fff;
+  background-color: #2196f3; }
+
+.ty-message--success {
+  color: #fff;
+  background-color: #4caf50; }
+
+.ty-message--warning {
+  color: #fff;
+  background-color: #fb8c00; }
+
+.ty-message--danger {
+  color: #fff;
+  background-color: #ff5252; }
+
+.ty-message-appear-active {
+  -webkit-animation: notifyMoveIn 225ms cubic-bezier(0.4, 0, 0.2, 1);
+          animation: notifyMoveIn 225ms cubic-bezier(0.4, 0, 0.2, 1); }
+
+.ty-message-exit-active {
+  -webkit-animation: notifyMoveOut 195ms cubic-bezier(0.4, 0, 0.2, 1) both;
+          animation: notifyMoveOut 195ms cubic-bezier(0.4, 0, 0.2, 1) both; }
+
+@-webkit-keyframes notifyMoveIn {
+  0% {
+    -webkit-transform: translateY(-100%);
+            transform: translateY(-100%);
+    opacity: 0; }
+  100% {
+    -webkit-transform: translateY(0%);
+            transform: translateY(0%);
+    opacity: 1; } }
+
+@keyframes notifyMoveIn {
+  0% {
+    -webkit-transform: translateY(-100%);
+            transform: translateY(-100%);
+    opacity: 0; }
+  100% {
+    -webkit-transform: translateY(0%);
+            transform: translateY(0%);
+    opacity: 1; } }
+
+@-webkit-keyframes notifyMoveOut {
+  0% {
+    -webkit-transform: translateY(0%);
+            transform: translateY(0%);
+    opacity: 1; }
+  100% {
+    -webkit-transform: translateY(-100%);
+            transform: translateY(-100%);
+    opacity: 0; } }
+
+@keyframes notifyMoveOut {
+  0% {
+    -webkit-transform: translateY(0%);
+            transform: translateY(0%);
+    opacity: 1; }
+  100% {
+    -webkit-transform: translateY(-100%);
+            transform: translateY(-100%);
+    opacity: 0; } }
 
 .ty-modal {
   position: relative;
