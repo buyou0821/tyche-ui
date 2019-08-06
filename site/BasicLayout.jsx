@@ -19,6 +19,7 @@ import {
   radio,
   checkbox,
   message,
+  Switch,
 } from './demo';
 import ModalPage from './pages/Modal';
 import LayoutPage from './pages/Layout';
@@ -71,7 +72,7 @@ const BasicLayout = () => {
           <Route path="/radio" component={radio} />
           <Route path="/checkbox" component={checkbox} />
           <Route path="/message" component={message} />
-          <Route path="/switch" component={SwitchPage} />
+          <Route path="/switch" component={Switch} />
         </Content>
       </Layout>
     </Layout>

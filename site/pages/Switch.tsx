@@ -10,7 +10,7 @@ export default () => {
           console.log(checked, e);
         }}
       />
-      <Switch color="primary" />
+      <Switch disabled color="primary" />
       <Switch color="secondary" />
     </div>
   );

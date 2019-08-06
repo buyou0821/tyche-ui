@@ -24,6 +24,7 @@ export type SwitchClickEventHandler = SwitchChangeEventHandler;
 export interface SwitchProps
   extends Omit<React.DOMAttributes<HTMLButtonElement>, 'onChange' | 'onClick'> {
   disabled?: boolean;
+  defaultChecked?: boolean;
   checked?: boolean;
   autoFocus?: boolean;
   loading?: boolean;
@@ -36,7 +37,8 @@ export interface SwitchProps
 
 const Switch = forwardRef((props: SwitchProps, ref: React.RefObject<HTMLButtonElement>) => {
   const {
-    checked = false,
+    defaultChecked = false,
+    checked = defaultChecked,
     autoFocus,
     disabled,
     onChange,
@@ -130,6 +132,7 @@ const Switch = forwardRef((props: SwitchProps, ref: React.RefObject<HTMLButtonEl
   const classes = clsx(prefixCls, {
     [`${prefixCls}--checked`]: isChecked,
     [`${prefixCls}--${color}`]: color && !disabled && isChecked,
+    [`${prefixCls}--disabled`]: disabled,
   });
 
   const rippleColor = color && !disabled && isChecked ? color : 'default';
