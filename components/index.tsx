@@ -12,6 +12,7 @@ export { default as Input } from './input';
 export { default as Radio } from './radio';
 export { default as Checkbox } from './checkbox';
 export { default as message } from './message';
+export { default as Switch } from './switch';
 
 /* @remove-on-es-build-begin */
 // this file is not used if use https://github.com/ant-design/babel-plugin-import

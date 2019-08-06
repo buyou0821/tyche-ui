@@ -2,8 +2,8 @@ import React, { useState, useLayoutEffect } from 'react';
 import clsx from 'clsx';
 import { Layout, Button, Row, Col } from 'components';
 import { Route, NavLink } from 'react-router-dom';
-import AppBarPage from './pages/AppBar';
-import SiderNav from './pages/SiderNav';
+import AppBarPage from './components/AppBar';
+import SiderNav from './components/SiderNav';
 import {
   createReactApp,
   umi,
@@ -28,6 +28,7 @@ import InputPage from './pages/Input';
 import RadioPage from './pages/Radio';
 import CheckboxPage from './pages/Checkbox';
 import MessagePage from './pages/Message';
+import SwitchPage from './pages/Switch';
 
 const { Header, Sider, Content } = Layout;
 
@@ -70,6 +71,7 @@ const BasicLayout = () => {
           <Route path="/radio" component={radio} />
           <Route path="/checkbox" component={checkbox} />
           <Route path="/message" component={message} />
+          <Route path="/switch" component={SwitchPage} />
         </Content>
       </Layout>
     </Layout>

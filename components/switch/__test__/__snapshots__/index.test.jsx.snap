@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Switch should render correctly 1`] = `
+<DocumentFragment>
+  <button
+    aria-checked="false"
+    class="ty-switch"
+    role="switch"
+  >
+    <span
+      class="ty-switch__node"
+    />
+    <span
+      class="ty-ripple ty-btn ty-switch__ripple ty-btn__icon ty-btn__icon--default"
+    >
+      <span
+        class="ty-btn__wrapper"
+      >
+        <span
+          class="ty-switch__circle"
+        />
+      </span>
+      <span
+        class="ty-ripple__wrapper"
+      />
+    </span>
+  </button>
+</DocumentFragment>
+`;

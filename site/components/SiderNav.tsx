@@ -73,7 +73,7 @@ const navRoutes = [
     ],
   },
   {
-    title: '表单',
+    title: '数据录入',
     children: [
       {
         to: 'input',
@@ -86,6 +86,10 @@ const navRoutes = [
       {
         to: 'checkbox',
         text: 'Checkbox 多选框',
+      },
+      {
+        to: 'switch',
+        text: 'Switch 开关',
       },
     ],
   },

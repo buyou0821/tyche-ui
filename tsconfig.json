@@ -18,9 +18,10 @@
     "esModuleInterop": true,
     "noUnusedLocals": true,
     "allowSyntheticDefaultImports": true,
-    "suppressImplicitAnyIndexErrors": true
+    "suppressImplicitAnyIndexErrors": true,
+    "allowJs": true,
   },
-  "include": ["site/**/*",  "scripts/**/*", "examples/**/*", "types/**/*", "components/**/*", "test/**/*"],
+  "include": ["site/**/*.tsx",  "scripts/**/*.ts", "examples/**/*", "types/**/*", "components/**/*", "test/**/*"],
   "exclude": [
     "node_modules",
     "build",
@@ -30,6 +31,7 @@
     "jest",
     "src/setupTests.ts",
     "*.js",
-    "__tests__"
+    "__tests__",
+    "scripts/config/postcssConfig.js"
   ]
 }

@@ -4,7 +4,7 @@ import clsx from 'clsx';
 import { usePrefixCls } from '../_util/hooks';
 import { RippleProps } from './TouchRipple';
 
-const DURATION = 500;
+const DURATION = 550;
 
 const Ripple = (props: RippleProps) => {
   const { rippleX, rippleY, rippleSize, ...restProps } = props;
