@@ -1,9 +1,10 @@
-import React, { forwardRef, useState } from 'react';
+import React, { forwardRef, useState, useRef, useLayoutEffect } from 'react';
 import { CSSTransition } from 'react-transition-group';
 import { usePrefixCls } from '../_util/hooks';
 import { duration } from '../_util/transition';
 import Portal from '../portal';
 import Sider, { SiderProps } from './Sider';
+import { useForkRef } from '../_util/reactHelpers';
 
 export interface DrawerProps extends Partial<SiderProps> {
   visible?: boolean;
@@ -16,6 +17,23 @@ const Drawer = forwardRef((props: DrawerProps, ref: React.RefObject<HTMLDivEleme
   const prefixCls = usePrefixCls('drawer');
   const [prevVisible, setPrevVisible] = useState<boolean>(false);
   const [exciting, setExciting] = useState<boolean>(false);
+  const maskNode = useRef<HTMLDivElement>(null);
+  const handleRef = useForkRef(maskNode, ref);
+
+  const removeMoveHandler = (e: React.TouchEvent | TouchEvent) => {
+    e.preventDefault();
+  };
+
+  useLayoutEffect(() => {
+    if (maskNode && maskNode.current) {
+      maskNode.current.addEventListener('touchmove', removeMoveHandler, { passive: false });
+    }
+    return () => {
+      if (maskNode && maskNode.current) {
+        maskNode.current.removeEventListener('touchmove', removeMoveHandler);
+      }
+    };
+  }, [visible]);
 
   if (visible !== prevVisible) {
     if (prevVisible && !visible) {
@@ -48,7 +66,7 @@ const Drawer = forwardRef((props: DrawerProps, ref: React.RefObject<HTMLDivEleme
           unmountOnExit
           classNames={`${prefixCls}__mask`}
         >
-          <div ref={ref} className={`${prefixCls}__mask`} onClick={handleMaskClick} />
+          <div ref={handleRef} className={`${prefixCls}__mask`} onClick={handleMaskClick} />
         </CSSTransition>
       )}
       <Sider width={width} inProp={visible} {...rest}>
