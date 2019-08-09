@@ -45,4 +45,11 @@ describe('Switch', () => {
     fireEvent.click(switchDOM);
     expect(handleClick).toHaveBeenCalled();
   });
+
+  it('should support defaultChecked', () => {
+    const { container } = render(<Switch defaultChecked />);
+    expect(container.querySelectorAll('.ty-switch--checked').length).toBe(1);
+    fireEvent.click(container.querySelector('.ty-switch'));
+    expect(container.querySelectorAll('.ty-switch--checked').length).toBe(0);
+  });
 });

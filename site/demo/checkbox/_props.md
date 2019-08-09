@@ -17,6 +17,7 @@
 | color | 设置所有子多选框的颜色类型，可选值为`primary`、 `secondary`、 `success`、 `warning`、 `danger` 或者不设 | string | primary |
 | defaultValue | 默认选中的选项 | string\[] | \[] | 3.6.2 |
 | disabled | 整组失效 | boolean | false | 3.6.2 |
+| isValueEqual | 可选参数，判断value值是否相等 | Function(a, b) | (a, b) => a === b |
 | options | 指定可选项 | string\[] | \[] | 3.6.2 |
 | value | 指定选中的选项 | string\[] | \[] | 3.6.2 |
 | onChange | 变化时回调函数 | Function(checkedValue) | - | 3.6.2 |

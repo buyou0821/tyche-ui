@@ -13,5 +13,6 @@
 | --- | --- | --- | --- |
 | color | 设置所有子单选器的颜色类型，可选值为`primary`、 `secondary`、 `success`、 `warning`、 `danger` 或者不设 | string | primary |
 | disabled | 禁选所有子单选器 | boolean | false |
+| isValueEqual | 可选参数，判断value值是否相等 | Function(a, b) | (a, b) => a === b |
 | onChange | 选项变化时的回调函数 | Function(e:Event) | - |
 | value | 用于设置当前选中的值 | any | - |
