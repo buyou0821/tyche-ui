@@ -1,5 +1,4 @@
 import webpack from 'webpack';
-import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 const markdownRenderer = require('react-markdown-reader').renderer;
 
 const config: webpack.Configuration = {
@@ -59,13 +58,6 @@ const config: webpack.Configuration = {
       },
     ],
   },
-  plugins: [
-    // new CleanWebpackPlugin(),
-    new MiniCssExtractPlugin({
-      filename: 'tyche.css',
-      chunkFilename: '[id].css',
-    }),
-  ],
 };
 
 export default config;

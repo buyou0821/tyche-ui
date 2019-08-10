@@ -2,22 +2,24 @@ import webpack from 'webpack';
 import webpackMerge from 'webpack-merge';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
+import CleanWebpackPlugin from 'clean-webpack-plugin';
+import { getProjectPath } from '../utils/projectHelper';
 import base from './webpack.base';
 const postcssConfig = require('./postcssConfig');
-import { getProjectPath } from '../utils/projectHelper';
 
 const config: webpack.Configuration = {
   mode: 'production',
   entry: {
     site: getProjectPath('site', 'index'),
   },
+  output: {
+    path: getProjectPath('docs'),
+    filename: '[name].[hash].js',
+  },
   resolve: {
     alias: {
       components: getProjectPath('components'),
     },
-  },
-  output: {
-    path: getProjectPath('docs'),
   },
   module: {
     rules: [
@@ -41,6 +43,11 @@ const config: webpack.Configuration = {
     ],
   },
   plugins: [
+    new MiniCssExtractPlugin({
+      filename: 'tyche.[hash].css',
+      chunkFilename: '[id].css',
+    }),
+    new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
       title: 'tyche-ui',
       template: getProjectPath('site', 'index.html'),

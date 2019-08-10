@@ -18,8 +18,7 @@
     "esModuleInterop": true,
     "noUnusedLocals": true,
     "allowSyntheticDefaultImports": true,
-    "suppressImplicitAnyIndexErrors": true,
-    "allowJs": true,
+    "suppressImplicitAnyIndexErrors": true
   },
   "include": ["site/**/*.tsx",  "scripts/**/*.ts", "examples/**/*", "types/**/*", "components/**/*", "test/**/*"],
   "exclude": [

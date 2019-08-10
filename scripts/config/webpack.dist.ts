@@ -52,6 +52,13 @@ const config: webpack.Configuration = {
       },
     ],
   },
+  plugins: [
+    // new CleanWebpackPlugin(),
+    new MiniCssExtractPlugin({
+      filename: 'tyche.css',
+      chunkFilename: '[id].css',
+    }),
+  ],
 };
 
 export default webpackMerge(base, config);
