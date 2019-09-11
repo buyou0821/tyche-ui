@@ -2,7 +2,7 @@ import React, { forwardRef } from 'react';
 import clsx from 'clsx';
 import { usePrefixCls } from '../_util/hooks';
 import { Col, Button } from '../';
-import { ColProps } from '../gird/Col';
+import { ColProps } from '../grid/Col';
 import { ButtonProps as IButtonProps } from '../button';
 
 interface IconButtonProps extends ColProps {

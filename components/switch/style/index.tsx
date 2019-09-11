@@ -1,4 +1,4 @@
-import './index.scss';
-
 // style dependencies
 import '../../button/style';
+
+import './index.scss';
